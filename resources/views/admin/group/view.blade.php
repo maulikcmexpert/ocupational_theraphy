@@ -137,7 +137,7 @@
                         <div class="col-md-6 position-relative mb-3">
                             <div class="d-flex align-items-center">
                                 <h4 class="text-bold"> {{ $value->session_name }} </h4>
-                                <span class="text-info">{{ $value->session_date}}</span>
+                                <span class="text-info">{{ $value->session_date.'('.date('l',strtotime($value->session_date)).')'}}</span>
                             </div>
                             <div class="col-md-3">
                                 @if($value->session_date < date('Y-m-d')) <span class="text-success">Completed</span>

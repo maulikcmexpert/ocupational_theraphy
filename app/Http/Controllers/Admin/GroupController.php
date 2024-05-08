@@ -206,7 +206,8 @@ class GroupController extends CoreController
 
     function calculateSessionDates($startDate, $totalSessions, $schedule)
     {
-
+        echo "hi";
+        dd($schedule);
         $sessionDates = [];
         $currentDate = Carbon::parse($startDate);
 

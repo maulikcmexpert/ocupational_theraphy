@@ -217,7 +217,7 @@ class GroupController extends CoreController
             foreach ($schedule as $val) {
 
                 $methodName = 'is' . ucfirst($val); // Generating method name dynamically
-                dd($methodName);
+
                 if (method_exists($currentDate, $methodName) && $currentDate->$methodName()) {
                     dd($methodName);
                     $sessionDates[] = $currentDate->toDateString();

@@ -245,7 +245,7 @@ class GroupController extends CoreController
                 $start_session_date = $request->start_session_date;
 
                 $sessionDates = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
-                dd($sessionDates);
+
 
 
 
@@ -278,7 +278,8 @@ class GroupController extends CoreController
                     'start_session_date' => $start_session_date,
                     'end_session_date' =>   end($sessionDate),
                     'group_type' => $request->group_type,
-                    'total_session' => $total_session
+                    'total_session' => $total_session,
+                    'schedule' => json_encode($request->schedule)
                 ]);
 
 
@@ -287,13 +288,14 @@ class GroupController extends CoreController
                 $groups = Group::find($group_id);
 
                 if (!empty($groups)) {
-
-                    for ($i = 0; $i < count($request->session_name); $i++) {
+                    $sessionCounter = 1;
+                    for ($i = 0; $i < $total_session; $i++) {
                         Group_session::create([
                             'group_id' => $group_id,
-                            'session_name' => $request->session_name[$i],
+                            'session_name' => 'Session ' . $sessionCounter,
                             'session_date' => $sessionDate[$i]
                         ]);
+                        $sessionCounter++;
                     }
                     if (is_array($request->doctor_id) && count($request->doctor_id) != 0 && !is_null($request->doctor_id[0])) {
 

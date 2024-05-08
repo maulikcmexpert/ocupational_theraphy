@@ -19,7 +19,8 @@ class Group extends Model
         'start_session_date',
         'end_session_date',
         'total_session',
-        'group_type'
+        'group_type',
+        'schedule'
     ];
     use HasFactory;
 

@@ -49,6 +49,14 @@ $(function () {
     });
   });
 
+  $.validator.addMethod(
+    "atLeastOneCheckboxChecked",
+    function (value, element) {
+      return $(".form-check-input:checked").length > 0;
+    },
+    "Please select at least one checkbox"
+  );
+
   $("#groupForm").validate({
     rules: {
       group_type: {
@@ -78,6 +86,9 @@ $(function () {
       group_details: { required: true },
       start_session_date: { required: true },
       total_session: { required: true, number: true, min: 1 },
+      "schedule[]": {
+        atLeastOneCheckboxChecked: true,
+      },
     },
     messages: {
       group_type: {
@@ -100,6 +111,9 @@ $(function () {
         required: "Please enter number of sessions",
         number: "Please enter in digit",
         min: "Please enter digit grater than 0",
+      },
+      "schedule[]": {
+        atLeastOneCheckboxChecked: "Please select at least one schedule",
       },
     },
     submitHandler: function (form) {

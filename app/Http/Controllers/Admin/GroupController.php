@@ -203,6 +203,27 @@ class GroupController extends CoreController
     /**
      * Store a newly created resource in storage.
      */
+
+    function calculateSessionDates($startDate, $totalSessions)
+    {
+        $sessionDates = [];
+        $currentDate = Carbon::parse($startDate);
+
+        // Loop until we have all sessions
+        for ($i = 0; $i < $totalSessions;) {
+            // Check if the current date is Monday or Tuesday
+            if ($currentDate->isMonday() || $currentDate->isTuesday()) {
+                // Add the current date to the session dates array
+                $sessionDates[] = $currentDate->toDateString();
+                $i++; // Increment session count
+            }
+            // Move to the next day
+            $currentDate->addDay();
+        }
+        return $sessionDates;
+    }
+
+
     public function store(GroupPostRequest $request)
     {
 
@@ -213,35 +234,35 @@ class GroupController extends CoreController
 
             if ($group_type == 'internal') {
 
-                $start_session_date = Carbon::parse($request->start_session_date);
+                $start_session_date = $request->start_session_date;
+
+                $sessionDates = $this->calculateSessionDates($start_session_date, $total_session);
+                dd($sessionDates);
 
 
-                $sessionDate = [];
 
-                for ($session = 1; $session <= $total_session; $session++) {
+                // for ($session = 1; $session <= $total_session; $session++) {
 
-                    // Calculate the session date based on the start date and session number
-                    $session_date = $start_session_date->copy()->addDays($session * 7);
+                //     // Calculate the session date based on the start date and session number
+                //     $session_date = $start_session_date->copy()->addDays($session * 7);
 
-                    $monday_date = $session_date->next(Carbon::MONDAY);
-                    $tuesday_date = $session_date->next(Carbon::TUESDAY);
+                //     $monday_date = $session_date->next(Carbon::MONDAY);
+                //     $tuesday_date = $session_date->next(Carbon::TUESDAY);
 
-                    // Check if the session date is a Monday or Tuesday
-                    // if ($session_date->isMonday() || $session_date->isTuesday()) {
-                    // If it is, add it to the result array
-                    if ($monday_date) {
+                //     // Check if the session date is a Monday or Tuesday
+                //     // if ($session_date->isMonday() || $session_date->isTuesday()) {
+                //     // If it is, add it to the result array
+                //     if ($monday_date) {
 
-                        $sessionDate[] = $monday_date;
-                    }
+                //         $sessionDate[] = $monday_date;
+                //     }
 
-                    if ($tuesday_date) {
+                //     if ($tuesday_date) {
 
-                        $sessionDate[] = $tuesday_date;
-                    }
-                    // }
-                }
-
-                dd($sessionDate);
+                //         $sessionDate[] = $tuesday_date;
+                //     }
+                //     // }
+                // }
 
                 $groups =   Group::create([
                     'group_name' => $request->group_name,

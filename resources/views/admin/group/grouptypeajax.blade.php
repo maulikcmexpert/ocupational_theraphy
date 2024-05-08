@@ -31,9 +31,7 @@ if ($group_type == 'internal') { ?>
 
             </div>
         </div>
-        <div class="col-lg-12 mt-5 position-relative">
-            <div class="row" id="addSession"></div>
-        </div>
+
         <div class="fv-row mb-7 fv-plugins-icon-container hide" id="doctorAssign" style="display: none;">
             <!--begin::Label-->
             <button class=" btn btn-primary mt-3 mb-3" id="addMore">Add Therapist</button>
@@ -65,6 +63,9 @@ if ($group_type == 'internal') { ?>
             <!--begin::Input-->
 
 
+        </div>
+        <div class="col-lg-12 mt-5 position-relative">
+            <div class="row" id="addSession"></div>
         </div>
     </div>
     <script>

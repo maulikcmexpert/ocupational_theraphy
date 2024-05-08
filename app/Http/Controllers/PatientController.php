@@ -1167,7 +1167,7 @@ class PatientController extends Controller
 
 
         $patientFinalAPOM = PatientApoms::where(['patient_id' => $patient_id, 'test_type' => '1'])->first();
-        dd($patientFinalAPOM);
+
         $final_processSkill = 0;
         $final_communicationInteractionSkills = 0;
         $final_lifeSkills = 0;

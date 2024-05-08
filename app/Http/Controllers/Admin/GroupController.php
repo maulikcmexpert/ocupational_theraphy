@@ -218,7 +218,7 @@ class GroupController extends CoreController
 
                 $methodName = 'is' . ucfirst($val); // Generating method name dynamically
 
-                if (method_exists($currentDate, $methodName) && $currentDate->$methodName()) {
+                if ($currentDate->$methodName()) {
                     dd($methodName);
                     $sessionDates[] = $currentDate->toDateString();
                     $i++;

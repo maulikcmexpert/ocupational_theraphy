@@ -219,8 +219,7 @@ class GroupController extends CoreController
                 $sessionDate = [];
 
                 for ($session = 0; $session < $total_session; $session++) {
-                    echo $session;
-                    exit;
+
                     // Calculate the session date based on the start date and session number
                     $session_date = $start_session_date->copy()->addDays($session * 7);
 

@@ -244,7 +244,7 @@ class GroupController extends CoreController
 
                 $start_session_date = $request->start_session_date;
 
-                $sessionDates = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
+                $sessionDate = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
 
 
 

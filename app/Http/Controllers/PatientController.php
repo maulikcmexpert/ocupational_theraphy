@@ -1177,92 +1177,104 @@ class PatientController extends Controller
         $final_selfEsteem = 0;
         $final_affect = 0;
 
+        if ($patientFinalAPOM != null) {
 
-        $final_processSkill = $patientFinalAPOM->attention +
-            $patientFinalAPOM->pace +
-            $patientFinalAPOM->knowledgeToolsAndMaterials +
-            $patientFinalAPOM->knowledgeConceptFormation +
-            $patientFinalAPOM->skillsToUseToolsAndMaterials +
-            $patientFinalAPOM->taskConcept +
-            $patientFinalAPOM->organizingSpaceAndObjects +
-            $patientFinalAPOM->adaptation;
+            $final_processSkill = $patientFinalAPOM->attention +
+                $patientFinalAPOM->pace +
+                $patientFinalAPOM->knowledgeToolsAndMaterials +
+                $patientFinalAPOM->knowledgeConceptFormation +
+                $patientFinalAPOM->skillsToUseToolsAndMaterials +
+                $patientFinalAPOM->taskConcept +
+                $patientFinalAPOM->organizingSpaceAndObjects +
+                $patientFinalAPOM->adaptation;
+
+            $final_communicationInteractionSkills =
+                $patientFinalAPOM->nonVerbalPhysicalContact +
+                $patientFinalAPOM->nonVerbalEyeContact +
+                $patientFinalAPOM->nonVerbalGestures +
+                $patientFinalAPOM->nonVerbalUseOfBody +
+                $patientFinalAPOM->verbalSpeech +
+                $patientFinalAPOM->verbalContent +
+                $patientFinalAPOM->verbalExpressNeeds +
+                $patientFinalAPOM->verbalConversation +
+                $patientFinalAPOM->relationsSocialNorms +
+                $patientFinalAPOM->relationsRapport;
+
+
+            $final_lifeSkills =
+                $patientFinalAPOM->personalCare +
+                $patientFinalAPOM->personalSafety +
+                $patientFinalAPOM->careOfMedication +
+                $patientFinalAPOM->useOfTransport +
+                $patientFinalAPOM->domesticSkills +
+                $patientFinalAPOM->childCareSkills +
+                $patientFinalAPOM->moneyManagementAndBudgetingSkills +
+                $patientFinalAPOM->assertiveness +
+                $patientFinalAPOM->stressManagement +
+                $patientFinalAPOM->conflictManagement +
+                $patientFinalAPOM->problemSolvingSkills +
+                $patientFinalAPOM->preVocationalSkills +
+                $patientFinalAPOM->vocationalSkills;
+
+
+            $final_roleperformance =
+                $patientFinalAPOM->awarenessOfRoles +
+                $patientFinalAPOM->roleExpectations +
+                $patientFinalAPOM->roleBalance +
+                $patientFinalAPOM->competency;
+
+
+
+            $final_balancedLifeStyle =
+                $patientFinalAPOM->timeUseRoutines +
+                $patientFinalAPOM->habits +
+                $patientFinalAPOM->mixOfOccupations;
+
+            $final_motivation =
+                $patientFinalAPOM->activeInvolvement +
+                $patientFinalAPOM->motivesAndDrives +
+                $patientFinalAPOM->showsInterest +
+                $patientFinalAPOM->goalDirectedBehaviour +
+                $patientFinalAPOM->locusOfControl;
+
+            $final_selfEsteem =
+
+                $patientFinalAPOM->commitmentToTaskSituation +
+                $patientFinalAPOM->usingFeedback +
+                $patientFinalAPOM->selfWorth +
+                $patientFinalAPOM->attitudeSelfAssurance +
+                $patientFinalAPOM->attitudeSelfSatisfaction +
+                $patientFinalAPOM->awarenessOfQualities +
+                $patientFinalAPOM->socialPresence;
+
+            $final_affect =
+                $patientFinalAPOM->repertoireOfEmotions +
+                $patientFinalAPOM->emotionControl +
+                $patientFinalAPOM->moods;
+        }
 
         $final_processSkillAvg = round($final_processSkill / 8);
 
 
-        $final_communicationInteractionSkills =
-            $patientFinalAPOM->nonVerbalPhysicalContact +
-            $patientFinalAPOM->nonVerbalEyeContact +
-            $patientFinalAPOM->nonVerbalGestures +
-            $patientFinalAPOM->nonVerbalUseOfBody +
-            $patientFinalAPOM->verbalSpeech +
-            $patientFinalAPOM->verbalContent +
-            $patientFinalAPOM->verbalExpressNeeds +
-            $patientFinalAPOM->verbalConversation +
-            $patientFinalAPOM->relationsSocialNorms +
-            $patientFinalAPOM->relationsRapport;
-
-
         $final_communicationInteractionSkillsAvg = round($final_communicationInteractionSkills / 10);
 
-        $final_lifeSkills =
-            $patientFinalAPOM->personalCare +
-            $patientFinalAPOM->personalSafety +
-            $patientFinalAPOM->careOfMedication +
-            $patientFinalAPOM->useOfTransport +
-            $patientFinalAPOM->domesticSkills +
-            $patientFinalAPOM->childCareSkills +
-            $patientFinalAPOM->moneyManagementAndBudgetingSkills +
-            $patientFinalAPOM->assertiveness +
-            $patientFinalAPOM->stressManagement +
-            $patientFinalAPOM->conflictManagement +
-            $patientFinalAPOM->problemSolvingSkills +
-            $patientFinalAPOM->preVocationalSkills +
-            $patientFinalAPOM->vocationalSkills;
 
 
         $final_lifeSkillsAvg = round($final_lifeSkills / 13);
 
-        $final_roleperformance =
-            $patientFinalAPOM->awarenessOfRoles +
-            $patientFinalAPOM->roleExpectations +
-            $patientFinalAPOM->roleBalance +
-            $patientFinalAPOM->competency;
 
         $final_roleperformanceAvg = round($final_roleperformance / 4);
 
-        $final_balancedLifeStyle =
-            $patientFinalAPOM->timeUseRoutines +
-            $patientFinalAPOM->habits +
-            $patientFinalAPOM->mixOfOccupations;
-
         $final_balancedLifeStyleAvg = round($final_balancedLifeStyle / 3);
 
-        $final_motivation =
-            $patientFinalAPOM->activeInvolvement +
-            $patientFinalAPOM->motivesAndDrives +
-            $patientFinalAPOM->showsInterest +
-            $patientFinalAPOM->goalDirectedBehaviour +
-            $patientFinalAPOM->locusOfControl;
+
 
         $final_motivationAvg = round($final_motivation / 5);
 
-        $final_selfEsteem =
 
-            $patientFinalAPOM->commitmentToTaskSituation +
-            $patientFinalAPOM->usingFeedback +
-            $patientFinalAPOM->selfWorth +
-            $patientFinalAPOM->attitudeSelfAssurance +
-            $patientFinalAPOM->attitudeSelfSatisfaction +
-            $patientFinalAPOM->awarenessOfQualities +
-            $patientFinalAPOM->socialPresence;
 
         $final_selfEsteemAvg = round($final_selfEsteem / 7);
 
-        $final_affect =
-            $patientFinalAPOM->repertoireOfEmotions +
-            $patientFinalAPOM->emotionControl +
-            $patientFinalAPOM->moods;
 
         $final_affectAvg = round($final_affect / 3);
 

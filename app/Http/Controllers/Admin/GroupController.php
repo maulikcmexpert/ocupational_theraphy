@@ -89,7 +89,7 @@ class GroupController extends CoreController
      */
     public function create()
     {
-     
+
 
 
 
@@ -213,21 +213,23 @@ class GroupController extends CoreController
 
             if ($group_type == 'internal') {
 
-                $start_session_date = $request->start_session_date;
+                $start_session_date = Carbon::parse($request->start_session_date);
 
-                $startDate = strtotime($start_session_date);
-                $daysCount = 0;
 
                 $sessionDate = [];
 
-                while ($daysCount < $total_session) {
-                    $dayOfWeek = date('N', $startDate); // 1 (Monday) to 7 (Sunday)
-                    if ($dayOfWeek != 6 && $dayOfWeek != 7) { // Check if it's not Saturday or Sunday
-                        $sessionDate[] = date('Y-m-d', $startDate);
-                        $daysCount++;
+                for ($session = 0; $session < $total_session; $session++) {
+                    // Calculate the session date based on the start date and session number
+                    $session_date = $start_session_date->copy()->addDays($session * 7);
+
+                    // Check if the session date is a Monday or Tuesday
+                    if ($session_date->isMonday() || $session_date->isTuesday()) {
+                        // If it is, add it to the result array
+                        $sessionDate[] = $session_date->toDateString();
                     }
-                    $startDate = strtotime("+1 day", $startDate);
                 }
+
+                dd($sessionDate);
 
                 $groups =   Group::create([
                     'group_name' => $request->group_name,

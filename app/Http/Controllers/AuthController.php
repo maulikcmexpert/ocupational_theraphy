@@ -19,8 +19,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        echo "hi";
-        exit;
+
         $data['js'] = ['login'];
         return view('auth.login', $data);
     }

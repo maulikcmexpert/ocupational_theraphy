@@ -229,8 +229,15 @@ class GroupController extends CoreController
                     // Check if the session date is a Monday or Tuesday
                     // if ($session_date->isMonday() || $session_date->isTuesday()) {
                     // If it is, add it to the result array
-                    $sessionDate[] = $monday_date;
-                    $sessionDate[] = $tuesday_date;
+                    if ($monday_date) {
+
+                        $sessionDate[] = $monday_date;
+                    }
+
+                    if ($tuesday_date) {
+
+                        $sessionDate[] = $tuesday_date;
+                    }
                     // }
                 }
 

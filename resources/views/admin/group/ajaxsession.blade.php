@@ -59,4 +59,5 @@
 
 
     </div>
+    <label id="schedule[]-error" class="error" for="schedule[]"></label>
 </div>

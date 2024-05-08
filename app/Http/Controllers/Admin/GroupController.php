@@ -223,11 +223,16 @@ class GroupController extends CoreController
                     // Calculate the session date based on the start date and session number
                     $session_date = $start_session_date->copy()->addDays($session * 7);
                     dd($session_date->isMonday());
+
+                    $monday_date = $session_date->next(Carbon::MONDAY);
+                    $tuesday_date = $session_date->next(Carbon::TUESDAY);
+
                     // Check if the session date is a Monday or Tuesday
-                    if ($session_date->isMonday() || $session_date->isTuesday()) {
-                        // If it is, add it to the result array
-                        $sessionDate[] = $session_date->toDateString();
-                    }
+                    // if ($session_date->isMonday() || $session_date->isTuesday()) {
+                    // If it is, add it to the result array
+                    $sessionDate[] = $monday_date;
+                    $sessionDate[] = $tuesday_date;
+                    // }
                 }
 
                 dd($sessionDate);

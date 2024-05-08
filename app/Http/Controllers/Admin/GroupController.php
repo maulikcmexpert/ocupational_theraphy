@@ -204,14 +204,16 @@ class GroupController extends CoreController
      * Store a newly created resource in storage.
      */
 
-    function calculateSessionDates($startDate, $totalSessions)
+    function calculateSessionDates($startDate, $totalSessions, $schedule)
     {
+        dd($schedule);
         $sessionDates = [];
         $currentDate = Carbon::parse($startDate);
 
         // Loop until we have all sessions
         for ($i = 0; $i < $totalSessions;) {
             // Check if the current date is Monday or Tuesday
+
             if ($currentDate->isMonday() || $currentDate->isTuesday()) {
                 // Add the current date to the session dates array
                 $sessionDates[] = $currentDate->toDateString();
@@ -231,12 +233,12 @@ class GroupController extends CoreController
             DB::beginTransaction();
             $total_session = $request->total_session;
             $group_type = $request->group_type;
-            dd($request->schedule);
+            $schedule = $request->schedule;
             if ($group_type == 'internal') {
 
                 $start_session_date = $request->start_session_date;
 
-                $sessionDates = $this->calculateSessionDates($start_session_date, $total_session);
+                $sessionDates = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
                 dd($sessionDates);
 
 

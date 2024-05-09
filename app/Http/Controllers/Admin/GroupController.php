@@ -386,7 +386,15 @@ class GroupController extends CoreController
         $data['startDatePerGroup'] = Group_session::select(\DB::raw('MIN(session_date) as start_date'))
             ->where('group_id', $group_id)
             ->get();
-        dd($data['startDatePerGroup']);
+
+        $newSession = $data['totalSession'] - $data['group_session'];
+        if ($newSession > 0) {
+            $lastDate = Group_session::select('session_date')
+                ->where('group_id', $group_id)
+                ->last();
+            dd($lastDate);
+            // $this->calculateSessionDates()
+        }
         return view('admin.group.ajaxUpdateSession', $data);
     }
 

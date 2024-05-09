@@ -23,11 +23,13 @@ $(function () {
     var selectedDate = $(this).val();
 
     $.ajax({
+      headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+      },
       url: base_url + "admin/group/check_date",
       method: "POST",
       data: {
         selectedDate: selectedDate,
-        _token: "{{ csrf_token() }}",
       },
       success: function (response) {
         if (response.exists) {

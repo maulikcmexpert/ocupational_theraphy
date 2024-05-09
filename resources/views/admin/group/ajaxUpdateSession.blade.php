@@ -8,7 +8,7 @@ $totalInsertedSession = count($group_session);
 <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
     <label class="required fw-bold fs-6 mb-2">Session name</label>
     <input type="hidden" name="session_id[]" value="{{ $value->id}}" class="form-control session_id" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
-    <input type="date" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
+    <input type="text" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
     <span class="datesession"></span>
     <input type="text" name="session_name[]" value="{{ $value->session_name}}" class="form-control session_name" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
     <span class="availdocerror"></span>
@@ -18,7 +18,7 @@ $totalInsertedSession = count($group_session);
 @elseif($totalInsertedSession < $totalSession) @foreach($group_session as $value) <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
     <label class="required fw-bold fs-6 mb-2">Session name</label>
     <input type="hidden" name="session_id[]" value="{{ $value->id}}" class="form-control session_id" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
-    <input type="date" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
+    <input type="text" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
     <span class="datesession"></span>
     <input type="text" name="session_name[]" value="{{ $value->session_name}}" class="form-control session_name" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
     <span class="availdocerror"></span>
@@ -35,7 +35,7 @@ $totalInsertedSession = count($group_session);
         @endphp
         <label class="required fw-bold fs-6 mb-2">Session name</label>
         <input type="hidden" name="session_id[]" value="0" class="form-control session_id">
-        <input type="date" name="session_date[]" value="{{ $newSessionDate[$i-1]}}" class="form-control session_date">
+        <input type="text" name="session_date[]" value="{{ $newSessionDate[$i-1]}}" class="form-control session_date">
         <span class="datesession"></span>
         <input type="text" name="session_name[]" value="{{ 'Session '.$totalInsertedSession}}" class="form-control session_name">
         <span class="availdocerror"></span>
@@ -73,7 +73,7 @@ $totalInsertedSession = count($group_session);
             <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
                 <label class="required fw-bold fs-6 mb-2">Session name</label>
                 <input type="hidden" name="session_id[]" value="{{ $value->id}}" class="form-control session_id">
-                <input type="date" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'disabled' : '' ?>>
+                <input type="text" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'disabled' : '' ?>>
                 <span class="datesession"></span>
                 <input type="text" name="session_name[]" value="{{ $value->session_name}}" class="form-control session_name" <?= ($value->session_date <= date('Y-m-d')) ? 'disabled' : '' ?>>
                 <span class="availdocerror"></span>

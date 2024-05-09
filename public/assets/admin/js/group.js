@@ -35,9 +35,9 @@ $(function () {
         if (response.exists) {
           // Date exists in the database
           that
-            .next("span")
-            .html("This date has already been selected")
-            .addClass("text-danger");
+            .next(".availdocerror")
+            .html("This date has already been selected");
+
           // You can add more logic here, like disabling form submission, etc.
         }
       },

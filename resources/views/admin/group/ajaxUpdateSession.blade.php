@@ -56,7 +56,7 @@ $totalInsertedSession = count($group_session);
         @for($i=1;$i<=$totalSession;$i++) <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
             <label class="required fw-bold fs-6 mb-2">Session name</label>
             <input type="hidden" name="session_id[]" value="{{ $group_session[$j]->id}}" class="form-control session_id">
-
+            <input type="text" name="session_date[]" value="{{ $newSessionDate[$i-1]}}" class="form-control session_date">
             <input type="text" name="session_name[]" value="{{ $group_session[$j]->session_name}}" class="form-control session_name">
             <span class="availdocerror"></span>
 

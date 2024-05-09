@@ -34,6 +34,7 @@ $totalInsertedSession = count($group_session);
         $totalInsertedSession++;
         @endphp
         <label class="required fw-bold fs-6 mb-2">Session name</label>
+        <input type="hidden" name="session_id[]" value="0" class="form-control session_id">
         <input type="date" name="session_date[]" value="{{ $newSessionDate[$i-1]}}" class="form-control session_date">
         <span class="datesession"></span>
         <input type="text" name="session_name[]" value="{{ 'Session '.$totalInsertedSession}}" class="form-control session_name">

@@ -388,12 +388,11 @@ class GroupController extends CoreController
             ->get();
 
         $newSession = $data['totalSession'] - count($data['group_session']);
-        echo $newSession;
-        exit;
+
         if ($newSession > 0) {
             $lastDate = Group_session::select('session_date')
                 ->where('group_id', $group_id)
-                ->latest()->first();
+                ->latest('session_date')->first();
             dd($lastDate);
             // $this->calculateSessionDates()
         }

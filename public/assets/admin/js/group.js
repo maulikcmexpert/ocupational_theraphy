@@ -35,7 +35,7 @@ $(function () {
         if (response.exists) {
           // Date exists in the database
           that
-            .next()
+            .next("span")
             .html("This date has already been selected")
             .addClass("text-danger");
           // You can add more logic here, like disabling form submission, etc.

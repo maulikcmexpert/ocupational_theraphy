@@ -444,7 +444,7 @@ class GroupController extends CoreController
                     // dd($request);
 
                     foreach ($request->session_id as $key => $val) {
-                        dd($request->session_name[$val]);
+                        dd($request->session_name[$key]);
                         // Group_session::create([
                         //     'group_id' => $groupId,
                         //     'session_name' => $request->session_name[$val],

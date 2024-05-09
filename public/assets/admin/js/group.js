@@ -575,7 +575,7 @@ $(function () {
       minDate: 0,
       daysOfWeekDisabled: [0, 6],
 
-      todayHighlight: true,
+      // todayHighlight: true,
     });
   });
 

@@ -463,7 +463,7 @@ class GroupController extends CoreController
                         Group_session::create([
                             'group_id' => $groupId,
                             'session_name' => $request->session_name[$key],
-                            'session_date' => $request->session_date[$key]
+                            'session_date' => $sessionDate[$key]
                         ]);
                     }
                 }

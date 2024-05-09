@@ -26,7 +26,7 @@ class Group extends Model
 
     public function group_session()
     {
-        return $this->hasMany(Group_session::class);
+        return $this->hasMany(Group_session::class, 'group_id', 'id');
     }
 
     public function groupPatientAssignments()

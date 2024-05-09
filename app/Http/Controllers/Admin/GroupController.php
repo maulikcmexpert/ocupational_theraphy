@@ -441,15 +441,13 @@ class GroupController extends CoreController
 
                 if ($request->start_session_date == $PrevDate) {
 
-                    // dd($request);
+                    dd($request);
 
                     foreach ($request->session_id as $key => $val) {
-                        dd($request->session_name[$key]);
-                        // Group_session::create([
-                        //     'group_id' => $groupId,
-                        //     'session_name' => $request->session_name[$val],
-                        //     'session_date' => $sessionDate[$sessioninc]
-                        // ]);
+                        $groupSession = Group_session::where('id', $val)->first();
+                        $groupSession->session_name = $request->session_name[$key];
+                        $groupSession->session_date = $request->session_date[$key];
+                        $groupSession->save();
                     }
                 } else {
                     $start_session_date = $request->start_session_date;
@@ -457,16 +455,6 @@ class GroupController extends CoreController
                     $startDate = strtotime($start_session_date);
                 }
 
-                $daysCount = 0;
-                $sessionDate = [];
-                while ($daysCount < $total_session) {
-                    $dayOfWeek = date('N', $startDate); // 1 (Monday) to 7 (Sunday)
-                    if ($dayOfWeek != 6 && $dayOfWeek != 7) { // Check if it's not Saturday or Sunday
-                        $sessionDate[] = date('Y-m-d', $startDate);
-                        $daysCount++;
-                    }
-                    $startDate = strtotime("+1 day", $startDate);
-                }
 
                 if ($total_session > $totalInsertedSession) {
 

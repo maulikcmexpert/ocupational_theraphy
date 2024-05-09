@@ -34,9 +34,7 @@ $(function () {
       success: function (response) {
         if (response.exists) {
           // Date exists in the database
-          that
-            .next(".availdocerror")
-            .html("This date has already been selected");
+          $(".availdocerror").html("This date has already been selected");
 
           // You can add more logic here, like disabling form submission, etc.
         }

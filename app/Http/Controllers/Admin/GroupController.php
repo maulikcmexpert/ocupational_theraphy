@@ -380,7 +380,7 @@ class GroupController extends CoreController
     public function updateSession(Request $request)
     {
         $group_id = decrypt($request->groupId);
-
+        $data['js'] = ['group'];
         $data['totalSession'] = $request->totalSession;
         $data['group_session'] = Group_session::where('group_id', $group_id)->get();
         $data['startDatePerGroup'] = Group_session::select(\DB::raw('MIN(session_date) as start_date'))

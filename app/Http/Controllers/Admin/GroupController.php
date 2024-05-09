@@ -430,6 +430,7 @@ class GroupController extends CoreController
             $group = Group::findOrFail($groupId);
             $PrevDate = $group->start_session_date;
             $PrevTotalSession = $group->total_session;
+            $schedule = json_decode($group->schedule);
             if ($group_type == 'internal') {
                 $group->group_name = $request->group_name;
                 $group->group_details = $request->group_details;
@@ -454,7 +455,7 @@ class GroupController extends CoreController
                 } else if ($request->start_session_date != $PrevDate && ($request->total_session != $PrevTotalSession || $request->total_session == $PrevTotalSession)) {
                     $start_session_date = $request->start_session_date;
 
-                    $schedule = json_decode($group->schedule);
+
 
                     $sessionDate = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
                     Group_session::where('group_id', $groupId)->delete();
@@ -481,7 +482,7 @@ class GroupController extends CoreController
                         ]);
                     }
                 }
-
+                $sessionDate = $this->calculateSessionDates($request->start_session_date, $total_session, $schedule);
                 $group = Group::findOrFail($groupId);
                 $group->end_session_date = end($sessionDate);
                 $group->save();

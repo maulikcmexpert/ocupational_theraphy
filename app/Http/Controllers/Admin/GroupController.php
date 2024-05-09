@@ -421,96 +421,49 @@ class GroupController extends CoreController
      */
     public function update(GroupUpdatePostRequest $request, $id)
     {
-
         try {
             DB::beginTransaction();
             $groupId = decrypt($id);
             $total_session = $request->total_session;
             $totalInsertedSession = Group_session::where('group_id', $groupId)->count();
             $group_type = $request->group_type;
+            $group = Group::findOrFail($groupId);
+            $PrevDate = $group->start_session_date;
+            $PrevTotalSession = $group->total_session;
             if ($group_type == 'internal') {
-
-                $group = Group::findOrFail($groupId);
-                $PrevDate = $group->start_session_date;
-
                 $group->group_name = $request->group_name;
                 $group->group_details = $request->group_details;
                 $group->total_session = $total_session;
                 $group->start_session_date = ($request->start_session_date != $group->start_session_date) ? $request->start_session_date : $group->start_session_date;
                 $group->save();
-
-                if ($request->start_session_date == $PrevDate) {
-
-                    dd($request);
-
+                if ($request->start_session_date == $PrevDate && $request->total_session == $PrevTotalSession) {
                     foreach ($request->session_id as $key => $val) {
-                        $groupSession = Group_session::where('id', $val)->first();
-                        $groupSession->session_name = $request->session_name[$key];
-                        $groupSession->session_date = $request->session_date[$key];
-                        $groupSession->save();
-                    }
-                } else {
-                    $start_session_date = $request->start_session_date;
-
-                    $startDate = strtotime($start_session_date);
-                }
-
-
-                if ($total_session > $totalInsertedSession) {
-
-
-                    if ($start_session_date >= date('Y-m-d')) {
-                        $sessioninc = 0;
-
-                        if (!empty($request->session_name)) {
-                            Group_session::where('group_id', $groupId)->delete();
-                            foreach ($request->session_name as $value) {
-                                Group_session::create([
-                                    'group_id' => $groupId,
-                                    'session_name' => $value,
-                                    'session_date' => $sessionDate[$sessioninc]
-                                ]);
-                                $sessioninc++;
-                            }
-                        }
-                    } else {
-                        foreach ($request->session_id as $key => $value) {
-                            $group_session =  Group_session::where('id', $value)->first();
-                            $group_session->session_name = $request->session_name[$key];
-                            $group_session->save();
-                        }
-                        $newSessionArray = array_slice($request->session_name, $totalInsertedSession);
-                        $j = 0;
-                        foreach ($newSessionArray as $value) {
+                        if ($val == '0') {
                             Group_session::create([
                                 'group_id' => $groupId,
-                                'session_name' => $value,
-                                'session_date' => $sessionDate[$j]
+                                'session_name' => $request->session_name[$key],
+                                'session_date' => $request->session_date[$key]
                             ]);
-                            $j++;
+                        } else {
+                            $groupSession = Group_session::where('id', $val)->first();
+                            $groupSession->session_name = $request->session_name[$key];
+                            $groupSession->session_date = $request->session_date[$key];
+                            $groupSession->save();
                         }
                     }
-                } else {
+                } else if ($request->start_session_date != $PrevDate && ($request->total_session != $PrevTotalSession || $request->total_session == $PrevTotalSession)) {
+                    $start_session_date = $request->start_session_date;
 
-                    if ($start_session_date >= date('Y-m-d')) {
-                        $sessioninc = 0;
-                        if (!empty($request->session_name)) {
-                            Group_session::where('group_id', $groupId)->delete();
-                            foreach ($request->session_name as $value) {
-                                Group_session::create([
-                                    'group_id' => $groupId,
-                                    'session_name' => $value,
-                                    'session_date' => $sessionDate[$sessioninc]
-                                ]);
-                                $sessioninc++;
-                            }
-                        }
-                    } else {
-                        foreach ($request->session_id as $key => $value) {
-                            $group_session =  Group_session::where('id', $value)->first();
-                            $group_session->session_name = $request->session_name[$key];
-                            $group_session->save();
-                        }
+                    $schedule = json_decode($group->schedule);
+
+                    $sessionDate = $this->calculateSessionDates($start_session_date, $total_session, $schedule);
+                    Group_session::where('group_id', $groupId)->delete();
+                    foreach ($request->session_id as $key => $val) {
+                        Group_session::create([
+                            'group_id' => $groupId,
+                            'session_name' => $request->session_name[$key],
+                            'session_date' => $request->session_date[$key]
+                        ]);
                     }
                 }
 

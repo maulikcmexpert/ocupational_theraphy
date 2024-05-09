@@ -388,14 +388,14 @@ class GroupController extends CoreController
             ->get();
 
         $newSession = $data['totalSession'] - count($data['group_session']);
-
+        $data['newSessionDate'] = [];
         if ($newSession > 0) {
             $lastDate = Group_session::with('group')
                 ->where('group_id', $group_id)
                 ->latest('session_date')->first();
 
             $scheduleDate = $this->calculateSessionDates($lastDate->session_date, $newSession, json_decode($lastDate->group->schedule));
-            dd($scheduleDate);
+            $data['newSessionDate'] = $scheduleDate;
         }
         return view('admin.group.ajaxUpdateSession', $data);
     }

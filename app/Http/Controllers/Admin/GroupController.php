@@ -391,7 +391,7 @@ class GroupController extends CoreController
         if ($newSession > 0) {
             $lastDate = Group_session::select('session_date')
                 ->where('group_id', $group_id)
-                ->last();
+                ->latest()->first();
             dd($lastDate);
             // $this->calculateSessionDates()
         }

@@ -34,12 +34,10 @@ $(function () {
       success: function (response) {
         if (response.exists) {
           // Date exists in the database
-          that
+          $(this)
             .next()
-            .next()
-            .next(".availdocerror")
-            .html("This date has already been selected");
-
+            .next("span")
+            .text("This date has already been selected");
           // You can add more logic here, like disabling form submission, etc.
         }
       },

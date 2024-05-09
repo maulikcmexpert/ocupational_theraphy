@@ -18,6 +18,33 @@ $(function () {
     ],
   });
 
+  $(".session_date").change(function () {
+    var that = $(this);
+    var selectedDate = $(this).val();
+
+    $.ajax({
+      url: "{{ route('check.date') }}",
+      method: "POST",
+      data: {
+        selectedDate: selectedDate,
+        _token: "{{ csrf_token() }}",
+      },
+      success: function (response) {
+        if (response.exists) {
+          // Date exists in the database
+          that
+            .next()
+            .html("This date has already been selected")
+            .addClass("text-danger");
+          // You can add more logic here, like disabling form submission, etc.
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+        // Handle error
+      },
+    });
+  });
   $(document).on("click", "#delete_group", function (event) {
     event.preventDefault();
     var URL = $(this).data("url");

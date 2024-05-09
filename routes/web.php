@@ -91,11 +91,13 @@ Route::middleware('auth')->group(function () {
         Route::post('group/remove_assign_doctor', [GroupController::class, 'removeAssignedDoctor'])->middleware(['isAdmin']);
         Route::get('group/attendance_list/{group_id}', [GroupController::class, 'attendanceList'])->name('group.attendance');
         Route::post('group/store_patient_attendance', [GroupController::class, 'storePatientAttendance'])->name('group.store_attendance');
+        Route::post('group/check_date', [GroupController::class, 'checkDate'])->name('check.date')->middleware(['isAdmin']);
 
         Route::get('group/session_list/{group_id}', [GroupSessionsController::class, 'index'])->name('group.session_list')->middleware(['isAdmin']);
 
         Route::post('group/check_session_is_already', [GroupSessionsController::class, 'check_session_is_already'])->middleware(['isAdmin']);
         Route::post('group/check_session_is_already', [GroupSessionsController::class, 'check_session_is_already'])->middleware(['isAdmin']);
+
 
         // doctor module //
         Route::resource('doctor', DoctorController::class);

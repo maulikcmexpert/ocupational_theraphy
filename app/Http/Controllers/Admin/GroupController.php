@@ -780,4 +780,14 @@ class GroupController extends CoreController
 
         return response()->json($doctors);
     }
+
+    public function checkDate(Request $request)
+    {
+        $selectedDate = $request->input('selectedDate');
+
+        // Query the database to check if the selected date already exists
+        $exists = Group_session::where('session_date', $selectedDate)->exists();
+
+        return response()->json(['exists' => $exists]);
+    }
 }

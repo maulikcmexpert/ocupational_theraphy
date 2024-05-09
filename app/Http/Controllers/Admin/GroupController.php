@@ -441,19 +441,7 @@ class GroupController extends CoreController
 
                 if ($request->start_session_date == $PrevDate) {
 
-                    if ($request->start_session_date >= date('Y-m-d')) {
-                        $getDateOfStartNewSession = $group->start_session_date;
-                        $start_session_date = $getDateOfStartNewSession;
-
-                        $startDate = strtotime($start_session_date);
-                    } else {
-                        $getDateOfStartNewSession = Group_session::where('group_id', $groupId)->orderBy('id', 'desc')->take(1)->get();
-                        $getDateOfStartNewSession = $getDateOfStartNewSession[0]->session_date;
-                        $start_session_date = $getDateOfStartNewSession;
-
-                        $startDate = strtotime($start_session_date);
-                        $startDate =  strtotime("+1 day", $startDate);
-                    }
+                    dd($request);
                 } else {
                     $start_session_date = $request->start_session_date;
 

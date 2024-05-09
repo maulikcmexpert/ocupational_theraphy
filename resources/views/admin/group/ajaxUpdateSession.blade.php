@@ -28,9 +28,10 @@ $totalInsertedSession = count($group_session);
     ?>
     @if($newSession > 0)
     @for($i=1;$i<=$newSession;$i++) <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
-        <label class="required fw-bold fs-6 mb-2">Sessions name</label>
-
+        <label class="required fw-bold fs-6 mb-2">Session name</label>
+        <input type="date" name="session_date[]" value="{{ $value->session_date}}" class="form-control session_date" <?= ($value->session_date <= date('Y-m-d')) ? 'readonly' : '' ?>>
         <input type="text" name="session_name[]" class="form-control session_name">
+
         <span class="availdocerror"></span>
         <span class=" sessionremove"><i class="fa fa-close"></i></span>
 

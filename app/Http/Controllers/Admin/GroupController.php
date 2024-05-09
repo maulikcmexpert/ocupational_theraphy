@@ -248,30 +248,6 @@ class GroupController extends CoreController
 
 
 
-
-                // for ($session = 1; $session <= $total_session; $session++) {
-
-                //     // Calculate the session date based on the start date and session number
-                //     $session_date = $start_session_date->copy()->addDays($session * 7);
-
-                //     $monday_date = $session_date->next(Carbon::MONDAY);
-                //     $tuesday_date = $session_date->next(Carbon::TUESDAY);
-
-                //     // Check if the session date is a Monday or Tuesday
-                //     // if ($session_date->isMonday() || $session_date->isTuesday()) {
-                //     // If it is, add it to the result array
-                //     if ($monday_date) {
-
-                //         $sessionDate[] = $monday_date;
-                //     }
-
-                //     if ($tuesday_date) {
-
-                //         $sessionDate[] = $tuesday_date;
-                //     }
-                //     // }
-                // }
-
                 $groups =   Group::create([
                     'group_name' => $request->group_name,
                     'group_details' => $request->group_details,
@@ -410,6 +386,7 @@ class GroupController extends CoreController
         $data['startDatePerGroup'] = Group_session::select(\DB::raw('MIN(session_date) as start_date'))
             ->where('group_id', $group_id)
             ->get();
+        dd($data['startDatePerGroup']);
         return view('admin.group.ajaxUpdateSession', $data);
     }
 

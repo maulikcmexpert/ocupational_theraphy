@@ -380,7 +380,7 @@ class GroupController extends CoreController
 
     public function updateSession(Request $request)
     {
-        dd($request);
+
         $group_id = decrypt($request->groupId);
         $data['js'] = ['group'];
         $data['totalSession'] = $request->totalSession;
@@ -391,7 +391,8 @@ class GroupController extends CoreController
 
         $newSession = $data['totalSession'] - count($data['group_session']);
         $data['newSessionDate'] = [];
-        $scheduleDate = $this->calculateSessionDates($lastDate->session_date, $request->totalSession, json_decode($lastDate->group->schedule));
+        $groupData = Group::where('id', $group_id)->first();
+        $scheduleDate = $this->calculateSessionDates($groupData->session_date, $request->totalSession, json_decode($groupData->schedule));
 
         $data['newSessionDate'] = $scheduleDate;
         if ($newSession > 0) {

@@ -441,7 +441,16 @@ class GroupController extends CoreController
 
                 if ($request->start_session_date == $PrevDate) {
 
-                    dd($request);
+                    // dd($request);
+
+                    foreach ($request->session_id as $key => $val) {
+                        dd($request->session_name[$val]);
+                        // Group_session::create([
+                        //     'group_id' => $groupId,
+                        //     'session_name' => $request->session_name[$val],
+                        //     'session_date' => $sessionDate[$sessioninc]
+                        // ]);
+                    }
                 } else {
                     $start_session_date = $request->start_session_date;
 

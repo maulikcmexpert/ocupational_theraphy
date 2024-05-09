@@ -28,10 +28,10 @@ $totalInsertedSession = count($group_session);
     ?>
     @if($newSession > 0 && count($newSessionDate))
     @for($i=1;$i<=$newSession;$i++) <div class="col-12 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 position-relative">
-        $totalInsertedSession++;
+        $totalSession = $totalInsertedSession++;
         <label class="required fw-bold fs-6 mb-2">Session name</label>
         <input type="date" name="session_date[]" value="{{ $newSessionDate[$i-1]}}" class="form-control session_date">
-        <input type="text" name="session_name[]" value="{{ 'Session '.$totalInsertedSession}}" class="form-control session_name">
+        <input type="text" name="session_name[]" value="{{ 'Session '.$totalSession}}" class="form-control session_name">
         <span class="availdocerror"></span>
         <span class=" sessionremove"><i class="fa fa-close"></i></span>
 

@@ -18,7 +18,7 @@ $(function () {
     ],
   });
 
-  $(".session_date").change(function () {
+  $(document).on("change", ".session_date", function () {
     var that = $(this);
     var selectedDate = $(this).val();
 

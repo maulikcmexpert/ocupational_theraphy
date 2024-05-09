@@ -23,7 +23,7 @@ $(function () {
     var selectedDate = $(this).val();
 
     $.ajax({
-      url: "{{ route('check.date') }}",
+      url: base_url + "admin/group/check_date",
       method: "POST",
       data: {
         selectedDate: selectedDate,

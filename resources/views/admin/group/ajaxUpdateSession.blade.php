@@ -86,12 +86,14 @@ $totalInsertedSession = count($group_session);
             @endif
 
             <script>
-                $(".session_date").datepicker({
-                    dateFormat: "yy-mm-dd",
-                    autoclose: true,
-                    minDate: 0,
-                    daysOfWeekDisabled: [0, 6],
+                $(document).ready(function() {
+                    $(".session_date").datepicker({
+                        dateFormat: "yy-mm-dd",
+                        autoclose: true,
+                        minDate: 0,
+                        daysOfWeekDisabled: [0, 6],
 
-                    todayHighlight: true,
+                        todayHighlight: true,
+                    });
                 });
             </script>

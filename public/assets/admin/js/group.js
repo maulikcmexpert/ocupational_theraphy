@@ -571,8 +571,8 @@ $(function () {
   $(document).ready(function () {
     $("#start_session_date").datepicker({
       dateFormat: "yy-mm-dd",
-      //  autoclose: true,
-      // minDate: 0,
+      autoclose: true,
+      minDate: 0,
       daysOfWeekDisabled: [0, 6],
 
       todayHighlight: true,

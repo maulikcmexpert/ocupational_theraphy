@@ -34,7 +34,7 @@ $(function () {
       success: function (response) {
         if (response.exists) {
           // Date exists in the database
-          console.log(that.next().next().find(".availdocerror"));
+          console.log(that.next().next().next(".availdocerror"));
 
           // You can add more logic here, like disabling form submission, etc.
         }

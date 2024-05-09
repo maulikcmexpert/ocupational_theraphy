@@ -395,6 +395,7 @@ class GroupController extends CoreController
                 ->latest('session_date')->first();
 
             $scheduleDate = $this->calculateSessionDates($lastDate->session_date, $newSession, json_decode($lastDate->group->schedule));
+            dd($scheduleDate);
         }
         return view('admin.group.ajaxUpdateSession', $data);
     }

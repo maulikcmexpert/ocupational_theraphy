@@ -36,7 +36,8 @@ $(function () {
           // Date exists in the database
           that
             .next("span")
-            .text("This date has already been selected in this group");
+            .text("This date has already been selected in this group")
+            .addClass("text-danger");
           // You can add more logic here, like disabling form submission, etc.
         }
       },

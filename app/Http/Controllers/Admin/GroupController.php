@@ -208,7 +208,7 @@ class GroupController extends CoreController
     {
 
         $sessionDates = [];
-        dd($startDate);
+
         $currentDate = Carbon::parse($startDate)->addDay();
         // Loop until we have all sessions
         for ($i = 0; $i < $totalSessions;) {

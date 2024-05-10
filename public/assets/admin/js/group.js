@@ -284,7 +284,9 @@ $(function () {
     });
   }
 
-  $(document).on("keyup", ".update_total_session", function () {});
+  // $(document).on("keyup", ".update_total_session", function () {
+
+  // });
   $(document).on("keyup", ".update_total_session", function () {
     var totalSession = $(this).val();
     var groupId = $("#groupId").val();

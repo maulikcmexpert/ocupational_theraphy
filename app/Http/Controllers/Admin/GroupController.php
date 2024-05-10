@@ -378,7 +378,7 @@ class GroupController extends CoreController
             ->min();
         $data['session_start'] = "";
         if ($minSessionDate < date('Y-m-d')) {
-            $data['session_start'] = "disabled";
+            $data['session_start'] = "readonly";
         }
         $data['doctors'] = User::where('status', '1')->whereIn('role_id', ['3', '4'])->get();
 

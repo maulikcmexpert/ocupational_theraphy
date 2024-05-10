@@ -138,7 +138,7 @@
                                         <label class="required fw-bold fs-6 mb-2">Number Of Sessions</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" name="total_session" class="form-control form-control-solid mb-3 mb-lg-0 update_total_session" id="total_session" placeholder="Number Of Sessions" value="{{ $groupDetail[0]->total_session}}">
+                                        <input type="text" name="total_session" class="form-control form-control-solid mb-3 mb-lg-0 update_total_session" id="total_session" placeholder="Number Of Sessions" value="{{ ($session_start != '')?$groupDetail[0]->total_session:''}}">
                                         <!--end::Input-->
                                         @if ($errors->has('total_session'))
                                         <span class="text-danger">{{ $errors->first('total_session') }}</span>

@@ -133,12 +133,8 @@ class ApiPatientController  extends BaseController
         $group = [];
 
         foreach ($groups as $value) {
-
-
             $groupData['group_id'] = $value->group_id;
             $groupData['group_name'] = $value->group->group_name;
-
-
             // your OT //
             $ot_doctor = GroupDoctorAssignment::with(['doctor.doctorDetails', 'doctor.groupDoctorAssignments.group'])->where('group_id', $value->group_id)->get();
             $groupOTDoctor = [];

@@ -21,6 +21,7 @@ $(function () {
   $(document).on("change", ".session_date", function () {
     var that = $(this);
     var selectedDate = $(this).val();
+    var sessionId = $(this).closest(".session_id").val();
 
     $.ajax({
       headers: {
@@ -30,6 +31,7 @@ $(function () {
       method: "POST",
       data: {
         selectedDate: selectedDate,
+        sessionId: sessionId,
       },
       success: function (response) {
         if (response.exists) {

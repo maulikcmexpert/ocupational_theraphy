@@ -742,7 +742,8 @@ class GroupController extends CoreController
     public function checkDate(Request $request)
     {
         $selectedDate = $request->input('selectedDate');
-
+        $sessionId = $request->input('sessionId');
+        dd($sessionId);
         // Query the database to check if the selected date already exists
         $exists = Group_session::where('session_date', $selectedDate)->exists();
 

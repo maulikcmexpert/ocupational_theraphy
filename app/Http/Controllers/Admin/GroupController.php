@@ -405,12 +405,12 @@ class GroupController extends CoreController
         $scheduleDate = $this->calculateSessionDates($groupData->start_session_date, $request->totalSession, json_decode($groupData->schedule));
 
         $data['newSessionDate'] = $scheduleDate;
-        echo $newSession;
+
         if ($newSession > 0) {
             $lastDate = Group_session::with('group')
                 ->where('group_id', $group_id)
                 ->latest('session_date')->first();
-
+            dd($lastDate);
             $scheduleDate = $this->calculateSessionDates($lastDate->start_session_date, $newSession, json_decode($lastDate->group->schedule));
 
             $data['newSessionDate'] = $scheduleDate;

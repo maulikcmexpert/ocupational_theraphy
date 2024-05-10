@@ -745,8 +745,8 @@ class GroupController extends CoreController
         $sessionId = $request->input('sessionId');
 
         // Query the database to check if the selected date already exists
-        $exists = Group_session::where('session_date', $selectedDate)->exists();
-        dd($exists);
+        $exists = Group_session::where(['session_date' => $selectedDate])->where('id', '!=', $sessionId)->exists();
+
         return response()->json(['exists' => $exists]);
     }
 }

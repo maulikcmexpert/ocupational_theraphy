@@ -370,7 +370,13 @@ class GroupController extends CoreController
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['groupDetail'] = Group::with('group_session')->where('id', $group_id)->get();
         $data['assignDoctors'] = GroupDoctorAssignment::with('doctor')->where('group_id', $group_id)->get();
-
+        $data['minSessionDate'] = Group::with('group_session')
+            ->where('id', $group_id)
+            ->get()
+            ->pluck('group_session.*.session_date')
+            ->flatten()
+            ->min();
+        dd($data['minSessionDate']);
         $data['doctors'] = User::where('status', '1')->whereIn('role_id', ['3', '4'])->get();
 
         $data['groupId'] = $id;

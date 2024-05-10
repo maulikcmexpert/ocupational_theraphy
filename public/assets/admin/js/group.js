@@ -395,6 +395,8 @@ $(function () {
           // You can add more logic here, like disabling form submission, etc.
         } else {
           that.next("span").text("").addClass("text-danger");
+          error = 0;
+          return error;
         }
       },
       error: function (xhr, status, error) {

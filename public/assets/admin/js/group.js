@@ -40,6 +40,7 @@ $(function () {
             .next("span")
             .text("This date has already been selected in this group")
             .addClass("text-danger");
+          error++;
           return false;
           // You can add more logic here, like disabling form submission, etc.
         } else {

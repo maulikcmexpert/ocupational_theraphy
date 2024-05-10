@@ -311,9 +311,8 @@ $(function () {
       },
     });
   });
-
+  var error = 0;
   function errorHandle() {
-    var error = 0;
     $(".session_name").each(function () {
       var session_name = $(this).val();
       if (session_name.length == "") {
@@ -365,44 +364,45 @@ $(function () {
       }
     });
 
-    $(document).on("change", ".session_date", function () {
-      var that = $(this);
-      var selectedDate = $(this).val();
-      var sessionId = $(this).prev(".session_id").val();
-
-      $.ajax({
-        headers: {
-          "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-        },
-        url: base_url + "admin/group/check_date",
-        method: "POST",
-        data: {
-          selectedDate: selectedDate,
-          sessionId: sessionId,
-        },
-        success: function (response) {
-          if (response.exists) {
-            // Date exists in the database
-            that
-              .next("span")
-              .text("This date has already been selected in this group")
-              .addClass("text-danger");
-            error++;
-
-            // You can add more logic here, like disabling form submission, etc.
-          } else {
-            that.next("span").text("").addClass("text-danger");
-          }
-        },
-        error: function (xhr, status, error) {
-          console.error(error);
-          // Handle error
-        },
-      });
-    });
-
     return error;
   }
+
+  $(document).on("change", ".session_date", function () {
+    var that = $(this);
+    var selectedDate = $(this).val();
+    var sessionId = $(this).prev(".session_id").val();
+
+    $.ajax({
+      headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+      },
+      url: base_url + "admin/group/check_date",
+      method: "POST",
+      data: {
+        selectedDate: selectedDate,
+        sessionId: sessionId,
+      },
+      success: function (response) {
+        if (response.exists) {
+          // Date exists in the database
+          that
+            .next("span")
+            .text("This date has already been selected in this group")
+            .addClass("text-danger");
+          error = 1;
+          return error;
+
+          // You can add more logic here, like disabling form submission, etc.
+        } else {
+          that.next("span").text("").addClass("text-danger");
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+        // Handle error
+      },
+    });
+  });
 
   $(document).on("change", ".doctor_id", function () {
     var outerThis = $(this); //

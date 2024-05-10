@@ -42,6 +42,8 @@ $(function () {
             .addClass("text-danger");
           return false;
           // You can add more logic here, like disabling form submission, etc.
+        } else {
+          that.next("span").text("").addClass("text-danger");
         }
       },
       error: function (xhr, status, error) {

@@ -123,7 +123,8 @@
                                         <label class="required fw-bold fs-6 mb-2">Start Session Date</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" id="start_session_date" name="start_session_date" class="form-control form-control-solid mb-3 mb-lg-0 start_session_date" placeholder="Start Session Date" value="{{$groupDetail[0]->start_session_date}}">
+
+                                        <input type="text" id="start_session_date" name="start_session_date" class="form-control form-control-solid mb-3 mb-lg-0 start_session_date" placeholder="Start Session Date" value="{{$groupDetail[0]->start_session_date}}" {{$session_start}}>
                                         <!--end::Input-->
                                         @if ($errors->has('start_session_date'))
                                         <span class="text-danger">{{ $errors->first('start_session_date') }}</span>

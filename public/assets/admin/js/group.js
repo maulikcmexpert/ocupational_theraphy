@@ -359,6 +359,14 @@ $(function () {
       }
     });
 
+    $(".session_date").each(function () {
+      var session_date = $(this).val();
+      if (session_date.length == "") {
+        $(this).next("span").text("Please enter date").addClass("text-danger");
+        error++;
+      }
+    });
+
     $(".start_time").each(function () {
       var start_time = $(this).val();
       if (start_time.length == "") {

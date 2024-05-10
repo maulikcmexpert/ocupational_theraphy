@@ -22,7 +22,7 @@ $(function () {
     var that = $(this);
     var selectedDate = $(this).val();
     var sessionId = $(this).prev(".session_id").val();
-    alert(sessionId);
+
     $.ajax({
       headers: {
         "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),

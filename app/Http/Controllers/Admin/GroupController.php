@@ -743,10 +743,10 @@ class GroupController extends CoreController
     {
         $selectedDate = $request->input('selectedDate');
         $sessionId = $request->input('sessionId');
-        dd($sessionId);
+
         // Query the database to check if the selected date already exists
         $exists = Group_session::where('session_date', $selectedDate)->exists();
-
+        dd($exists);
         return response()->json(['exists' => $exists]);
     }
 }

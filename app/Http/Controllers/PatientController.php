@@ -1338,18 +1338,6 @@ class PatientController extends Controller
             \File::move($tempPath, $destinationPath . $filename);
 
 
-            // if (Storage::disk('public')->exists('pdf/' . $patientName . '.pdf')) {
-
-            //     Storage::disk('public')->delete('pdf/' . $patientName . '.pdf');
-
-            //     Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
-            // } else {
-
-            //     Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
-            // }
-
-
-
             return $pdf->download($patientName . '.pdf');
         }
     }

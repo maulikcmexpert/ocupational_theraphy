@@ -252,7 +252,8 @@ class ApiDoctorController  extends BaseController
         if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
             $homeData['is_discharge'] = true;
             $patientReport =  User::where('id', $patient_id)->first();
-            $homeData['discharge_report_url'] =  asset('storage/pdfs/' . $patientReport->first_name . '_' . $patientReport->last_name . '.pdf');
+            $patientName = str_replace(' ', '_', $patientReport->first_name) . '_' . str_replace(' ', '_', $patientReport->last_name);
+            $homeData['discharge_report_url'] =  asset('public/storage/pdf/' . $patientName . '.pdf');
         } else {
 
             $homeData['is_discharge'] = false;

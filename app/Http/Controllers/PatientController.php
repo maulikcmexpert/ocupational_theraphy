@@ -110,7 +110,7 @@ class PatientController extends Controller
                     </a>';
                     } else {
                         $actionBtn .=   '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Descharge
+    <i class="fa fa-discharge"></i>
 </button>';
                         // $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                         // </a>';

@@ -249,7 +249,7 @@ class ApiDoctorController  extends BaseController
         $checkFinalRasComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
         $checkInitialAPOMComplated = PatientApoms::where(['test_type' => '0', 'patient_id' => $patient_id])->count();
         $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
-        if ($checkInitialRasComplated != 0  && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
+        if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0  && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
             $homeData['is_discharge'] = true;
             $patientReport =  User::where('id', $patient_id)->first();
             $patientName = str_replace(' ', '_', $patientReport->first_name) . '_' . str_replace(' ', '_', $patientReport->last_name);
@@ -258,6 +258,10 @@ class ApiDoctorController  extends BaseController
 
             $homeData['is_discharge'] = false;
             $homeData['discharge_report_url'] = "";
+        }
+
+        if ($checkFinalAPOMComplated != 0) {
+            $homeData['is_discharge'] = true;
         }
         // $homeData['sessions_completed'] = $this->checkSessionComplated($patient_id);
 

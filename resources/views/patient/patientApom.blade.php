@@ -58,10 +58,12 @@
                     <option {{($patientApom->test_type == 1)?"selected":""}} value="{{ route('patient.patientApom',
                          [$patient_id, 1]); }}">Final Test</option>
                     @else
-                    @if($checkGroupLastsession->end_session_date <= date('Y-m-d')) <option {{($patientApom->test_type == 1)?"selected":""}} value="{{ route('patient.patientApom',
+                    <!-- @if($checkGroupLastsession->end_session_date <= date('Y-m-d')) -->
+
+                    <option {{($patientApom->test_type == 1)?"selected":""}} value="{{ route('patient.patientApom',
                             [$patient_id, 1]); }}">Final Test</option>
-                        @endif
-                        @endif
+                    <!-- @endif -->
+                    @endif
 
                 </select>
 

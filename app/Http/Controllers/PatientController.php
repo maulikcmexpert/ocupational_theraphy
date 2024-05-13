@@ -1485,7 +1485,39 @@ class PatientController extends Controller
     function CheckPatientStatus($id)
     {
         $patientId = decrypt($id);
-        dd($patientId);
+        $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patientId])->count();
+        $test_type = '1';
+        if ($checkFinalAPOMComplated == 0) {
+            return redirect()->route('patient.patientApom', [$id, $test_type]);;
+        }
+    }
+
+
+    public function checkSessionComplated($id)
+    {
+        $assignedGroups = GroupPatientAssignment::where(['patient_id' => $id, 'in_out' => 'in'])->pluck('group_id');
+
+        if (count($assignedGroups) != 0) {
+            $allSessionsCompletedForAllGroups = true;
+
+            $checkGroupLastsession = Group::select(DB::raw('MAX(end_session_date) as max_date'))->whereIn('id', $assignedGroups)->first();
+            $currentDate = date('Y-m-d');
+            if ($checkGroupLastsession->max_date > $currentDate) {
+
+                return  $allSessionsCompletedForAllGroups = false;
+            }
+
+
+            $checkFianlRASComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $id])->count();
+            if ($checkFianlRASComplated != 0) {
+
+                return  $allSessionsCompletedForAllGroups = false;
+            } else {
+                return $allSessionsCompletedForAllGroups;
+            }
+        } else {
+            return  $allSessionsCompletedForAllGroups = false;
+        }
     }
 
     function countryList()

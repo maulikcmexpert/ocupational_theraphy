@@ -739,6 +739,9 @@ $(document).ready(function () {
 
 $(document).on("click", "#dischargeCheck", function () {
   var url = $(this).attr("url");
-
+  var totalAttendence = $(this).attr("totalAttendence");
+  var totalSession = $(this).attr("totalSession");
   $("#dischargeUrl").attr("href", url);
+  $("#totalAttendence").html(totalAttendence);
+  $("#totalSession").html(totalSession);
 });

@@ -110,9 +110,9 @@ class PatientController extends Controller
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
                     } else {
-                        GroupPatientAssignment::where('patient_id', $row->id)->
-                            //   dd($checkAttendence);
-                            $actionBtn .=   '<a href="" id="dischargeCheck"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        GroupPatientAssignment::where('patient_id', $row->id)->first();
+                        //   dd($checkAttendence);
+                        $actionBtn .=   '<a href="" id="dischargeCheck"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        
 <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_2359_4832)">

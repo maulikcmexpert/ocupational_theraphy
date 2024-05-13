@@ -1330,16 +1330,23 @@ class PatientController extends Controller
 
             $pdf = PDF::loadView('patient.pdfDeschargeReport', $data);
             $patientName = str_replace('', '_', $patientData->first_name . '_' . $patientData->last_name);
-            dd($patientName);
-            if (Storage::disk('public')->exists('pdf/' . $patientName . '.pdf')) {
+            $filename = $patientName . '.pdf';
 
-                Storage::disk('public')->delete('pdf/' . $patientName . '.pdf');
+            $tempPath = storage_path('app/temp/' . $filename);
+            $pdf->save($tempPath);
+            $destinationPath = public_path('storage/pdf/');
+            \File::move($tempPath, $destinationPath . $filename);
 
-                Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
-            } else {
 
-                Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
-            }
+            // if (Storage::disk('public')->exists('pdf/' . $patientName . '.pdf')) {
+
+            //     Storage::disk('public')->delete('pdf/' . $patientName . '.pdf');
+
+            //     Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
+            // } else {
+
+            //     Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
+            // }
 
 
 

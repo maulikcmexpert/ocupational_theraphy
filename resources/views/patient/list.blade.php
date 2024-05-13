@@ -142,12 +142,13 @@
                 <span>
                     are you sure you want discharge Patient ? <b id="totalAttendence"></b> session are completed out of <b id="totalSession"></b> sessions
                 </span>
-                <a href="" id="dischargeUrl" class="btn add-patient text-white">
 
-
-                    <!--end::Svg Icon-->Discharge</a>
             </div>
+            <div class="modal-footer">
+                <a href="" id="dischargeUrl" class="btn add-patient text-white">Yes</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
 
+            </div>
         </div>
     </div>
 </div>

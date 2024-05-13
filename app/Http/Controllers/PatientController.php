@@ -110,7 +110,9 @@ class PatientController extends Controller
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
                     } else {
-                        $checkAttendence = GroupPatientAssignment::withCount('group.group_session')->where('patient_id', $row->id)->first();
+                        $checkAttendence = GroupPatientAssignment::with(['group' => function ($query) {
+                            $query->withCount('group_session');
+                        }])->where('patient_id', $row->id)->first();
                         dd($checkAttendence);
                         $actionBtn .=   '<a href="" id="dischargeCheck"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        

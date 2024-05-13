@@ -111,7 +111,7 @@ class PatientController extends Controller
                     </a>';
                     } else {
 
-                        $checkAttendence = Attendance::withCount('group_session')->where('user_id', $row->id)->get();
+                        $checkAttendence = Attendance::withCount('group_session')->where('patient_id', $row->id)->get();
                         dd($checkAttendence);
                         $actionBtn .=   '<a href="" id="dischargeCheck"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        

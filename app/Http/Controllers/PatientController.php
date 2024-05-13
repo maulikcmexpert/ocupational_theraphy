@@ -1482,8 +1482,10 @@ class PatientController extends Controller
         }
     }
 
-    function CheckPatientStatus(Request $request)
+    function CheckPatientStatus($id)
     {
+        $patientId = decrypt($id);
+        dd($patientId);
     }
 
     function countryList()

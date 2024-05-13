@@ -462,8 +462,8 @@ $(function () {
   });
 
   $(document).on("click", "#apomSubmit", function (event) {
-    alert();
     event.preventDefault(); // Prevent the default form submission
+
     var selectedGroup = $("#groupSelect").val();
     if (selectedGroup) {
       $(".btn-submit").text("submiting...");
@@ -508,6 +508,46 @@ $(function () {
 
       return false;
     }
+  });
+  $(document).on("click", "#updateapomSubmit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    $(".btn-submit").text("submiting...");
+    clearInterval(timerInterval); // Stop the timer interval
+    localStorage.removeItem("formVisible");
+    localStorage.removeItem("startTime");
+
+    var currentTime = new Date().getTime(); // Get the current time in milliseconds
+    var elapsedTime = currentTime - startTime; // Calculate the elapsed time
+    var minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+
+    // Display the elapsed minutes in a span with the ID "timerDisplay"
+    $("#timerDisplay").val(minutes + " minutes");
+
+    var formData = $("#APOMForm").serialize();
+
+    // Make an AJAX POST request to submit the form
+    $.ajax({
+      headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+      },
+      url: $("#APOMForm").attr("action"),
+      method: "POST",
+      data: formData,
+      success: function (response) {
+        if (response == true) {
+          toastr.success("Patient APOM submited successfully !");
+          window.location.href = base_url + "patient";
+        } else {
+          toastr.error(response);
+          //window.location.href = base_url + "patient";
+        }
+      },
+      error: function (error) {
+        // Handle the error response here (if needed)
+        console.error("Error submiting the form:", error);
+      },
+    });
   });
 });
 

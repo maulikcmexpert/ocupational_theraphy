@@ -698,5 +698,5 @@ $(document).ready(function () {
 $(document).on("click", "#dischargeCheck", function () {
   var url = $(this).attr("url");
 
-  $("#dischargeUrl").attr("href", $url);
+  $("#dischargeUrl").attr("href", url);
 });

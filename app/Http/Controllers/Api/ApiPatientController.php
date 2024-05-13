@@ -351,11 +351,11 @@ class ApiPatientController  extends BaseController
         $patient = Auth::guard('api')->user();
 
         $checkInitialRasComplated = PatientRasMaster::where(['test_type' => '0', 'patient_id' => $patient->id])->count();
-        // $checkFinalRasComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $patient->id])->count();
+        $checkFinalRasComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $patient->id])->count();
         $checkInitialAPOMComplated = PatientApoms::where(['test_type' => '0', 'patient_id' => $patient->id])->count();
-        //  $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patient->id])->count();
+        $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patient->id])->count();
 
-        if ($checkInitialRasComplated != 0 && $checkInitialAPOMComplated != 0) {
+        if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
             $patientName = str_replace(' ', '_', $patient->first_name) . '_' . str_replace(' ', '_', $patient->last_name);
 
@@ -368,12 +368,13 @@ class ApiPatientController  extends BaseController
                 $groupData['discharge_report_url'] = "";
             }
         } else {
+
             $groupData['is_discharge'] = false;
             $groupData['discharge_report_url'] = "";
         }
         $patient_id  = Auth::guard('api')->user()->id;
-        // $groupData['sessions_completed'] = $this->checkSessionComplated($patient_id);
-        $groupData['sessions_completed'] = true;
+        $groupData['sessions_completed'] = $this->checkSessionComplated($patient_id);
+        // $groupData['sessions_completed'] = true;
         $groupDetail[] = $groupData;
         return $this->sendResponse($groupDetail, 'Ot and Sessions');
     }

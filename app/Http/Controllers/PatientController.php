@@ -72,6 +72,7 @@ class PatientController extends Controller
                     $discharge_report = route('patient.discharge_report', $cryptId);
                     $change_password_url = route('patient.changePassword', $cryptId);
                     $apomReport = route('patient.apom_assessment_report', $cryptId);
+                    $check_patient_status = route('patient.check_patient_status', $cryptId);
                     $actionBtn = ' <div class="action-icon">
                   
                     <a class="" href="' . $edit_url . '"  title="Edit"><i class="fas fa-edit" ></i></a>
@@ -109,7 +110,7 @@ class PatientController extends Controller
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
                     } else {
-                        $actionBtn .=   '<button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        $actionBtn .=   '<button type="button" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa fa-medkit" aria-hidden="true"></i>
 
 </button>';

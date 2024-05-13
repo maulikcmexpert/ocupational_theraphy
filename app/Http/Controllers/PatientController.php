@@ -1501,8 +1501,9 @@ class PatientController extends Controller
         $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patientId])->count();
         $test_type = '1';
         if ($checkFinalAPOMComplated == 0) {
-            return redirect()->route('patient.patientApom', [$id, $test_type]);;
+            return redirect()->route('patient.patientApom', [$id, $test_type]);
         }
+        return redirect()->route('patient.patientApom', [$id, 0]);
     }
 
 

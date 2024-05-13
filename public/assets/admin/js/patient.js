@@ -462,6 +462,7 @@ $(function () {
   });
 
   $(document).on("click", "#apomSubmit", function (event) {
+    alert();
     event.preventDefault(); // Prevent the default form submission
     var selectedGroup = $("#groupSelect").val();
     if (selectedGroup) {

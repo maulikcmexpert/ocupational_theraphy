@@ -371,6 +371,7 @@ $(function () {
     var that = $(this);
     var selectedDate = $(this).val();
     var sessionId = $(this).prev(".session_id").val();
+    var groupId = $("#groupId").val();
 
     $.ajax({
       headers: {
@@ -381,6 +382,7 @@ $(function () {
       data: {
         selectedDate: selectedDate,
         sessionId: sessionId,
+        groupId: groupId,
       },
       success: function (response) {
         if (response.exists) {

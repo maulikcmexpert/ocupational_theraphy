@@ -1358,9 +1358,9 @@ class PatientController extends Controller
             $patientName = str_replace(' ', '_', $patientData->first_name) . '_' . str_replace(' ', '_', $patientData->last_name);
             $filename = $patientName . '.pdf';
 
-            $tempPath = storage_path('public/storage/pdf/' . $filename);
+            $tempPath = storage_path('public/pdf/' . $filename);
             $pdf->save($tempPath);
-            $destinationPath = public_path('public/storage/pdf/');
+            $destinationPath = public_path('public/pdf/');
             \File::move($tempPath, $destinationPath . $filename);
 
 

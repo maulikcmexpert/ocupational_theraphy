@@ -1337,6 +1337,7 @@ class PatientController extends Controller
 
                 Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
             } else {
+                dd($patientName);
                 Storage::put('public/pdf/' . $patientName . '.pdf', $pdf->output());
             }
 

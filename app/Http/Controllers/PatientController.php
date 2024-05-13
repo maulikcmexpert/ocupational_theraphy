@@ -111,7 +111,9 @@ class PatientController extends Controller
                     </a>';
                     } else {
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
-                            $query->withCount(['group_session', 'group_session.attendance']);
+                            $query->with(['group_session' => function ($subquery) {
+                                $subquery->withCount(['attendance']);
+                            }])->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
 
                         $actionBtn .=   '<a href="" id="dischargeCheck" totalSession = "' . $total_session . '"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">

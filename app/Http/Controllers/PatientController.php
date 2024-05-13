@@ -109,7 +109,7 @@ class PatientController extends Controller
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
                     } else {
-                        $actionBtn .=   '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        $actionBtn .=   '<button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa fa-medkit" aria-hidden="true"></i>
 
 </button>';

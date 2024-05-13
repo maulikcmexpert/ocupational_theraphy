@@ -104,11 +104,17 @@ class PatientController extends Controller
                         </a>
                     ';
                     }
-                    // if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
+                    if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
-                    $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
+                        $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
-                    //  }
+                    } else {
+                        $actionBtn .=   '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Descharge
+</button>';
+                        // $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
+                        // </a>';
+                    }
                     if (Auth::guard('web')->user()->role_id != 3) {
                         $actionBtn .= '<a class="" href="' . $change_password_url . '"  title="Change Password" id="change_password_doctor" ><i class="fas fa-key"></i></a> ';
                     }

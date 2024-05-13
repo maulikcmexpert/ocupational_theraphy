@@ -743,7 +743,7 @@ class GroupController extends CoreController
     public function checkDate(Request $request)
     {
 
-        dd($request);
+
         $selectedDate = $request->input('selectedDate');
         $sessionId = $request->input('sessionId');
         $groupId = decrypt($request->input('groupId'));

@@ -140,7 +140,7 @@
             </div>
             <div class="modal-body">
 
-                <a href="" id="discharge" class="btn add-patient text-white">
+                <a href="{{route('patient.check_patient_status',)}}" id="dischargeUrl" class="btn add-patient text-white">
 
 
                     <!--end::Svg Icon-->Descharge</a>

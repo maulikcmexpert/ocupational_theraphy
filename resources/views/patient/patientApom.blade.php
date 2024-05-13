@@ -1010,7 +1010,7 @@
                             @if($checkinitialApomDone == 0)
                             <button type="submit" id="apomSubmit" class="btn-submit">Submit</button>
                             @else
-                            <button type="submit" id="updatepomSubmit" class="btn-submit">Submit</button>
+                            <button type="submit" id="updateapomSubmit" class="btn-submit">Submit</button>
                             @endif
                         </div>
                     </form>

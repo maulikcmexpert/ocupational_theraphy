@@ -153,4 +153,5 @@ Route::middleware('auth')->group(function () {
     Route::post('patient/remove_patient_from_group', [PatientController::class, 'removePatientFromGroup'])->name('patient.remove_patient_from_group');
     Route::get('patient/apom_assessment_report/{patient_id}', [PatientController::class, 'apomAssessmentReport'])->name('patient.apom_assessment_report');
     Route::post('patient/apom_assessment_pdf_genarate', [PatientController::class, 'apomAssessmentPdfGenarate'])->name('patient.apom_assessment_pdf_genarate');
+    Route::post('patient/check_patient_status', [PatientController::class, 'CheckPatientStatus'])->name('patient.check_patient_status');
 });

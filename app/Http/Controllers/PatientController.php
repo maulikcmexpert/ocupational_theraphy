@@ -1481,6 +1481,10 @@ class PatientController extends Controller
         }
     }
 
+    function CheckPatientStatus(Request $request)
+    {
+    }
+
     function countryList()
     {
 

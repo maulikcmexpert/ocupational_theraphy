@@ -375,6 +375,9 @@ class ApiPatientController  extends BaseController
         }
         $patient_id  = Auth::guard('api')->user()->id;
         $groupData['sessions_completed'] = $this->checkSessionComplated($patient_id);
+        if ($checkFinalAPOMComplated != 0) {
+            $groupData['sessions_completed'] = true;
+        }
         // $groupData['sessions_completed'] = true;
         $groupDetail[] = $groupData;
         return $this->sendResponse($groupDetail, 'Ot and Sessions');

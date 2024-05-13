@@ -478,48 +478,49 @@ class PatientController extends Controller
         $id = $request->patient_id;
         $patient_id = decrypt($request->patient_id);
 
-        // try {
-        if (!empty($request->assignGroup) && count($request->assignGroup) != 0) {
+        try {
+            if (!empty($request->assignGroup) && count($request->assignGroup) != 0) {
 
-            DB::beginTransaction();
-            $patient_reffering_dr = patientDetails::where('user_id', $patient_id)->get();
-            $checkGroupIsNotAssigned = $this->checkGroupIsNotAssigned($request);
-            if (!empty($checkGroupIsNotAssigned)) {
-                foreach ($checkGroupIsNotAssigned as $key => $value) {
-                    $AssignGroups = new GroupPatientAssignment;
-                    $AssignGroups->group_id = $value;
-                    $AssignGroups->patient_id = $patient_id;
-                    $AssignGroups->doctor_id = $patient_reffering_dr[0]->referring_provider;
-                    $AssignGroups->AssignmentDate = date('Y-m-d,h:i:s');
-                    $AssignGroups->in_out = "In";
-                    $AssignGroups->save();
-                }
-            } else {
-                $patientRemoveGroup = GroupPatientAssignment::where(['patient_id' => $patient_id])->whereNotIn('group_id', $request->assignGroup)->get();
+                DB::beginTransaction();
+                $patient_reffering_dr = patientDetails::where('user_id', $patient_id)->get();
+                dd($patient_reffering_dr);
+                $checkGroupIsNotAssigned = $this->checkGroupIsNotAssigned($request);
+                if (!empty($checkGroupIsNotAssigned)) {
+                    foreach ($checkGroupIsNotAssigned as $key => $value) {
+                        $AssignGroups = new GroupPatientAssignment;
+                        $AssignGroups->group_id = $value;
+                        $AssignGroups->patient_id = $patient_id;
+                        $AssignGroups->doctor_id = $patient_reffering_dr[0]->referring_provider;
+                        $AssignGroups->AssignmentDate = date('Y-m-d,h:i:s');
+                        $AssignGroups->in_out = "In";
+                        $AssignGroups->save();
+                    }
+                } else {
+                    $patientRemoveGroup = GroupPatientAssignment::where(['patient_id' => $patient_id])->whereNotIn('group_id', $request->assignGroup)->get();
 
-                if (!empty($patientRemoveGroup)) {
+                    if (!empty($patientRemoveGroup)) {
 
-                    foreach ($patientRemoveGroup as $key => $value) {
-                        $patientRemoveGroup = GroupPatientAssignment::where(['group_id' => $value->group_id, 'patient_id' => $patient_id])->first();
+                        foreach ($patientRemoveGroup as $key => $value) {
+                            $patientRemoveGroup = GroupPatientAssignment::where(['group_id' => $value->group_id, 'patient_id' => $patient_id])->first();
 
-                        $patientRemoveGroup->in_out = "Out";
-                        $patientRemoveGroup->save();
+                            $patientRemoveGroup->in_out = "Out";
+                            $patientRemoveGroup->save();
+                        }
                     }
                 }
+                GroupPatientAssignment::where(['patient_id' => $patient_id, 'in_out' => 'Out'])->whereIn('group_id', $request->assignGroup)->update(['in_out' => 'In']);
+            } else {
+                GroupPatientAssignment::where(['patient_id' => $patient_id])->update(['in_out' => 'Out']);
             }
-            GroupPatientAssignment::where(['patient_id' => $patient_id, 'in_out' => 'Out'])->whereIn('group_id', $request->assignGroup)->update(['in_out' => 'In']);
-        } else {
-            GroupPatientAssignment::where(['patient_id' => $patient_id])->update(['in_out' => 'Out']);
-        }
 
-        DB::commit();
-        toastr()->success("groups are assigned succesfully");
-        return redirect()->route('patient.groupAssign', $id);
-        // } catch (QueryException $e) {
-        //     DB::rollBack();
-        //     toastr()->error('Database query error');
-        //     return redirect()->route('patient.groupAssign', $id);
-        // }
+            DB::commit();
+            toastr()->success("groups are assigned succesfully");
+            return redirect()->route('patient.groupAssign', $id);
+        } catch (QueryException $e) {
+            DB::rollBack();
+            toastr()->error('Database query error');
+            return redirect()->route('patient.groupAssign', $id);
+        }
     }
 
     public function checkGroupIsNotAssigned($request)

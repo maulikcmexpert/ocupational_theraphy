@@ -512,7 +512,7 @@ $(function () {
 
   $(document).on("click", "#updateapomSubmit", function (event) {
     event.preventDefault(); // Prevent the default form submission
-    alert("Final Apom");
+
     $(".btn-submit").text("submiting...");
     clearInterval(timerInterval); // Stop the timer interval
     localStorage.removeItem("formVisible");

@@ -1341,7 +1341,7 @@ class PatientController extends Controller
 
 
 
-            return $pdf->download($patientData->first_name . '_' . $patientData->last_name . '.pdf');
+            return $pdf->download(str_replace('', '_', $patientData->first_name) . '_' . str_replace('', '_', $patientData->last_name) . '.pdf');
         }
     }
 

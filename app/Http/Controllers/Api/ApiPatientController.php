@@ -194,7 +194,8 @@ class ApiPatientController  extends BaseController
             // Sessions //
         }
         $homeData['program'] = $group;
-        $homeData['sessions_completed'] = $this->checkSessionComplated($patient_id);
+        $homeData['sessions_completed'] = true;
+        // $homeData['sessions_completed'] = $this->checkSessionComplated($patient_id);
 
         return $this->sendResponse($homeData, 'Home');
     }

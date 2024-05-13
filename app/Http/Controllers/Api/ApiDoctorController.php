@@ -262,6 +262,9 @@ class ApiDoctorController  extends BaseController
 
         if ($checkFinalAPOMComplated != 0) {
             $homeData['is_discharge'] = true;
+            $patientReport =  User::where('id', $patient_id)->first();
+            $patientName = str_replace(' ', '_', $patientReport->first_name) . '_' . str_replace(' ', '_', $patientReport->last_name);
+            $homeData['discharge_report_url'] =  asset('public/storage/pdf/' . $patientName . '.pdf');
         }
         // $homeData['sessions_completed'] = $this->checkSessionComplated($patient_id);
 

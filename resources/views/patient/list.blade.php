@@ -143,7 +143,7 @@
                 <a href="" id="dischargeUrl" class="btn add-patient text-white">
 
 
-                    <!--end::Svg Icon-->Descharge</a>
+                    <!--end::Svg Icon-->Discharge</a>
             </div>
 
         </div>

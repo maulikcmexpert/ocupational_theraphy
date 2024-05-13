@@ -360,7 +360,7 @@ class ApiPatientController  extends BaseController
 
             $patientName = str_replace(' ', '_', $patient->first_name) . '_' . str_replace(' ', '_', $patient->last_name);
 
-            if (file_exists(public_path('public/storage/pdf/') . $patientName . '.pdf')) {
+            if (file_exists(public_path('public/storage/pdf/' . $patientName . '.pdf'))) {
 
                 $groupData['is_discharge'] = true;
                 $groupData['discharge_report_url'] =  asset('public/storage/pdf/' . $patientName . '.pdf');

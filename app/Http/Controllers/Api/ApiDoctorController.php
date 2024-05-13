@@ -246,10 +246,10 @@ class ApiDoctorController  extends BaseController
         $homeData['program'] = $group;
 
         $checkInitialRasComplated = PatientRasMaster::where(['test_type' => '0', 'patient_id' => $patient_id])->count();
-        //  $checkFinalRasComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
+        $checkFinalRasComplated = PatientRasMaster::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
         $checkInitialAPOMComplated = PatientApoms::where(['test_type' => '0', 'patient_id' => $patient_id])->count();
-        // $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
-        if ($checkInitialRasComplated != 0  && $checkInitialAPOMComplated != 0) {
+        $checkFinalAPOMComplated = PatientApoms::where(['test_type' => '1', 'patient_id' => $patient_id])->count();
+        if ($checkInitialRasComplated != 0  && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
             $homeData['is_discharge'] = true;
             $patientReport =  User::where('id', $patient_id)->first();
             $patientName = str_replace(' ', '_', $patientReport->first_name) . '_' . str_replace(' ', '_', $patientReport->last_name);

@@ -1503,7 +1503,7 @@ class PatientController extends Controller
         if ($checkFinalAPOMComplated == 0) {
             return redirect()->route('patient.patientApom', [$id, $test_type]);
         }
-        return redirect()->route('patient.patientApom', [$id, 0]);
+        return redirect()->route('patient.patientApom', [$id, $test_type]);
     }
 
 

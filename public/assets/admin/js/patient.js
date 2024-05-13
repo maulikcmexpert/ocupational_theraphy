@@ -695,7 +695,7 @@ $(document).ready(function () {
   });
 });
 
-$(document).on("#dischargeCheck", "click", function () {
+$(document).on("click", "#dischargeCheck", function () {
   var url = $(this).attr("url");
   alert(url);
 });

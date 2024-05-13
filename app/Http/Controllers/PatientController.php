@@ -483,14 +483,14 @@ class PatientController extends Controller
 
                 DB::beginTransaction();
                 $patient_reffering_dr = patientDetails::where('user_id', $patient_id)->get();
-                dd($patient_reffering_dr);
+
                 $checkGroupIsNotAssigned = $this->checkGroupIsNotAssigned($request);
                 if (!empty($checkGroupIsNotAssigned)) {
                     foreach ($checkGroupIsNotAssigned as $key => $value) {
                         $AssignGroups = new GroupPatientAssignment;
                         $AssignGroups->group_id = $value;
                         $AssignGroups->patient_id = $patient_id;
-                        $AssignGroups->doctor_id = $patient_reffering_dr[0]->referring_provider;
+                        $AssignGroups->doctor_id = ($patient_reffering_dr != null) ? $patient_reffering_dr[0]->referring_provider : 0;
                         $AssignGroups->AssignmentDate = date('Y-m-d,h:i:s');
                         $AssignGroups->in_out = "In";
                         $AssignGroups->save();

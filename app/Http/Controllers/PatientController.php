@@ -111,12 +111,10 @@ class PatientController extends Controller
                     </a>';
                     } else {
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
-                            $query->with(['group_session' => function ($subquery) {
-                                $subquery->withCount(['attendance']);
-                            }])->withCount(['group_session']);
+                            $query->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
-
-                        $actionBtn .=   '<a href="" id="dischargeCheck" totalSession = "' . $total_session . '"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        $total_attendence = Attendance::where(['patient_id' => $row->id, 'group_id' => $total_session->group_id])->count();
+                        $actionBtn .=   '<a href="" id="dischargeCheck" totalAttendence = "' . $total_attendence . '" totalSession = "' . $total_session . '"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        
 <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_2359_4832)">

@@ -139,7 +139,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <span>are you sure you want discharge Patient ? <b id="totalAttendence"></b> session are completed out of <b id="totalSession"></b> sessions
+                <span>
+                    are you sure you want discharge Patient ? <b id="totalAttendence"></b> session are completed out of <b id="totalSession"></b> sessions
                 </span>
                 <a href="" id="dischargeUrl" class="btn add-patient text-white">
 

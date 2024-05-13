@@ -509,6 +509,7 @@ $(function () {
       return false;
     }
   });
+
   $(document).on("click", "#updateapomSubmit", function (event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -536,7 +537,6 @@ $(function () {
       data: formData,
       success: function (response) {
         if (response == true) {
-          console.log("form submiting");
           toastr.success("Patient APOM submited successfully !");
           window.location.href = base_url + "patient";
         } else {

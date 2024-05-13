@@ -359,7 +359,7 @@ class ApiPatientController  extends BaseController
         if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
             $patientName = str_replace(' ', '_', $patient->first_name) . '_' . str_replace(' ', '_', $patient->last_name);
-
+            dd($patientName);
             if (file_exists(public_path('public/storage/pdf/') . $patientName . '.pdf')) {
 
                 $groupData['is_discharge'] = true;

@@ -1329,7 +1329,7 @@ class PatientController extends Controller
 
 
             $pdf = PDF::loadView('patient.pdfDeschargeReport', $data);
-            $patientName = str_replace('', '_', $patientData->first_name . '_' . $patientData->last_name);
+            $patientName = str_replace(' ', '_', $patientData->first_name) . '_' . str_replace(' ', '_', $patientData->last_name);
             $filename = $patientName . '.pdf';
 
             $tempPath = storage_path('app/temp/' . $filename);

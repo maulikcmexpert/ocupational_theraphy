@@ -483,31 +483,31 @@ class ApiPatientController  extends BaseController
             }
         } else {
 
-            $checkSessionComplated =  $this->checkSessionComplated($patient->id);
+            // $checkSessionComplated =  $this->checkSessionComplated($patient->id);
 
-            if ($checkSessionComplated == true) {
+            // if ($checkSessionComplated == true) {
 
-                $rasQuestion = RasQuestion::get();
-                $rasAnswer = RasRating::select('id', 'scale_type', 'scale')->get();
+            $rasQuestion = RasQuestion::get();
+            $rasAnswer = RasRating::select('id', 'scale_type', 'scale')->get();
 
-                $question = [];
+            $question = [];
 
-                foreach ($rasQuestion as $value) {
-                    $questionData['id'] = $value->id;
-                    $questionData['question'] = $value->question;
-                    $questionData['answer'] = $rasAnswer;
-                    $question[] = $questionData;
-                }
-                if (!empty($question)) {
-                    return $this->sendResponse($question, 'Note Details');
-                } else {
-                    return $this->sendError('Data not found');
-                }
-            } else {
-
-                $this->logout();
-                return $this->sendErroriftokenFalse('Unauthorised', ['error' => 'Unauthorised']);
+            foreach ($rasQuestion as $value) {
+                $questionData['id'] = $value->id;
+                $questionData['question'] = $value->question;
+                $questionData['answer'] = $rasAnswer;
+                $question[] = $questionData;
             }
+            if (!empty($question)) {
+                return $this->sendResponse($question, 'Note Details');
+            } else {
+                return $this->sendError('Data not found');
+            }
+            // } else {
+
+            //     $this->logout();
+            //     return $this->sendErroriftokenFalse('Unauthorised', ['error' => 'Unauthorised']);
+            // }
         }
 
 

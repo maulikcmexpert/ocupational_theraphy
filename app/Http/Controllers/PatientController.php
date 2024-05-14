@@ -113,7 +113,7 @@ class PatientController extends Controller
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
                             $query->with('group_session')->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
-                        dd($total_session->group->group_session->first());
+                        dd($total_session->group->group_session->first()->session_date);
                         if ($total_session != null) {
 
                             $total_attendence = Attendance::where(['patient_id' => $row->id, 'group_id' => $total_session->group_id])->count();

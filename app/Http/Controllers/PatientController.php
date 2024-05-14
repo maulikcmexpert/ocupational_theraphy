@@ -740,71 +740,71 @@ class PatientController extends Controller
             $patient_apoms->feltBadGuilty = $request->feltBadGuilty;
             $patient_apoms->drinkUsedMorning = $request->drinkUsedMorning;
             $patient_apoms->expectationsGoals = $request->expectationsGoals;
-            dd($request->attention);
-            $patient_apoms->attention = $request->attention;
-            $patient_apoms->pace = $request->pace;
-            $patient_apoms->knowledgeToolsAndMaterials = $request->knowledgeToolsAndMaterials;
-            $patient_apoms->knowledgeConceptFormation = $request->knowledgeConceptFormation;
-            $patient_apoms->skillsToUseToolsAndMaterials = $request->skillsToUseToolsAndMaterials;
-            $patient_apoms->taskConcept = $request->taskConcept;
-            $patient_apoms->organizingSpaceAndObjects = $request->organizingSpaceAndObjects;
-            $patient_apoms->adaptation = $request->adaptation;
+
+            $patient_apoms->attention = ($request->attention != null) ? $request->attention : "0";
+            $patient_apoms->pace = ($request->pace != null) ? $request->pace : "0";
+            $patient_apoms->knowledgeToolsAndMaterials = ($request->knowledgeToolsAndMaterials != null) ? $request->knowledgeToolsAndMaterials : "0";
+            $patient_apoms->knowledgeConceptFormation = ($request->knowledgeConceptFormation != null) ? $request->knowledgeConceptFormation : "0";
+            $patient_apoms->skillsToUseToolsAndMaterials = ($request->skillsToUseToolsAndMaterials != null) ? $request->skillsToUseToolsAndMaterials : "0";
+            $patient_apoms->taskConcept = ($request->taskConcept != null) ? $request->taskConcept : "0";
+            $patient_apoms->organizingSpaceAndObjects = ($request->organizingSpaceAndObjects != null) ? $request->organizingSpaceAndObjects : "0";
+            $patient_apoms->adaptation = ($request->adaptation != null) ? $request->adaptation : "0";
 
 
-            $patient_apoms->nonVerbalPhysicalContact = $request->nonVerbalPhysicalContact;
-            $patient_apoms->nonVerbalEyeContact = $request->nonVerbalEyeContact;
-            $patient_apoms->nonVerbalGestures = $request->nonVerbalGestures;
-            $patient_apoms->nonVerbalUseOfBody = $request->nonVerbalUseOfBody;
-            $patient_apoms->verbalSpeech = $request->verbalSpeech;
-            $patient_apoms->verbalContent = $request->verbalContent;
-            $patient_apoms->verbalExpressNeeds = $request->verbalExpressNeeds;
-            $patient_apoms->verbalConversation = $request->verbalConversation;
-            $patient_apoms->relationsSocialNorms = $request->relationsSocialNorms;
-            $patient_apoms->relationsRapport = $request->relationsRapport;
+            $patient_apoms->nonVerbalPhysicalContact = ($request->nonVerbalPhysicalContact != null) ? $request->nonVerbalPhysicalContact : "0";
+            $patient_apoms->nonVerbalEyeContact = ($request->nonVerbalEyeContact != null) ? $request->nonVerbalEyeContact : "0";
+            $patient_apoms->nonVerbalGestures = ($request->nonVerbalGestures != null) ? $request->nonVerbalGestures : "0";
+            $patient_apoms->nonVerbalUseOfBody = ($request->nonVerbalUseOfBody != null) ? $request->nonVerbalUseOfBody : "0";
+            $patient_apoms->verbalSpeech = ($request->verbalSpeech != null) ? $request->verbalSpeech : "0";
+            $patient_apoms->verbalContent = ($request->verbalContent != null) ? $request->verbalContent : "0";
+            $patient_apoms->verbalExpressNeeds = ($request->verbalExpressNeeds != null) ? $request->verbalExpressNeeds : "0";
+            $patient_apoms->verbalConversation = ($request->verbalConversation != null) ? $request->verbalConversation : "0";
+            $patient_apoms->relationsSocialNorms = ($request->relationsSocialNorms != null) ? $request->relationsSocialNorms : "0";
+            $patient_apoms->relationsRapport = ($request->relationsRapport != null) ? $request->relationsRapport : "0";
 
 
-            $patient_apoms->personalCare = $request->personalCare;
-            $patient_apoms->personalSafety = $request->personalSafety;
-            $patient_apoms->careOfMedication = $request->careOfMedication;
-            $patient_apoms->useOfTransport = $request->useOfTransport;
-            $patient_apoms->domesticSkills = $request->domesticSkills;
-            $patient_apoms->childCareSkills = $request->childCareSkills;
-            $patient_apoms->moneyManagementAndBudgetingSkills = $request->moneyManagementAndBudgetingSkills;
-            $patient_apoms->assertiveness = $request->assertiveness;
-            $patient_apoms->stressManagement = $request->stressManagement;
-            $patient_apoms->conflictManagement = $request->conflictManagement;
-            $patient_apoms->problemSolvingSkills = $request->problemSolvingSkills;
-            $patient_apoms->preVocationalSkills = $request->preVocationalSkills;
-            $patient_apoms->vocationalSkills = $request->vocationalSkills;
+            $patient_apoms->personalCare = ($request->personalCare != null) ? $request->personalCare : "0";
+            $patient_apoms->personalSafety = ($request->personalSafety != null) ? $request->personalSafety : "0";
+            $patient_apoms->careOfMedication = ($request->careOfMedication != null) ? $request->careOfMedication : "0";
+            $patient_apoms->useOfTransport = ($request->useOfTransport != null) ? $request->useOfTransport : "0";
+            $patient_apoms->domesticSkills = ($request->domesticSkills != null) ? $request->domesticSkills : "0";
+            $patient_apoms->childCareSkills = ($request->childCareSkills != null) ? $request->childCareSkills : "0";
+            $patient_apoms->moneyManagementAndBudgetingSkills = ($request->moneyManagementAndBudgetingSkills != null) ? $request->moneyManagementAndBudgetingSkills : "0";
+            $patient_apoms->assertiveness = ($request->assertiveness != null) ? $request->assertiveness : "0";
+            $patient_apoms->stressManagement = ($request->stressManagement != null) ? $request->stressManagement : "0";
+            $patient_apoms->conflictManagement = ($request->conflictManagement != null) ? $request->conflictManagement : "0";
+            $patient_apoms->problemSolvingSkills = ($request->problemSolvingSkills != null) ? $request->problemSolvingSkills : "0";
+            $patient_apoms->preVocationalSkills = ($request->preVocationalSkills != null) ? $request->preVocationalSkills : "0";
+            $patient_apoms->vocationalSkills = ($request->vocationalSkills != null) ? $request->vocationalSkills : "0";
 
-            $patient_apoms->awarenessOfRoles = $request->awarenessOfRoles;
-            $patient_apoms->roleExpectations = $request->roleExpectations;
-            $patient_apoms->roleBalance = $request->roleBalance;
-            $patient_apoms->competency = $request->competency;
+            $patient_apoms->awarenessOfRoles = ($request->awarenessOfRoles != null) ? $request->awarenessOfRoles : "0";
+            $patient_apoms->roleExpectations = ($request->roleExpectations != null) ? $request->roleExpectations : "0";
+            $patient_apoms->roleBalance = ($request->roleBalance != null) ? $request->roleBalance : "0";
+            $patient_apoms->competency = ($request->competency != null) ? $request->competency : "0";
 
-            $patient_apoms->timeUseRoutines = $request->timeUseRoutines;
-            $patient_apoms->habits = $request->habits;
-            $patient_apoms->mixOfOccupations = $request->mixOfOccupations;
+            $patient_apoms->timeUseRoutines = ($request->timeUseRoutines != null) ? $request->timeUseRoutines : "0";
+            $patient_apoms->habits = ($request->habits != null) ? $request->habits : "0";
+            $patient_apoms->mixOfOccupations = ($request->mixOfOccupations != null) ? $request->mixOfOccupations : "0";
 
-            $patient_apoms->activeInvolvement = $request->activeInvolvement;
-            $patient_apoms->motivesAndDrives = $request->motivesAndDrives;
-            $patient_apoms->showsInterest = $request->showsInterest;
-            $patient_apoms->goalDirectedBehaviour = $request->goalDirectedBehaviour;
-            $patient_apoms->locusOfControl = $request->locusOfControl;
-
-
-            $patient_apoms->commitmentToTaskSituation = $request->commitmentToTaskSituation;
-            $patient_apoms->usingFeedback = $request->usingFeedback;
-            $patient_apoms->selfWorth = $request->selfWorth;
-            $patient_apoms->attitudeSelfAssurance = $request->attitudeSelfAssurance;
-            $patient_apoms->attitudeSelfSatisfaction = $request->attitudeSelfSatisfaction;
-            $patient_apoms->awarenessOfQualities = $request->awarenessOfQualities;
-            $patient_apoms->socialPresence = $request->socialPresence;
+            $patient_apoms->activeInvolvement = ($request->activeInvolvement != null) ? $request->activeInvolvement : "0";
+            $patient_apoms->motivesAndDrives = ($request->motivesAndDrives != null) ? $request->motivesAndDrives : "0";
+            $patient_apoms->showsInterest = ($request->showsInterest != null) ? $request->showsInterest : "0";
+            $patient_apoms->goalDirectedBehaviour = ($request->goalDirectedBehaviour != null) ? $request->goalDirectedBehaviour : "0";
+            $patient_apoms->locusOfControl = ($request->locusOfControl != null) ? $request->locusOfControl : "0";
 
 
-            $patient_apoms->repertoireOfEmotions = $request->repertoireOfEmotions;
-            $patient_apoms->emotionControl = $request->emotionControl;
-            $patient_apoms->moods = $request->moods;
+            $patient_apoms->commitmentToTaskSituation = ($request->commitmentToTaskSituation != null) ? $request->commitmentToTaskSituation : "0";
+            $patient_apoms->usingFeedback = ($request->usingFeedback != null) ? $request->usingFeedback : "0";
+            $patient_apoms->selfWorth = ($request->selfWorth != null) ? $request->selfWorth : "0";
+            $patient_apoms->attitudeSelfAssurance = ($request->attitudeSelfAssurance != null) ? $request->attitudeSelfAssurance : "0";
+            $patient_apoms->attitudeSelfSatisfaction = ($request->attitudeSelfSatisfaction != null) ? $request->attitudeSelfSatisfaction : "0";
+            $patient_apoms->awarenessOfQualities = ($request->awarenessOfQualities != null) ? $request->awarenessOfQualities : "0";
+            $patient_apoms->socialPresence = ($request->socialPresence != null) ? $request->socialPresence : "0";
+
+
+            $patient_apoms->repertoireOfEmotions = ($request->repertoireOfEmotions != null) ? $request->repertoireOfEmotions : "0";
+            $patient_apoms->emotionControl = ($request->emotionControl != null) ? $request->emotionControl : "0";
+            $patient_apoms->moods = ($request->moods != null) ? $request->moods : "0";
 
             $patient_apoms->group_id = ($checkpatientApom != 0) ? $group[0]->group_id : $request->group;
             $patient_apoms->test_type =  ($checkpatientApom != 0) ? '1' : '0';

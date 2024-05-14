@@ -378,6 +378,10 @@ class ApiPatientController  extends BaseController
         if ($checkFinalAPOMComplated != 0) {
             $groupData['sessions_completed'] = true;
         }
+        $groupData['final_ras'] = false;
+        if ($checkFinalRasComplated != 0) {
+            $groupData['final_ras'] = true;
+        }
         // $groupData['sessions_completed'] = true;
         $groupDetail[] = $groupData;
         return $this->sendResponse($groupDetail, 'Ot and Sessions');

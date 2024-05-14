@@ -548,14 +548,19 @@ class ApiPatientController  extends BaseController
             } else {
                 $patientStatus = User::where('id', $patient_id->id)->get();
                 if ($patientStatus[0]->status == 1) {
+                    $checkRASExist = PatientRasMaster::where(['patient_id' => $patient_id->id, 'test_type' => '1'])->count();
+                    if ($checkRASExist == 0) {
 
-                    foreach ($rasQuestionAnswer as $value) {
-                        $patient_ras_master = new PatientRasMaster;
-                        $patient_ras_master->patient_id = $patient_id->id;
-                        $patient_ras_master->question_id = $value['questionID'];
-                        $patient_ras_master->answer_id = $value['answerID'];
-                        $patient_ras_master->test_type = '1';
-                        $patient_ras_master->save();
+                        foreach ($rasQuestionAnswer as $value) {
+                            $patient_ras_master = new PatientRasMaster;
+                            $patient_ras_master->patient_id = $patient_id->id;
+                            $patient_ras_master->question_id = $value['questionID'];
+                            $patient_ras_master->answer_id = $value['answerID'];
+                            $patient_ras_master->test_type = '1';
+                            $patient_ras_master->save();
+                        }
+                    } else {
+                        return $this->sendResponse('RAS form', 'RAS final form already submited');
                     }
                 }
                 return $this->sendResponse('RAS form', 'RAS final form submited Succesfully');

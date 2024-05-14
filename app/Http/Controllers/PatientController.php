@@ -111,8 +111,9 @@ class PatientController extends Controller
                     </a>';
                     } else {
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
-                            $query->withCount(['group_session']);
+                            $query->with('group_session')->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
+                        dd($total_session);
                         if ($total_session != null) {
 
                             $total_attendence = Attendance::where(['patient_id' => $row->id, 'group_id' => $total_session->group_id])->count();

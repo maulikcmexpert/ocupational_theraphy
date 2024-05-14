@@ -113,8 +113,8 @@ class PatientController extends Controller
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
                             $query->with('group_session')->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
-                        dd($total_session->group->group_session->first()->session_date);
-                        if ($total_session != null) {
+
+                        if ($total_session != null && $total_session->group->group_session->first()->session_date < date('Y-m-d')) {
 
                             $total_attendence = Attendance::where(['patient_id' => $row->id, 'group_id' => $total_session->group_id])->count();
                             $actionBtn .=   '<a href="" id="dischargeCheck" totalAttendence = "' . $total_attendence . '" totalSession = "' . $total_session->group->group_session_count . '"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">

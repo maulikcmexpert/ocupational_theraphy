@@ -847,7 +847,7 @@ class PatientController extends Controller
             DB::rollBack();
 
 
-            return response()->json($e->getMessage());
+            return response()->json("db error");
         }
     }
     /**

@@ -105,7 +105,7 @@ class PatientController extends Controller
                         </a>
                     ';
                     }
-                    if ($checkInitialRasComplated != 0 && $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
+                    if ($checkInitialRasComplated != 0 &&  $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';
@@ -113,6 +113,7 @@ class PatientController extends Controller
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {
                             $query->withCount(['group_session']);
                         }])->where('patient_id', $row->id)->first();
+                        dd($total_session);
                         $total_attendence = Attendance::where(['patient_id' => $row->id, 'group_id' => $total_session->group_id])->count();
                         $actionBtn .=   '<a href="" id="dischargeCheck" totalAttendence = "' . $total_attendence . '" totalSession = "' . $total_session->group->group_session_count . '"  title="Discharge" class="" url = "' . $check_patient_status . '" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        

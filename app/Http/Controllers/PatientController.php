@@ -740,7 +740,7 @@ class PatientController extends Controller
             $patient_apoms->feltBadGuilty = $request->feltBadGuilty;
             $patient_apoms->drinkUsedMorning = $request->drinkUsedMorning;
             $patient_apoms->expectationsGoals = $request->expectationsGoals;
-
+            dd($request->attention);
             $patient_apoms->attention = $request->attention;
             $patient_apoms->pace = $request->pace;
             $patient_apoms->knowledgeToolsAndMaterials = $request->knowledgeToolsAndMaterials;

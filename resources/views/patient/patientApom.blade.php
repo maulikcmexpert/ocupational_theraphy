@@ -617,42 +617,42 @@
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Attention</label>
-                                        <input class="content" type="text" name="attention"><br>
+                                        <input class="content" type="number" min="0" max="18" name="attention"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Pace</label>
-                                        <input class="content" type="text" name="pace"><br>
+                                        <input class="content" type="number" min="0" max="18" name="pace"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Knowledge - tools & materials</label>
-                                        <input class="content" type="text" name="knowledgeToolsAndMaterials"><br>
+                                        <input class="content" type="number" min="0" max="18" name="knowledgeToolsAndMaterials"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Knowledge - concept formation</label>
-                                        <input class="content" type="text" name="knowledgeConceptFormation"><br>
+                                        <input class="content" type="number" min="0" max="18" name="knowledgeConceptFormation"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Skills - to use tools & materials</label>
-                                        <input class="content" type="text" name="skillsToUseToolsAndMaterials"><br>
+                                        <input class="content" type="number" min="0" max="18" name="skillsToUseToolsAndMaterials"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Task Concept</label>
-                                        <input class="content" type="text" name="taskConcept"><br>
+                                        <input class="content" type="number" min="0" max="18" name="taskConcept"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Organizing space and objects</label>
-                                        <input class="content" type="text" name="organizingSpaceAndObjects"><br>
+                                        <input class="content" type="number" min="0" max="18" name="organizingSpaceAndObjects"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Adaptation</label>
-                                        <input class="content" type="text" name="adaptation"><br>
+                                        <input class="content" type="number" min="0" max="18" name="adaptation"><br>
                                     </div>
 
                                 </div>
@@ -663,54 +663,54 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Non-verbal: Physical contact</label>
-                                        <input type="text" name="nonVerbalPhysicalContact"><br>
+                                        <input type="number" min="0" max="18" name="nonVerbalPhysicalContact"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Non-verbal: Eye contact</label>
-                                        <input class="text" type="text" name="nonVerbalEyeContact"><br>
+                                        <input class="text" type="number" min="0" max="18" name="nonVerbalEyeContact"><br>
                                     </div>
 
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Non-verbal: Gestures</label>
-                                        <input class="text" type="text" name="nonVerbalGestures"><br>
+                                        <input class="text" type="number" min="0" max="18" name="nonVerbalGestures"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Non-verbal: Use of body</label>
-                                        <input class="text" type="text" name="nonVerbalUseOfBody"><br>
+                                        <input class="text" type="number" min="0" max="18" name="nonVerbalUseOfBody"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Verbal: Use of speech</label>
-                                        <input type="text" name="verbalSpeech"><br>
+                                        <input type="number" min="0" max="18" name="verbalSpeech"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Verbal: Content</label>
-                                        <input type="text" name="verbalContent"><br>
+                                        <input type="number" min="0" max="18" name="verbalContent"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Verbal: Express needs</label>
-                                        <input type="text" name="verbalExpressNeeds"><br>
+                                        <input type="number" min="0" max="18" name="verbalExpressNeeds"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Verbal: conversation</label>
-                                        <input type="text" name="verbalConversation"><br>
+                                        <input type="number" min="0" max="18" name="verbalConversation"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Relations: Social Norms</label>
-                                        <input type="text" name="relationsSocialNorms"><br>
+                                        <input type="number" min="0" max="18" name="relationsSocialNorms"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Relations: Rapport</label>
-                                        <input type="text" name="relationsRapport"><br>
+                                        <input type="number" min="0" max="18" name="relationsRapport"><br>
                                     </div>
 
 
@@ -723,75 +723,75 @@
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Personal Care, hygiene, grooming</label>
-                                        <input type="text" name="personalCare"><br>
+                                        <input type="number" min="0" max="18" name="personalCare"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Personal safety</label>
-                                        <input type="text" name="personalSafety"><br>
+                                        <input type="number" min="0" max="18" name="personalSafety"><br>
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Care of medication</label>
-                                        <input type="text" name="careOfMedication"><br>
+                                        <input type="number" min="0" max="18" name="careOfMedication"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Use of transport</label>
-                                        <input type="text" name="useOfTransport"><br>
+                                        <input type="number" min="0" max="18" name="useOfTransport"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Domestic skills</label>
-                                        <input type="text" name="domesticSkills"><br>
+                                        <input type="number" min="0" max="18" name="domesticSkills"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label> Child care skills</label>
-                                        <input type="text" name="childCareSkills"><br>
+                                        <input type="number" min="0" max="18" name="childCareSkills"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label> Money management and budgeting skills</label>
-                                        <input type="text" name="moneyManagementAndBudgetingSkills"><br>
+                                        <input type="number" min="0" max="18" name="moneyManagementAndBudgetingSkills"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
                                         <label>Assertiveness</label>
-                                        <input type="text" name="assertiveness"><br>
+                                        <input type="number" min="0" max="18" name="assertiveness"><br>
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Stress Management</label>
-                                        <input type="text" name="stressManagement"><br>
+                                        <input type="number" min="0" max="18" name="stressManagement"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Conflict Management</label>
-                                        <input type="text" name="conflictManagement"><br>
+                                        <input type="number" min="0" max="18" name="conflictManagement"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Problem Solving Skills:</label>
-                                        <input type="text" name="problemSolvingSkills"><br>
+                                        <input type="number" min="0" max="18" name="problemSolvingSkills"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Pre-vocational skills</label>
-                                        <input type="text" name="preVocationalSkills"><br>
+                                        <input type="number" min="0" max="18" name="preVocationalSkills"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label> Vocational skills</label>
-                                        <input type="text" name="vocationalSkills"><br>
+                                        <input type="number" min="0" max="18" name="vocationalSkills"><br>
 
                                     </div>
 
@@ -807,28 +807,28 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Awareness of roles</label>
-                                        <input type="text" name="awarenessOfRoles"><br>
+                                        <input type="number" min="0" max="18" name="awarenessOfRoles"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Role expectations</label>
-                                        <input type="text" name="roleExpectations"><br>
+                                        <input type="number" min="0" max="18" name="roleExpectations"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Role Balance</label>
-                                        <input type="text" name="roleBalance"><br>
+                                        <input type="number" min="0" max="18" name="roleBalance"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Competency</label>
-                                        <input type="text" name="competency"><br>
+                                        <input type="number" min="0" max="18" name="competency"><br>
 
                                     </div>
                                 </div>
@@ -841,20 +841,20 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Time Use and Routines</label>
-                                        <input type="text" name="timeUseRoutines"><br>
+                                        <input type="number" min="0" max="18" name="timeUseRoutines"><br>
 
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Habits</label>
-                                        <input type="text" name="habits"><br>
+                                        <input type="number" min="0" max="18" name="habits"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Mix of Occupations:</label>
-                                        <input type="text" name="mixOfOccupations"><br>
+                                        <input type="number" min="0" max="18" name="mixOfOccupations"><br>
 
                                     </div>
 
@@ -870,34 +870,34 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Active involvement</label>
-                                        <input type="text" name="activeInvolvement"><br>
+                                        <input type="number" min="0" max="18" name="activeInvolvement"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Motives and drives</label>
-                                        <input type="text" name="motivesAndDrives"><br>
+                                        <input type="number" min="0" max="18" name="motivesAndDrives"><br>
 
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Shows Interest</label>
-                                        <input type="text" name="showsInterest"><br>
+                                        <input type="number" min="0" max="18" name="showsInterest"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Goal directed behaviour</label>
-                                        <input type="text" name="goalDirectedBehaviour"><br>
+                                        <input type="number" min="0" max="18" name="goalDirectedBehaviour"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Locus of Control:</label>
-                                        <input type="text" name="locusOfControl"><br>
+                                        <input type="number" min="0" max="18" name="locusOfControl"><br>
 
                                     </div>
 
@@ -913,39 +913,39 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Commitment to task /situation</label>
-                                        <input type="text" name="commitmentToTaskSituation"><br>
+                                        <input type="number" min="0" max="18" name="commitmentToTaskSituation"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Using feedback</label>
-                                        <input type="text" name="usingFeedback"><br>
+                                        <input type="number" min="0" max="18" name="usingFeedback"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Self-worth</label>
-                                        <input type="text" name="selfWorth"><br>
+                                        <input type="number" min="0" max="18" name="selfWorth"><br>
 
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Attitude towards self: Self assurance</label>
-                                        <input type="text" name="attitudeSelfAssurance"><br>
+                                        <input type="number" min="0" max="18" name="attitudeSelfAssurance"><br>
 
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Attitude towards self: Self satisfaction</label>
-                                        <input type="text" name="attitudeSelfSatisfaction"><br>
+                                        <input type="number" min="0" max="18" name="attitudeSelfSatisfaction"><br>
 
                                     </div>
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Awareness of Qualities</label>
-                                        <input type="text" name="awarenessOfQualities"><br>
+                                        <input type="number" min="0" max="18" name="awarenessOfQualities"><br>
 
                                     </div>
 
@@ -953,7 +953,7 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Social presence</label>
-                                        <input type="text" name="socialPresence"><br>
+                                        <input type="number" min="0" max="18" name="socialPresence"><br>
 
                                     </div>
 
@@ -967,21 +967,21 @@
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Repertoire of Emotions:</label>
-                                        <input type="text" name="repertoireOfEmotions"><br>
+                                        <input type="number" min="0" max="18" name="repertoireOfEmotions"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Control</label>
-                                        <input type="text" name="emotionControl"><br>
+                                        <input type="number" min="0" max="18" name="emotionControl"><br>
 
                                     </div>
 
                                     <div class="col-xl-3 col-lg-3">
 
                                         <label>Mood</label>
-                                        <input type="text" name="moods"><br>
+                                        <input type="number" min="0" max="18" name="moods"><br>
 
                                     </div>
 

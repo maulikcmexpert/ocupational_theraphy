@@ -105,7 +105,7 @@ class PatientController extends Controller
                         </a>
                     ';
                     }
-                    if ($checkInitialRasComplated != 0 &&  $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
+                    if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 &&  $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
                         $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
                     </a>';

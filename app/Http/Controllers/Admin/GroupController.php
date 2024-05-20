@@ -241,6 +241,7 @@ class GroupController extends CoreController
             $total_session = $request->total_session;
             $group_type = $request->group_type;
             $schedule = $request->schedule;
+
             if ($group_type == 'internal') {
 
                 $start_session_date = $request->start_session_date;

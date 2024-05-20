@@ -19,6 +19,7 @@
         "laravel/ui": "^4.2",
         "laraveldaily/laravel-charts": "^0.2.3",
         "league/csv": "^9.9",
+        "onecentlin/laravel-adminer": "^7.0",
         "phpoffice/phpspreadsheet": "^1.29",
         "yajra/laravel-datatables-buttons": "^10.0",
         "yajra/laravel-datatables-oracle": "^10.6",

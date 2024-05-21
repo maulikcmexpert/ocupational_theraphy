@@ -216,9 +216,9 @@ class GroupController extends CoreController
             // Check if the current date is Monday or Tuesday
 
             foreach ($schedule as $val) {
-                dd($val);
+
                 $methodName = 'is' . ucfirst($val); // Generating method name dynamically
-                dd($currentDate->$methodName());
+
                 if ($currentDate->$methodName()) {
 
                     $sessionDates[] = $currentDate->toDateString();

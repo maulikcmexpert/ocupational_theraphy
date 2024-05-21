@@ -31,8 +31,8 @@
             <label for="Friday">Every Friday</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="schedule[]" value="Saterday" id="Saterday">
-            <label for="Saterday">Every Saterday</label>
+            <input type="checkbox" class="form-check-input" name="schedule[]" value="Saturday" id="Saturday">
+            <label for="Saturday">Every Saturday</label>
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" name="schedule[]" value="Sunday" id="Sunday">

@@ -210,7 +210,7 @@ class GroupController extends CoreController
         $sessionDates = [];
 
         $currentDate = Carbon::parse($startDate)->addDay();
-        dd($currentDate);
+
         // Loop until we have all sessions
         for ($i = 0; $i < $totalSessions;) {
             // Check if the current date is Monday or Tuesday
@@ -218,7 +218,7 @@ class GroupController extends CoreController
             foreach ($schedule as $val) {
 
                 $methodName = 'is' . ucfirst($val); // Generating method name dynamically
-
+                dd($currentDate->$methodName());
                 if ($currentDate->$methodName()) {
 
                     $sessionDates[] = $currentDate->toDateString();

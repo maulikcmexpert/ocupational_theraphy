@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <div class="ps-4"><button type="submit" class="btn btn-primary">Make Descharge Report</button>
+        <div class="ps-4"><button type="submit" class="btn btn-primary">Make Discharge Report</button>
             <input class="btn btn-primary" type="submit" name="viewreport" value="PDF View">
         </div>
 

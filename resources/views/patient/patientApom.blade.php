@@ -356,7 +356,7 @@
 
                             <div class="my-3">
                                 <label class="heading">Job Role (Choose one):</label>
-                                <div class="d-flex gap-5 flex-wrap mt-2">
+                                <div class="d-flex gap-5 flex-wrap mt-2 history-check">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="jobRole[]" value="Projects" id="projects">
                                         <label class="form-check-label" for="projects">Projects</label>
@@ -384,7 +384,7 @@
 
                             <div>
                                 <label class="heading">Struggling with:</label>
-                                <div class="d-flex flex-wrap check-wrap">
+                                <div class="d-flex flex-wrap check-wrap history-check">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="strugglingWith[]" value="concentration" id="concern">
                                         <label for="concern">Concentration</label>

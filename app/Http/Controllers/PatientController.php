@@ -496,7 +496,7 @@ class PatientController extends Controller
                         $AssignGroups = new GroupPatientAssignment;
                         $AssignGroups->group_id = $value;
                         $AssignGroups->patient_id = $patient_id;
-                        $AssignGroups->doctor_id = ($patient_reffering_dr != null) ? $patient_reffering_dr[0]->referring_provider : 0;
+                        $AssignGroups->doctor_id = ($patient_reffering_dr != null) ? $patient_reffering_dr[0]->referring_provider : NULL;
                         $AssignGroups->AssignmentDate = date('Y-m-d,h:i:s');
                         $AssignGroups->in_out = "In";
                         $AssignGroups->save();

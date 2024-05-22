@@ -409,13 +409,16 @@ label.error {
      
       /* .edit-group  */
       .flex-wrap.history-check{
-        justify-content: space-between;
-        margin-top: 15px;
+        margin-top: 15px !important;
       }
 
      .history-check .form-check{
         display: flex;
         width: 160px;
+     }
+
+     .history-check .form-check label{
+        width: 80%;
      }
 
 

@@ -107,7 +107,7 @@ class PatientController extends Controller
                     }
                     if ($checkInitialRasComplated != 0 && $checkFinalRasComplated != 0 &&  $checkInitialAPOMComplated != 0 && $checkFinalAPOMComplated != 0) {
 
-                        $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Descharge Report"><i class="fa fa-file"></i>
+                        $actionBtn .= '<a class="" href="' . $discharge_report . '"  title="Discharge Report"><i class="fa fa-file"></i>
                     </a>';
                     } else {
                         $total_session = GroupPatientAssignment::with(['group' => function ($query) {

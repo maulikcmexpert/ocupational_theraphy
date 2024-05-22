@@ -414,7 +414,7 @@ label.error {
 
      .history-check .form-check{
         display: flex;
-        width: 160px;
+        width: 20%;
      }
 
      .history-check .form-check label{

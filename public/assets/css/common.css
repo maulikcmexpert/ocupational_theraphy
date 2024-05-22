@@ -408,8 +408,15 @@ label.error {
       }
      
       /* .edit-group  */
+      .flex-wrap.history-check{
+        justify-content: space-between;
+        margin-top: 15px;
+      }
 
-
+     .history-check .form-check{
+        display: flex;
+        width: 160px;
+     }
 
 
       /* ====== resposive =========== */

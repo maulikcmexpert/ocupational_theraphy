@@ -174,7 +174,7 @@
 
                                             <label class="select-label">
                                                 <select name="referring_provider" class="form-control form-control-solid">
-                                                    <option value="">Select Referring provider</option>
+                                                    <option value="0">Select Referring provider</option>
                                                     @foreach($getRefferingDR as $value)
                                                     <option {{ ($patientDetail[0]->patientDetails->referring_provider == $value->id)?"selected":"" }} value="{{$value->id }}">{{ $value->first_name.' '.$value->last_name}}</option>
                                                     @endforeach

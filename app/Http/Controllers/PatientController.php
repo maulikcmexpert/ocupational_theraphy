@@ -524,7 +524,7 @@ class PatientController extends Controller
             return redirect()->route('patient.groupAssign', $id);
         } catch (QueryException $e) {
             DB::rollBack();
-            toastr()->error('Database query error');
+            toastr()->error('Database query error' . $e->getMessage());
             return redirect()->route('patient.groupAssign', $id);
         }
     }

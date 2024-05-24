@@ -113,8 +113,9 @@
                                         <div class="form-check">
                                             @if(in_array($value->patient->id,$getAttendancepatient) && in_array($sessionvalue->id,$getAttendancesession))
                                             @foreach($getGroupAttendacneData as $Attendvalue)
-
+                                            @if($Attendvalue->patient_id == $value->patient->id)
                                             <img src="{{asset('assets/media/attendence_sign/'.$Attendvalue->attend_sign_img)}}" width="100px">
+                                            @endif
                                             @endforeach
                                             @else
                                             <button type="button" class="btn btn-primary attendancePatient" data-bs-toggle="modal" data-bs-target="#exampleModal" session_id="{{ $sessionvalue->id}}" group_id="{{$groupId}}" patient_id="{{ $value->patient->id}}">

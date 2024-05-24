@@ -650,7 +650,7 @@ class GroupController extends CoreController
             $take_attendance->attendance_time = date('Y-m-d H:i:s');
             $take_attendance->save();
 
-            Attendance::where(['patient_id' => $patient_id, 'session_id' => $session_id])->delete();
+            // Attendance::where(['patient_id' => $patient_id, 'session_id' => $session_id])->delete();
             DB::commit();
             toastr()->success('Attend confirmed successfully !');
             return redirect()->route('group.attendance', $request->group_id);

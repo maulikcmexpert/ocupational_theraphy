@@ -112,7 +112,7 @@
 
                                         <div class="form-check">
                                             @if(in_array($value->patient->id,$getAttendancepatient) && in_array($sessionvalue->id,$getAttendancesession))
-                                            dd($getGroupAttendacneData);
+                                            <?php dd($getGroupAttendacneData); ?>
                                             <img src="{{asset('public/assets/media/attendence_sign/'.$getGroupAttendacneData[$key]->attend_sign_img)}}" width="100px">
                                             @else
                                             <button type="button" class="btn btn-primary attendancePatient" data-bs-toggle="modal" data-bs-target="#exampleModal" session_id="{{ $sessionvalue->id}}" group_id="{{$groupId}}" patient_id="{{ $value->patient->id}}">

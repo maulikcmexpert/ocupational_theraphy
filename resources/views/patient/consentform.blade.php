@@ -27,8 +27,8 @@
                                             {{$val->question}}
 
                                             <?php if ($val->ques_type == 'text') { ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-control" type="text" name="answer">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-control" type="text" name="answer_{{$key}}_{{$key}}">
                                             <?php } ?>
                                         </label>
                                     </div>
@@ -36,8 +36,8 @@
                                     <div>
                                         <?php if ($val->ques_type == 'check') {
                                         ?>
-                                            <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                            <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <input class="form-control" type="hidden" name="question_id_{{$key}}_{{$key}}" value="{{ $val->id}}">
+                                            <input class="form-check-input" name="answer_{{$key}}_{{$key}}" type="checkbox" id="flexCheckDefault">
                                         <?php }
                                         ?>
                                     </div>
@@ -67,16 +67,16 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{ $val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
 
@@ -107,16 +107,16 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{$val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
                                         </div>
@@ -146,16 +146,16 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{$val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
                                         </div>
@@ -186,16 +186,16 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{ $val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
                                         </div>
@@ -220,16 +220,16 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{$val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
                                         </div>
@@ -256,27 +256,27 @@
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{$val->question}}
                                                 <?php if ($val->ques_type == 'text') { ?>
-                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                    <input class="form-control" type="text" name="answer">
+                                                    <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer_{{$key}}">
                                                 <?php } ?>
                                             </label>
                                         </div>
                                         <div>
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
-                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                                <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer_{{$key}}" type="checkbox" id="flexCheckDefault">
                                             <?php }
                                             ?>
                                         </div>
                                     </div>
                                     <?php if ($val->ques_type == 'text_two') {
                                     ?>
-                                        <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                        <input class="form-control" type="hidden" name="question_id_{{$key}}" value="{{ $val->id}}">
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    My treating team, namely: <input class="form-control" type="text" name="answer">
+                                                    My treating team, namely: <input class="form-control" type="text" name="answer_{{$key}}">
                                                 </label>
                                             </div>
                                             <div>
@@ -286,7 +286,7 @@
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    Family members, namely: <input class="form-control" type="text" name="answer">
+                                                    Family members, namely: <input class="form-control" type="text" name="answer_{{$key}}">
                                                 </label>
                                             </div>
                                             <div>

@@ -171,16 +171,36 @@
                             <h3>Telehealth Appointments</h3>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I agree that telehealth can be used as an alternative to a traditional in-person consultation. I confirm that telehealth means connecting via a a video call or phone call and agree that technical problems may interrupt or stop my visit before I am done. I understand that a telehealth visit will not cost any more than an office visit. I know I can stop using telehealth any time, even during a telehealth visit.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
+                            <?php
+                            foreach ($question as $key => $val) {
+
+                                if ($key == 16) {
+
+
+
+                            ?>
+
+                                    <div class="form-check">
+                                        <div>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{ $val->question}}
+                                                <?php if ($val->ques_type == 'text') { ?>
+                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer">
+                                                <?php } ?>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <?php if ($val->ques_type == 'check') {
+                                            ?>
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+                            <? }
+                            } ?>
                         </div>
                     </div>
                 </div>

@@ -132,56 +132,36 @@
                             <h3>Electronic Communiction:</h3>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        The occupational therapists and staff associated with Grounded.Well.Wise Pty Ltd. will reach out to me to remind me of my appointments or communicate changes to my appointments, to send me information about my treatment, progress, account, etc. We will not send you spam.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I consent to receiving phone calls, SMSs, WhatsApp messages and/or emails for the above purpose.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        We would like to send you information about the interventions available at the occupational therapy practices associated with Grounded.Well.Wise Pty Ltd. Please check the channels below on how you wish to receive these updates
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        WhatsApp
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        E-mail
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
+                            <?php
+                            foreach ($question as $key => $val) {
+
+                                if ($key >= 12 && $key <= 16) {
+
+
+
+                            ?>
+                                    <div class="form-check">
+                                        <div>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{$val->question}}
+                                                <?php if ($val->ques_type == 'text') { ?>
+                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer">
+                                                <?php } ?>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <?php if ($val->ques_type == 'check') {
+                                            ?>
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+
+                            <?php }
+                            } ?>
                         </div>
                     </div>
                 </div>

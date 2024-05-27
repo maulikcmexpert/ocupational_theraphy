@@ -156,7 +156,7 @@ class ConsentQuestion extends Seeder
                 'ques_type' => 'check',
             ],
 
-            // Add more records as needed
+
         ]);
     }
 }

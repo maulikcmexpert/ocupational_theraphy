@@ -218,7 +218,7 @@
                 </div>
             </div>
             @if ($val->ques_type == 'text_two')
-
+            <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id }}">
             <div class="form-check">
                 <div>
                     <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
@@ -227,6 +227,7 @@
                 </div>
                 <div></div>
             </div>
+            <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id }}">
             <div class="form-check">
                 <div>
                     <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">

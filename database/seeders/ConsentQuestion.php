@@ -32,6 +32,10 @@ class ConsentQuestion extends Seeder
                 'ques_type' => 'text',
             ],
             [
+                'question' => 'I give consent to the assessment and treatment provided by the occupational therapists associated with Grounded.Well.Wise Pty Ltd',
+                'ques_type' => 'check',
+            ],
+            [
                 'question' => 'I confirm that I have read and understand each of the terms and conditions contained in this agreement.',
                 'ques_type' => 'check',
             ],

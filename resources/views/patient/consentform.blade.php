@@ -93,27 +93,36 @@
                             <h3>Withdrawal of Consent</h3>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I know that I am, at any stage, free to withdraw my consent to undergo assessment and/or treatment, and/or research. I understand that if I do withdraw my consent, I must confirm that I have done so in writing to admin@groundedwellwise.co.za
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        If I withdraw consent to the occupational therapy assessment and/or treatment, the consequences include loss of potential improvement and poorer outcomes for mental health recovery.
-                                        I will then not hold the therapist liable for any of those consequences, should they happen. I must still pay for the sessions of therapy I have had up to the date of withdrawing consent.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
+                            <?php
+                            foreach ($question as $key => $val) {
+
+                                if ($key >= 6 && $key <= 7) {
+
+
+
+                            ?>
+                                    <div class="form-check">
+                                        <div>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{$val->question}}
+                                                <?php if ($val->ques_type == 'text') { ?>
+                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer">
+                                                <?php } ?>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <?php if ($val->ques_type == 'check') {
+                                            ?>
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+
+                            <?php }
+                            } ?>
                         </div>
                     </div>
                 </div>

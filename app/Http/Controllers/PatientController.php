@@ -227,8 +227,15 @@ class PatientController extends Controller
         $data['page'] = 'patient.consentform';
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['css'] = ['consent'];
+        $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
         return view('admin.main_layout', $data);
+    }
+
+
+    public function consentFormStore(Request $request, string $id)
+    {
+        dd($request);
     }
 
     /**

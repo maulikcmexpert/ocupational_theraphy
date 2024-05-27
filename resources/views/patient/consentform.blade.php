@@ -26,7 +26,7 @@
                                             {{$val->question}}
 
                                             <?php if ($val->ques_type == 'text') { ?>
-                                                <input class="form-control" type="hidden" name="wuestion_id" value="{{ $val->id}}">
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
                                                 <input class="form-control" type="text" name="answer">
                                             <?php } ?>
                                         </label>
@@ -35,6 +35,7 @@
                                     <div>
                                         <?php if ($val->ques_type == 'check') {
                                         ?>
+                                            <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
                                             <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
                                         <?php }
                                         ?>

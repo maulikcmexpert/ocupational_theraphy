@@ -210,56 +210,31 @@
                             <h3>Billing consent: </h3>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I understand that there are costs related to the services provided by occupational therapists associated with Grounded.Well.Wise Pty Ltd. These costs are specified in the Grounded.Well.Wise Pty Ltd Terms and Conditions.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I understand that I (or my parent/guardian) remain liable for the account for services rendered by this practice, even if I am insured by a medical aid or other third party.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I accept that I am fully responsible for payment for services rendered and should I not pay timeously, understand that I will be liable for debt recovery costs on an attorney and own client scale.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I consent that Grounded.Well.Wise Pty Ltd can assist me in addressing the non-payment / short-payment and/or imposed co-payments by
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        my medical scheme, which includes lodging a complaint with the Council for Medical Schemes if it is so requires.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
+                            <?php
+                            foreach ($question as $key => $val) {
+                                if ($key >= 17 && $key <= 21) {
+                            ?>
+                                    <div class="form-check">
+                                        <div>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{$val->question}}
+                                                <?php if ($val->ques_type == 'text') { ?>
+                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer">
+                                                <?php } ?>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <?php if ($val->ques_type == 'check') {
+                                            ?>
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+                            <? }
+                            } ?>
                         </div>
                     </div>
                 </div>

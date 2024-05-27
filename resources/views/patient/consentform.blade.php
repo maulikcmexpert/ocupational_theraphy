@@ -96,7 +96,7 @@
                             <?php
                             foreach ($question as $key => $val) {
 
-                                if ($key >= 6 && $key <= 7) {
+                                if ($key >= 9 && $key <= 10) {
 
 
 

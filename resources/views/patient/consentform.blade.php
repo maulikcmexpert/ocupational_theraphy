@@ -218,9 +218,10 @@
                 </div>
             </div>
             @if ($val->ques_type == 'text_two')
-            <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id }}">
+
             <div class="form-check">
                 <div>
+                    <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id }}">
                     <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                         My treating team, namely: <input class="form-control" type="text" name="answer[]">
                     </label>
@@ -229,6 +230,7 @@
             </div>
             <div class="form-check">
                 <div>
+                    <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id }}">
                     <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                         Family members, namely: <input class="form-control" type="text" name="answer[]">
                     </label>

@@ -37,7 +37,7 @@
                                         <?php if ($val->ques_type == 'check') {
                                         ?>
                                             <input class="form-control" type="hidden" name="ques_ans[question][]" value="{{ $val->id}}">
-                                            <input class="form-check-input" name="ques_ans[question][]" type="checkbox" id="flexCheckDefault">
+                                            <input class="form-check-input" name="ques_ans[answer][]" type="checkbox" id="flexCheckDefault">
                                         <?php }
                                         ?>
                                     </div>

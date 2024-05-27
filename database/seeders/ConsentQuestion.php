@@ -13,7 +13,7 @@ class ConsentQuestion extends Seeder
      */
     public function run(): void
     {
-        DB::table('consent_patient_question')->insert([
+        DB::table('consent_questions')->insert([
             [
                 'question' => 'I am the patient/client',
                 'ques_type' => 'check',

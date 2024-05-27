@@ -28,7 +28,7 @@
 
                                             <?php if ($val->ques_type == 'text') { ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-control" type="text" name="answer[]">
+                                                <input class="form-control" type="text" name="answer_{{ $val->id}}">
                                             <?php } ?>
                                         </label>
                                     </div>

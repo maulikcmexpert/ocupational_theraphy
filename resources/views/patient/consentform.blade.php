@@ -276,7 +276,7 @@
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    My treating team, namely: <input class="form-control" type="text" name="answer_{{$val->id}}">
+                                                    My treating team, namely: <input class="form-control" type="text" name="answer_{{$val->id}}_1">
                                                 </label>
                                             </div>
                                             <div>
@@ -286,7 +286,7 @@
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    Family members, namely: <input class="form-control" type="text" name="answer_{{$val->id}}">
+                                                    Family members, namely: <input class="form-control" type="text" name="answer_{{$val->id}}_2">
                                                 </label>
                                             </div>
                                             <div>

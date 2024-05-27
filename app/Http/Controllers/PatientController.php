@@ -30,6 +30,7 @@ use App\Models\Admin\PatientApoms;
 use App\Models\Admin\Group_session;
 use App\Models\Admin\Patient_discharge_master;
 use App\Http\Requests\PostchangePassword;
+use App\Models\ConsentQuestion;
 use Illuminate\Support\Facades\Hash;
 use PDF;
 
@@ -222,7 +223,7 @@ class PatientController extends Controller
         $data['page'] = 'patient.consentfrom';
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['css'] = ['consent'];
-
+        $data['question'] = ConsentQuestion::get();
         return view('admin.main_layout', $data);
     }
 

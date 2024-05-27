@@ -12,56 +12,31 @@
                             <h3>Identification of person giving consent</h3>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I am the patient/client
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I am authorized to provide consent to treatment on behalf of the patient / client, who is unable to give consent. (The patient is under 12 years of age).
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I am authorized to provide consent to treatment on behalf of the patient / client, who is unable to give consent. (The patient is incapacitated /unconscious/mentally unfit to provide consent).
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <p>Relationship to patient / client (e.g. mother / father / partner / spouse/ etc): _________________________ </p>
-                                    </label>
-                                </div>
-                                <div>
 
+                            <?php
+                            foreach ($question as $key => $val) {
+
+                                if ($key == 5) {
+                                    break;
+                                }
+                            ?>
+                                <div class="form-check">
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{$val->question}}
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <?php if ($val->ques_type == 'check') {
+                                        ?>
+                                            <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                        <?php }
+                                        ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I confirm that I have read and understand each of the terms and conditions contained in this agreement.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
+
+                            <?php  } ?>
+
                         </div>
                     </div>
                 </div>

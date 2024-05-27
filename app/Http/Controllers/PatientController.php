@@ -237,7 +237,6 @@ class PatientController extends Controller
     public function consentFormStore(Request $request, string $id)
     {
         $patientId = decrypt($id);
-        dd($request->questions);
 
         foreach ($request->questions as $val) {
             $answer = new ConsentAnswer();

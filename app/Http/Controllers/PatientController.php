@@ -235,12 +235,14 @@ class PatientController extends Controller
 
     public function consentFormStore(Request $request, string $id)
     {
-        dd($request->question_id);
+        dd($request);
         foreach ($request->question_id as $val) {
             $checkType = ConsentQuestion::where('id', $val)->first();
-            if ($checkType == 'check')
+            if ($checkType == 'check') {
+
                 if (isset($request->answer)) {
                 }
+            }
         }
     }
 

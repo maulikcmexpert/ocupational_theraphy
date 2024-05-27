@@ -238,16 +238,21 @@ class PatientController extends Controller
     {
         $patientId = decrypt($id);
 
-        foreach ($request->questions as $val) {
+        $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
+        if (checkIsCompleted == 0) {
 
-            $answer = new ConsentAnswer();
-            $answer->patient_id = $patientId;
-            $answer->question_id = $val['question'];
-            $answer->answer = is_array($val['answer']) ? json_encode($val['answer']) : $val['answer'];
-            $answer->save();
+            foreach ($request->questions as $val) {
+
+                $answer = new ConsentAnswer();
+                $answer->patient_id = $patientId;
+                $answer->question_id = $val['question'];
+                $answer->answer = is_array($val['answer']) ? json_encode($val['answer']) : $val['answer'];
+                $answer->save();
+            }
+            toastr()->success('Patient Consent form submited successfully !');
+        } else {
+            toastr()->success('Patient Consent form already submited successfully !');
         }
-
-        toastr()->success('Patient Consent form submited successfully !');
         return redirect()->route('patient.index');
     }
 

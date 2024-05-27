@@ -26,6 +26,7 @@
                                             {{$val->question}}
 
                                             <?php if ($val->ques_type == 'text') { ?>
+                                                <input class="form-control" type="hidden" name="wuestion_id" value="{{ $val->id}}">
                                                 <input class="form-control" type="text" name="answer">
                                             <?php } ?>
                                         </label>

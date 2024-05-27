@@ -242,7 +242,9 @@
     </div>
 </div>
 </div>
+@if(count($answer) == 0)
 <input class="btn btn-primary" type="submit" value="Submit">
+@endif
 </form>
 </div>
 </div>

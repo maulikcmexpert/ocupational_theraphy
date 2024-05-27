@@ -230,6 +230,7 @@ class PatientController extends Controller
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
+        $data['answer'] = ConsentAnswer::get();
         return view('admin.main_layout', $data);
     }
 

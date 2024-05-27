@@ -30,7 +30,7 @@
                                 <div>
                                     @if ($val->ques_type == 'check')
                                     <input type="hidden" name="question_id[]" value="{{ $val->id }}">
-                                    <input type="hidden" name="answer[]" value="0">
+                                    <input type="hidden" name="answer[]" value="hi">
                                     <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
                                     @endif
                                 </div>

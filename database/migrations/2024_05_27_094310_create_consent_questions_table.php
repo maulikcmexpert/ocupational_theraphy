@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consent_patient_question', function (Blueprint $table) {
+        Schema::create('consent_questions', function (Blueprint $table) {
             $table->id();
             $table->string('question', 500);
             $table->enum('ques_type', ['text', 'text_two', 'check']);
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consent_patient_question');
+        Schema::dropIfExists('consent_questions');
     }
 };

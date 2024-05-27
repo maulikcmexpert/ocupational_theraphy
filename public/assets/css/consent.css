@@ -1,0 +1,117 @@
+h3{
+    margin-bottom: 0px !important;
+}
+p{
+    margin-bottom: 0px !important;
+}
+.form-wrpper h3{
+  color: #181c32;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+
+.form-main p{
+  color: #464E5F;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px; /* 114.286% */
+  margin-bottom: 24px !important;
+  text-align: center;
+  max-width: 700px;
+  margin: 0px auto;
+}
+.form-main p a{
+  text-decoration: none;
+  color: #3699FF;
+  font-weight: 600;
+}
+.main-content .form-check{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.main-content-wrp{
+  position: relative;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.main-content-title{
+  width: 100%;
+  padding: 5px 10px; 
+  border-bottom: 1px solid black;
+}
+.main-content-title h3{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0px !important;
+}
+.main-content .form-check{
+  border-bottom: 1px solid black;
+  border-top: none;
+  padding: 0px 10px;
+  padding-right: 0px;
+}
+.main-content .form-check label{
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  color: #181c32;
+}
+.main-content .form-check div:last-child{
+  width: 100%;
+  max-width: 30px;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid;
+}
+.main-content .form-check .form-check-input{
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+}
+.main-content .form-check {
+  margin-bottom: 0px !important;
+}
+.main-content .form-check p{
+  margin-bottom: 0px !important;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: #181c32;
+}
+.main-content-title h5{
+  font-size: 14px;
+  margin-top: 5px;
+}
+.main-content .form-check:last-child{
+  border-bottom: none;
+}
+
+
+@media only screen and (max-width: 575px) {
+  .main-content .form-check{
+      flex-direction: row-reverse;
+      justify-content: start;
+      align-items: start;
+      padding: 10px 10px;
+      
+  }
+  .main-content .form-check div:last-child{
+      border-left: none;
+      padding-top: 5px;
+      max-width: 20px;
+  }
+  .main-content-title h3 {
+      font-size: 16px;
+  }
+  
+}

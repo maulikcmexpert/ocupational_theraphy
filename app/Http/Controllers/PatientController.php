@@ -216,6 +216,15 @@ class PatientController extends Controller
         return view('admin.main_layout', $data);
     }
 
+
+    public function createConsentForm()
+    {
+        $data['page'] = 'patient.consentfrom';
+        $data['role_id'] = Auth::guard('web')->user()->role_id;
+        $data['css'] = ['consent'];
+        return view('admin.main_layout', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -465,6 +474,8 @@ class PatientController extends Controller
             return redirect()->route('patient.edit', $id);
         }
     }
+
+
 
     public function group_assignment($id)
     {

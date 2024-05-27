@@ -220,7 +220,7 @@ class PatientController extends Controller
 
     public function createConsentForm()
     {
-        dd("Hi");
+
         $data['page'] = 'patient.consentfrom';
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['css'] = ['consent'];

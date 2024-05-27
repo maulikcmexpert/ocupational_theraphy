@@ -27,8 +27,8 @@
                                             {{$val->question}}
 
                                             <?php if ($val->ques_type == 'text') { ?>
-                                                <input class="form-control" type="hidden" name="ques_ans['question'][]" value="{{ $val->id}}">
-                                                <input class="form-control" type="text" name="ques_ans['answer'][]" value="">
+                                                <input class="form-control" type="hidden" name="ques_ans[question][]" value="{{ $val->id}}">
+                                                <input class="form-control" type="text" name="ques_ans[answer][]" value="">
                                             <?php } ?>
                                         </label>
                                     </div>

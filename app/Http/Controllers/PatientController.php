@@ -235,7 +235,7 @@ class PatientController extends Controller
 
     public function consentFormStore(Request $request, string $id)
     {
-        dd($request);
+        dd($request->question_id);
     }
 
     /**

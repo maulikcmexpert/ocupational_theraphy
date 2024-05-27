@@ -135,7 +135,7 @@
                             <?php
                             foreach ($question as $key => $val) {
 
-                                if ($key >= 12 && $key <= 16) {
+                                if ($key >= 11 && $key <= 15) {
 
 
 

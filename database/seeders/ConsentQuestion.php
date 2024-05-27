@@ -13,7 +13,7 @@ class ConsentQuestion extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
+        DB::table('consent_patient_question')->insert([
             [
                 'question' => 'I am the patient/client',
                 'ques_type' => 'check',
@@ -137,7 +137,7 @@ class ConsentQuestion extends Seeder
             ],
             [
                 'question' => 'Obtaining of health information: I agree that, where it is in my best interest, the occupational therapists and staff associated with Grounded.Well.Wise Pty Ltd. can obtain information and/or records from any other healthcare professional simultaneously involved in my care.',
-                'ques_type' => 'text',
+                'ques_type' => 'text_two',
             ],
             [
                 'question' => 'Minors: If you are a minor, your parents may be legally entitled to some information about your therapy. Your therapist will discuss with you what information is appropriate for them to receive and which issues are more appropriately kept confidential.',

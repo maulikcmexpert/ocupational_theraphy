@@ -74,6 +74,7 @@ class PatientController extends Controller
                     $change_password_url = route('patient.changePassword', $cryptId);
                     $apomReport = route('patient.apom_assessment_report', $cryptId);
                     $check_patient_status = route('patient.check_patient_status', $cryptId);
+                    $consentForm = route('patient.consentForm', $cryptId);
                     $actionBtn = ' <div class="action-icon">
                   
                     <a class="" href="' . $edit_url . '"  title="Edit"><i class="fas fa-edit" ></i></a>
@@ -142,6 +143,8 @@ class PatientController extends Controller
                     if (Auth::guard('web')->user()->role_id != 3) {
                         $actionBtn .= '<a class="" href="' . $change_password_url . '"  title="Change Password" id="change_password_doctor" ><i class="fas fa-key"></i></a> ';
                     }
+                    $actionBtn .= ' <a class="" href="' . $consentForm . '"  title="Consent Form"><i class="fas fa-edit" ></i></a>';
+
                     '</div>';
                     return $actionBtn;
                 })

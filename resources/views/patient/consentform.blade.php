@@ -28,7 +28,7 @@
 
                                             <?php if ($val->ques_type == 'text') { ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-control" type="text" name="answer_{{ $val->id}}">
+                                                <input class="form-control" type="text" name="answer[]">
                                             <?php } ?>
                                         </label>
                                     </div>
@@ -37,7 +37,6 @@
                                         <?php if ($val->ques_type == 'check') {
                                         ?>
                                             <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                            <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                             <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                         <?php }
                                         ?>
@@ -77,7 +76,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -118,7 +116,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -158,7 +155,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -199,7 +195,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -234,7 +229,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -271,7 +265,6 @@
                                             <?php if ($val->ques_type == 'check') {
                                             ?>
                                                 <input class="form-control" type="hidden" name="question_id[]" value="{{ $val->id}}">
-                                                <input class="form-check-input" name="answer[]" type="hidden" value="0" id="flexCheckDefault">
                                                 <input class="form-check-input" name="answer[]" type="checkbox" value="1" id="flexCheckDefault">
                                             <?php }
                                             ?>
@@ -283,7 +276,7 @@
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    My treating team, namely: <input class="form-control" type="text" name="answer_{{ $val->id}}_1">
+                                                    My treating team, namely: <input class="form-control" type="text" name="answer[]">
                                                 </label>
                                             </div>
                                             <div>
@@ -293,7 +286,7 @@
                                         <div class="form-check">
                                             <div>
                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                    Family members, namely: <input class="form-control" type="text" name="answer_{{ $val->id}}_2">
+                                                    Family members, namely: <input class="form-control" type="text" name="answer[]">
                                                 </label>
                                             </div>
                                             <div>

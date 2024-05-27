@@ -245,177 +245,59 @@
                             <h5>(POPI and PAIA manuals are available at www.groundedwellwise.co.za)</h5>
                         </div>
                         <div class="main-content">
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I understand that the occuptional therapists and staff associated with Grounded.Well.Wise Pty Ltd will always act so as to protect my privacy even if I do consent to share personal information. I may direct the occupational therapist to share information with whomever I choose, and I can change your mind and revoke that permission at any time
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I understand that Grounded.Well.Wise Pty Ltd. will collect information about me and my health, in order to provide healthcare services. If I do not disclose all relevant information, or do not disclose full information, I understand that it may have a negative impact on my health and healthcare services to be provided.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        The occuptional therapists and staff associated with Grounded.Well.Wise Pty Ltd will use my information for the purposes of providing treatment and care, to bill me for the costs of such treatment, to do healthcare and or financial follow-ups.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I understand that my personal information may be disclosed by the practice in response to a specific request by a law enforcement agency, subpoena, court order, or as required by law.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        If my information is to be used for any other purpose, I will be asked to consent to such use separately.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Research:</strong> I agree that the results of the assessment and/or treatment may be anonymously used for purposes of research and/or data-collection purposes, provided that such information is de-identified with sufficient safeguards.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Emergency:</strong> If there is an emergency during a therapy session or after termination in which the therapist becomes concerned about my personal safety, the possibility of me injuring someone else, or about me requiring psychiatric care, the therapist will contact the person whose name I have provided during my intake as my next of kin.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Sharing of health information: I agree that information relating to my health status and treatment can be disclosed to
-                                    </label>
-                                </div>
-                                <div>
+                            <?php
+                            foreach ($question as $key => $val) {
+                                if ($key >= 17 && $key <= 21) {
+                            ?>
 
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        My treating team, namely: ______________________
-                                    </label>
-                                </div>
-                                <div>
+                                    <div class="form-check">
+                                        <div>
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{$val->question}}
+                                                <?php if ($val->ques_type == 'text') { ?>
+                                                    <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                    <input class="form-control" type="text" name="answer">
+                                                <?php } ?>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <?php if ($val->ques_type == 'check') {
+                                            ?>
+                                                <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                                <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                            <?php }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <?php if ($val->ques_type == 'text_two') {
+                                    ?>
+                                        <input class="form-control" type="hidden" name="question_id" value="{{ $val->id}}">
+                                        <div class="form-check">
+                                            <div>
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    My treating team, namely: <input class="form-control" type="text" name="answer">
+                                                </label>
+                                            </div>
+                                            <div>
 
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Family members, namely: ______________________
-                                    </label>
-                                </div>
-                                <div>
+                                            </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <div>
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Family members, namely: <input class="form-control" type="text" name="answer">
+                                                </label>
+                                            </div>
+                                            <div>
 
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I give permission that the occupational therapists associated with Grounded.Well.Wise Pty Ltd. share appropriate information with my medical scheme for billing and/or review purposes.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Obtaining of health information:</strong> I agree that, where it is in my best interest, the occupational therapists and staff associated with Grounded.Well.Wise Pty Ltd. can obtain information and/or records from any other healthcare professional simultaneously involved in my care.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        My treating team, namely: ______________________
-                                    </label>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Family members, namely: ______________________
-                                    </label>
-                                </div>
-                                <div>
-
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Minors:</strong> If you are a minor, your parents may be legally entitled to some information about your therapy. Your therapist will discuss with you what information is appropriate for them to receive and which issues are more appropriately kept confidential.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Confidentiality Of E-Mail, Voice Mail And Text Communication:</strong> I understand that while the occupational therapists and staff associated with Grounded.Well.Wise Pty Ltd. do their best to protect my confidentiality and security of the services used, e-mail, voice mail, and text communication may be accessed by unauthorized people, compromising the privacy and confidentiality of such communication.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <div>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <strong>Right to withdraw:</strong> I have the right to withdraw any consent given or refused at any future visit. Should this occur, I will inform the occupational therapist or staff associated with Grounded.Well.Wise Pty Ltd. of this decision by email admin@groundedwellwise.co.za and sign another consent form, indicating your amended decision.
-                                    </label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </div>
-
+                                            </div>
+                                        </div>
+                                    <?php }
+                                    ?>
+                            <?php
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

@@ -247,7 +247,7 @@
                         <div class="main-content">
                             <?php
                             foreach ($question as $key => $val) {
-                                if ($key >= 17 && $key <= 21) {
+                                if ($key >= 22) {
                             ?>
 
                                     <div class="form-check">

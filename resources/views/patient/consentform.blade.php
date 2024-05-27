@@ -24,17 +24,61 @@
                                     <div>
                                         <label class="form-check-label" for="flexCheckDefault">
                                             {{$val->question}}
+
+                                            <?php if ($val->ques_type == 'text') { ?>
+                                                <input class="form-control" type="text" name="answer">
+                                            <?php } ?>
+                                        </label>
+                                    </div>
+
+                                    <?php if ($val->ques_type == 'check') {
+                                    ?>
+                                        <div>
+                                            <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
+                                        </div>
+                                    <?php }
+                                    ?>
+                                </div>
+                                <div class="form-check">
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            I am authorized to provide consent to treatment on behalf of the patient / client, who is unable to give consent. (The patient is under 12 years of age).
                                         </label>
                                     </div>
                                     <div>
-                                        <?php if ($val->ques_type == 'check') {
-                                        ?>
-                                            <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-                                        <?php }
-                                        ?>
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     </div>
                                 </div>
+                                <div class="form-check">
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            I am authorized to provide consent to treatment on behalf of the patient / client, who is unable to give consent. (The patient is incapacitated /unconscious/mentally unfit to provide consent).
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <p>Relationship to patient / client (e.g. mother / father / partner / spouse/ etc): _________________________ </p>
+                                        </label>
+                                    </div>
+                                    <div>
 
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            I confirm that I have read and understand each of the terms and conditions contained in this agreement.
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    </div>
+                                </div>
                             <?php  } ?>
 
                         </div>

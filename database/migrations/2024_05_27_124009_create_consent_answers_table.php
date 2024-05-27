@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('consent_answers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('patient_id')->nullable();
+            $table->foreign('patient_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('question_id')->nullable();
+            $table->foreign('question_id')->references('id')->on('consent_questions')->onDelete('restrict');
+            $table->string('answer')->nullable();
             $table->timestamps();
         });
     }

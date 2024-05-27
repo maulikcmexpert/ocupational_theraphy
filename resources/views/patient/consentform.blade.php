@@ -31,13 +31,13 @@
                                         </label>
                                     </div>
 
-                                    <?php if ($val->ques_type == 'check') {
-                                    ?>
-                                        <div>
+                                    <div>
+                                        <?php if ($val->ques_type == 'check') {
+                                        ?>
                                             <input class="form-check-input" name="answer" type="checkbox" value="1" id="flexCheckDefault">
-                                        </div>
-                                    <?php }
-                                    ?>
+                                        <?php }
+                                        ?>
+                                    </div>
                                 </div>
 
                             <?php  } ?>

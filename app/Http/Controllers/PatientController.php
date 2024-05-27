@@ -239,7 +239,7 @@ class PatientController extends Controller
         $patientId = decrypt($id);
 
         foreach ($request->questions as $val) {
-            dd($val->question);
+            dd($val);
             $answer = new ConsentAnswer();
             $answer->patient_id = $patientId;
             $answer->question_id = $val->question;

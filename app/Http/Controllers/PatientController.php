@@ -239,11 +239,11 @@ class PatientController extends Controller
         $patientId = decrypt($id);
 
         foreach ($request->questions as $val) {
-            dd($val['question']);
+
             $answer = new ConsentAnswer();
             $answer->patient_id = $patientId;
-            $answer->question_id = $val->question;
-            $answer->answer = is_array($val->answer) ? json_encode($val->answer) : $val->answer;
+            $answer->question_id = $val['question'];
+            $answer->answer = is_array($val['answer']) ? json_encode($val['answer']) : $val['answer'];
             $answer->save();
         }
 

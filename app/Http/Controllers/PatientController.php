@@ -30,6 +30,7 @@ use App\Models\Admin\PatientApoms;
 use App\Models\Admin\Group_session;
 use App\Models\Admin\Patient_discharge_master;
 use App\Http\Requests\PostchangePassword;
+use App\Models\ConsentAnswer;
 use App\Models\ConsentQuestion;
 use Illuminate\Support\Facades\Hash;
 use PDF;
@@ -235,9 +236,19 @@ class PatientController extends Controller
 
     public function consentFormStore(Request $request, string $id)
     {
+        $patientId = decrypt($id);
         dd($request->questions);
-        foreach ($request->question_id as $val) {
+
+        foreach ($request->questions as $val) {
+            $answer = new ConsentAnswer();
+            $answer->patient_id = $patientId;
+            $answer->question_id = $val->question;
+            $answer->answer = is_array($val->answer) ? json_encode($val->answer) : $val->answer;
+            $answer->save();
         }
+
+        toastr()->success('Patient Consent form submited successfully !');
+        return redirect()->route('patient.index');
     }
 
     /**

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('consent_patient_question', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->enum('ques_type', ['text', 'check']);
+            $table->enum('ques_type', ['text', 'text_two', 'check']);
             $table->timestamps();
         });
     }

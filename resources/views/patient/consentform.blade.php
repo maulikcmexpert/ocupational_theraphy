@@ -255,7 +255,8 @@
         </div>
     </div>
     </div>
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input type="submit" class="btn btn-primary" value="Send">
+
     </form>
     </div>
     </div>

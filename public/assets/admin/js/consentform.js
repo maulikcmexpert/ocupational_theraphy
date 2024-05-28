@@ -12,7 +12,7 @@ $(document).ready(function () {
   var validationRules = {};
   var validationMessages = {};
   for (var i = 0; i <= 34; i++) {
-    var fieldName = "questions[" + i + "][answer][]";
+    var fieldName = "questions[" + i + "][answer]";
     validationRules[fieldName] = {
       atLeastOneCheckbox: true,
     };

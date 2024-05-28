@@ -11,10 +11,10 @@ class ConsentAnswer extends Model
 
     public function question()
     {
-        $this->belongsTo(ConsentQuestion::class);
+        return $this->belongsTo(ConsentQuestion::class);
     }
     public function user()
     {
-        $this->belongsTo(User::class, 'patient_id', 'id');
+        return   $this->belongsTo(User::class, 'patient_id', 'id');
     }
 }

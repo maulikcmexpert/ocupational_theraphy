@@ -11,6 +11,6 @@ class ConsentQuestion extends Model
 
     public function answer()
     {
-        $this->hasOne(ConsentAnswer::class);
+        return $this->hasOne(ConsentAnswer::class);
     }
 }

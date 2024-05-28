@@ -9,7 +9,7 @@ $(document).ready(function () {
   );
 
   // Initialize jQuery Validate plugin
-  $("#myForm").validate({
+  $("#consentForm").validate({
     rules: {
       "questions[0][answer]": {
         checkboxRequired: true,

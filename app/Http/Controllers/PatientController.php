@@ -255,7 +255,7 @@ class PatientController extends Controller
         } else {
             toastr()->success('Patient Consent form already submited successfully !');
         }
-        return redirect()->route('patient.consentform');
+        return redirect()->route('patient.consentform', $patientId);
     }
 
     /**

@@ -618,6 +618,11 @@ class PatientController extends Controller
     {
         $patient_id = decrypt($id);
 
+        $checkIsConsentForm = ConsentAnswer::where('patient_id', $patient_id)->count();
+        if ($checkIsConsentForm == 0) {
+
+            return redirect()->route('patient.consentForm', $patient_id);
+        }
         $data['page'] = 'patient.recoveryAssessment';
         $data['js'] = ['patient'];
         $data['role_id'] = Auth::guard('web')->user()->role_id;

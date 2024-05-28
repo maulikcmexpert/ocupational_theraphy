@@ -145,7 +145,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/export-csv', [CSVController::class, 'export'])->name('export.csv');
     Route::get('patient/group_assignment/{id}', [PatientController::class, 'group_assignment'])->name('patient.groupAssign');
     Route::post('patient/assign_group_to_patient', [PatientController::class, 'assignGroupToPatient'])->name('patient.assignGroup');
-    Route::get('patient/patient_recovery_assessment/{id}/{test_type}', [PatientController::class, 'recoveryAssessment'])->name('patient.recoveryAssessment');
+    Route::get('patient/patient_recovery_assessment/{id}/{test_type}', [PatientController::class, 'recoveryAssessment'])->name('patient.recoveryAssessment')->middleware('checkComplateConsentForm');
     Route::post('patient/recovery_assessment_of_patient', [PatientController::class, 'recoveryAssessmentPatient'])->name('patient.recoveryAssessmentPatient');
 
     Route::get('patient/patient_apom/{id}/{test_type}', [PatientController::class, 'patientApom'])->name('patient.patientApom');

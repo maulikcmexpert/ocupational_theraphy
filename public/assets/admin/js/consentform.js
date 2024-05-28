@@ -26,7 +26,7 @@ $(document).ready(function () {
     submitHandler: function (form) {
       // Check if at least one checkbox is checked before form submission
       if ($("input[name^='questions'][type='checkbox']:checked").length === 0) {
-        $("label .error").html("Please select at least one.");
+        $(".error").html("Please select at least one.");
         return false; // Prevent form submission
       } else {
         form.submit(); // Submit the form if at least one checkbox is checked

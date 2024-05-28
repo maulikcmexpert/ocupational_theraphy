@@ -19,7 +19,7 @@
                 <h3>General Consent Form for GWW APP</h3>
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>
                 <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="#">click here.</a></p>
-                <label id="" class="error"></label>
+                <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label>
                 <div class="row">
                     <div class="col-12 mb-3">
                         <div class="main-content-wrp">
@@ -34,7 +34,7 @@
                                 <div class="form-check">
                                     <div>
                                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                            { {{ $val->question }}}
+                                            {{ $val->question }}
                                             @if ($val->ques_type == 'text')
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
@@ -63,7 +63,7 @@
                                 @if ($key >= 5 && $key <= 8) <div class="form-check">
                                     <div>
                                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                            { {{ @$val->question }}}
+                                            {{ $val->question }}
                                             @if ($val->ques_type == 'text')
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">

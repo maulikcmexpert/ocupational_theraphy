@@ -114,6 +114,7 @@ class ApiAuthController extends BaseController
             $token = $Patients->createToken('token')->accessToken;
             $success['token'] =  $token;
             $success['name'] =  $Patients->first_name . ' ' . $Patients->last_name;
+            $success['id'] =  $Patients->id;
 
 
             return $this->sendResponse($success, 'User register successfully.');

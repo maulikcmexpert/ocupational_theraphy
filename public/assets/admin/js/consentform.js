@@ -1,7 +1,6 @@
 $(document).ready(function () {
   // Add a custom validation method for checkbox
-  alert(0);
-  return false;
+
   // Initialize jQuery Validate plugin
   $("#consentForm").validate({
     rules: {

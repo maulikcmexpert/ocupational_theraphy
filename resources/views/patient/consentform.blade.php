@@ -13,6 +13,7 @@
     @if(count($consentAnswers) == 0)
     <div class="container">
         <div class="form-main">
+            <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label>
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <h3>General Consent Form for GWW APP</h3>

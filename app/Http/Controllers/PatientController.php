@@ -230,7 +230,7 @@ class PatientController extends Controller
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
-        $data['consentAnswers'] = ConsentAnswer::where('patient_id', $paitent_id)->get();
+        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $paitent_id)->get();
         return view('admin.main_layout', $data);
     }
 

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ConsentQuestion extends Model
 {
     use HasFactory;
+
+    public function answer()
+    {
+        $this->hasOne(ConsentAnswer::class);
+    }
 }

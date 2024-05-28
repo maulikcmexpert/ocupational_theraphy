@@ -108,6 +108,12 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function consentAnswer()
+    {
+        return $this->hasMany(ConsentAnswer::class, 'patient_id');
+    }
+
+
 
 
     /**

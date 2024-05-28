@@ -251,11 +251,10 @@
 @else
 
 <div class="container">
-    <h3>Consent Form Answers for {{ $patient->name }}</h3>
     <div class="consent-form-answers">
         @foreach ($consentAnswers as $answer)
         <div class="consent-answer">
-            <strong>Question:</strong> {{ $answer->question }}
+            <strong>Question:</strong> {{ $answer->question->question }}
             <br>
             <strong>Answer:</strong>
             @if(is_array($answer->answer))

@@ -225,6 +225,7 @@ class PatientController extends Controller
     public function createConsentForm(string $id)
     {
 
+
         $data['page'] = 'patient.consentform';
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['css'] = ['consent'];

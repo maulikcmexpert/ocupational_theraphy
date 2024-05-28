@@ -1,4 +1,4 @@
-@if($consentAnswers == 0)
+@if(count($consentAnswers) == 0)
 <div class="container">
     <div class="form-main">
         <form method="POST" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">

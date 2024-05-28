@@ -75,7 +75,7 @@ class PatientController extends Controller
                     $change_password_url = route('patient.changePassword', $cryptId);
                     $apomReport = route('patient.apom_assessment_report', $cryptId);
                     $check_patient_status = route('patient.check_patient_status', $cryptId);
-                    $consentForm = route('patient.consentForm', $cryptId);
+                    $consentForm = route('patient.consentForm', $row->id);
                     $actionBtn = ' <div class="action-icon">
                   
                     <a class="" href="' . $edit_url . '"  title="Edit"><i class="fas fa-edit" ></i></a>
@@ -224,13 +224,13 @@ class PatientController extends Controller
 
     public function createConsentForm(string $id)
     {
-        $paitent_id =  decrypt($id);
+
         $data['page'] = 'patient.consentform';
         $data['role_id'] = Auth::guard('web')->user()->role_id;
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
-        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $paitent_id)->get();
+        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $id)->get();
         return view('admin.main_layout', $data);
     }
 

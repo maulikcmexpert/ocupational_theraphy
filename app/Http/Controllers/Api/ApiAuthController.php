@@ -12,6 +12,7 @@ use App\Models\Api\patientDetails;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Token;
 use App\Models\Admin\PatientRasMaster;
+use App\Models\ConsentAnswer;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
@@ -160,6 +161,12 @@ class ApiAuthController extends BaseController
 
                 $patient = Auth::user();
                 $checkRASComplated = PatientRasMaster::where(['patient_id' => $patient->id, 'test_type' => '0'])->count();
+                $checkConsentAns = ConsentAnswer::where(['patient_id' => $patient->id])->count();
+                $success['consent_done'] = false;
+                if ($checkConsentAns != 0) {
+                    $success['consent_done'] = true;
+                }
+
                 if ($patient->status == '1') {
                     Token::where('user_id', $patient->id)->delete();
                     if ($checkRASComplated == 0) {

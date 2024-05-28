@@ -227,12 +227,12 @@ class PatientController extends Controller
 
 
         $data['page'] = 'patient.consentform';
-        $data['role_id'] = Auth::guard('web')->user()->role_id;
+
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
         $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $id)->get();
-        return view('admin.main_layout', $data);
+        return view('patient.consentform', $data);
     }
 
 
@@ -255,7 +255,7 @@ class PatientController extends Controller
         } else {
             toastr()->success('Patient Consent form already submited successfully !');
         }
-        return redirect()->route('patient.index');
+        return redirect()->route('patient.consentform');
     }
 
     /**

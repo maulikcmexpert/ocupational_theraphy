@@ -288,4 +288,37 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
+<script>
+    $(document).ready(function() {
+        $("#consentForm").validate({
+            rules: {
+                @foreach($question as $key => $val)
+                @if($val - > ques_type == 'text' || $val - > ques_type == 'text_two')
+                "questions[{{ $key }}][answer]": {
+                    required: true,
+                    minlength: 2
+                },
+                @endif
+                @endforeach
+            },
+            messages: {
+                @foreach($question as $key => $val)
+                @if($val - > ques_type == 'text' || $val - > ques_type == 'text_two')
+                "questions[{{ $key }}][answer]": {
+                    required: "This field is required.",
+                    minlength: "Your answer must be at least 2 characters long."
+                },
+                @endif
+                @endforeach
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent());
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+    });
+</script>
+
 </html>

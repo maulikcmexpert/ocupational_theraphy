@@ -251,7 +251,7 @@ class PatientController extends Controller
 
 
         $data['page'] = 'patient.consentform';
-
+        $data['js'] = 'consentform';
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();

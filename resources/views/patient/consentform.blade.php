@@ -13,7 +13,7 @@
     @if(count($consentAnswers) == 0)
     <div class="container">
         <div class="form-main">
-            <form method="POST" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
+            <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <h3>General Consent Form for GWW APP</h3>
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>

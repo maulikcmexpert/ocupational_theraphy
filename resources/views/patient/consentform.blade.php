@@ -1,3 +1,4 @@
+@if($consentAnswers == 0)
 <div class="container">
     <div class="form-main">
         <form method="POST" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
@@ -242,9 +243,33 @@
     </div>
 </div>
 </div>
-@if(count($answer) == 0)
 <input class="btn btn-primary" type="submit" value="Submit">
-@endif
 </form>
 </div>
 </div>
+
+@else
+
+<div class="container">
+    <h3>Consent Form Answers for {{ $patient->name }}</h3>
+    <div class="consent-form-answers">
+        @foreach ($consentAnswers as $answer)
+        <div class="consent-answer">
+            <strong>Question:</strong> {{ $answer->question }}
+            <br>
+            <strong>Answer:</strong>
+            @if(is_array($answer->answer))
+            <ul>
+                @foreach($answer->answer as $item)
+                <li>{{ $item }}</li>
+                @endforeach
+            </ul>
+            @else
+            {{ $answer->answer }}
+            @endif
+        </div>
+        <hr>
+        @endforeach
+    </div>
+
+    @endif

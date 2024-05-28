@@ -230,7 +230,7 @@ class PatientController extends Controller
         $data['css'] = ['consent'];
         $data['patient_id'] = $id;
         $data['question'] = ConsentQuestion::get();
-        $data['answer'] = ConsentAnswer::get();
+        $data['consentAnswers'] = ConsentAnswer::where('patient_id', $paitent_id)->get();
         return view('admin.main_layout', $data);
     }
 
@@ -240,7 +240,7 @@ class PatientController extends Controller
         $patientId = decrypt($id);
 
         $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
-        if (checkIsCompleted == 0) {
+        if ($checkIsCompleted == 0) {
 
             foreach ($request->questions as $val) {
 

@@ -158,4 +158,5 @@ Route::middleware('auth')->group(function () {
     Route::get('patient/check_patient_status/{patient_id}', [PatientController::class, 'CheckPatientStatus'])->name('patient.check_patient_status');
 });
 Route::get('patient/create_consent_form/{id}', [PatientController::class, 'createConsentForm'])->name('patient.consentForm');
+Route::get('patient/create_consent_form/{id}/submited', [PatientController::class, 'createConsentFormSubmited'])->name('patient.consentFormSubmited');
 Route::post('patient/consent_form_store/{id}', [PatientController::class, 'consentFormStore'])->name('patient.consentFormStore');

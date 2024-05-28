@@ -222,18 +222,6 @@ class PatientController extends Controller
     }
 
 
-    public function createConsentForm(string $id)
-    {
-
-
-        $data['page'] = 'patient.consentform';
-
-        $data['css'] = ['consent'];
-        $data['patient_id'] = $id;
-        $data['question'] = ConsentQuestion::get();
-        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $id)->get();
-        return view('patient.consentform', $data);
-    }
 
 
     public function consentFormStore(Request $request, string $id)
@@ -255,8 +243,34 @@ class PatientController extends Controller
         } else {
             toastr()->success('Patient Consent form already submited successfully !');
         }
-        return redirect('patient/create_consent_form/' . $patientId);
+        return redirect('patient/create_consent_form/' . $patientId . '/submited');
     }
+
+    public function createConsentForm(string $id)
+    {
+
+
+        $data['page'] = 'patient.consentform';
+
+        $data['css'] = ['consent'];
+        $data['patient_id'] = $id;
+        $data['question'] = ConsentQuestion::get();
+        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $id)->get();
+        return view('patient.consentform', $data);
+    }
+
+    public function createConsentFormSubmited(string $id)
+    {
+        $data['page'] = 'patient.consentform';
+
+        $data['css'] = ['consent'];
+        $data['patient_id'] = $id;
+        $data['question'] = ConsentQuestion::get();
+        $data['consentAnswers'] = ConsentAnswer::with(['question'])->where('patient_id', $id)->get();
+        return view('patient.consentform', $data);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

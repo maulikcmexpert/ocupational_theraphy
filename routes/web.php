@@ -137,8 +137,7 @@ Route::middleware('auth')->group(function () {
     ]);
     Route::post('patient/change_status', [PatientController::class, 'change_status']);
 
-    Route::get('patient/create_consent_form/{id}', [PatientController::class, 'createConsentForm'])->name('patient.consentForm');
-    Route::post('patient/consent_form_store/{id}', [PatientController::class, 'consentFormStore'])->name('patient.consentFormStore');
+
 
     Route::post('patient/check_ezmed_number_is_already', [PatientController::class, 'check_ezmed_number_is_already']);
     Route::post('patient/check_identity_number_is_already', [PatientController::class, 'check_identity_number_is_already']);
@@ -158,3 +157,5 @@ Route::middleware('auth')->group(function () {
     Route::post('patient/apom_assessment_pdf_genarate', [PatientController::class, 'apomAssessmentPdfGenarate'])->name('patient.apom_assessment_pdf_genarate');
     Route::get('patient/check_patient_status/{patient_id}', [PatientController::class, 'CheckPatientStatus'])->name('patient.check_patient_status');
 });
+Route::get('patient/create_consent_form/{id}', [PatientController::class, 'createConsentForm'])->name('patient.consentForm');
+Route::post('patient/consent_form_store/{id}', [PatientController::class, 'consentFormStore'])->name('patient.consentFormStore');

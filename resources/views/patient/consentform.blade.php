@@ -56,7 +56,7 @@
                                         @endphp
                                         @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
                                         @php
-                                        $checkbox = "checked";
+                                        $checkbox = "checked disabled";
                                         @endphp
                                         @endif
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">

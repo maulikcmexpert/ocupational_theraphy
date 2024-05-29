@@ -299,18 +299,13 @@
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                 @php
                 $explodeAns = json_decode($consentAnswers[$key]->answer);
-                dd(json_decode($consentAnswers[$key]->answer));
+
                 @endphp
-                @if(is_array($consentAnswers[$key]->answer))
-                @php
-                $explodeAns = json_decode($consentAnswers[$key]->answer);
-                dd($explodeAns);
-                @endphp
-                @endif
+
                 <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            <span>My treating team, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]"></span>
+                            <span>My treating team, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]" value="{{(count($consentAnswers) != 0 && $explodeAns[0] != null)?$explodeAns[0]:''}}"></span>
                         </label>
                     </div>
                     <div></div>
@@ -318,7 +313,7 @@
                 <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            <span>Family members, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]"></span>
+                            <span>Family members, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]" value="{{(count($consentAnswers) != 0 && $explodeAns[1] != null)?$explodeAns[1]:''}}"></span>
                         </label>
                     </div>
                     <div></div>

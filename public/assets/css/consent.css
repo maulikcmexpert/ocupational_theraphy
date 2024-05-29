@@ -13,7 +13,7 @@ p{
 .form-wrpper{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
   border-radius: 5px;
-  padding: 30px;
+  padding: 10px 30px 30px;
 }
 .form-wrpper h3{
   color: #181c32;

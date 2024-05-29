@@ -153,7 +153,7 @@
             <div class="main-content">
                 @foreach ($question as $key => $val)
                 @if ($key == 16)
-                <div class="form-check text-type-input">
+                <div class="form-check">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             {{ $val->question }}
@@ -215,7 +215,7 @@
             <div class="main-content">
                 @foreach ($question as $key => $val)
                 @if ($key >= 22)
-                <div class="form-check text-type-input">
+                <div class="form-check ">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             {{ $val->question }}
@@ -235,7 +235,7 @@
                 </div>
                 @if ($val->ques_type == 'text_two')
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                <div class="form-check">
+                <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             My treating team, namely: <input class="form-control" type="text" name="questions[{{ $key }}][answer][]">
@@ -243,7 +243,7 @@
                     </div>
                     <div></div>
                 </div>
-                <div class="form-check">
+                <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             Family members, namely: <input class="form-control" type="text" name="questions[{{ $key }}][answer][]">

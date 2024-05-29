@@ -15,12 +15,13 @@
     @if(count($consentAnswers) == 0)
     <div class="container">
         <div class="form-main">
-
-            <img alt="Logo" src="https://groundedwellwise.cmexpertiseinfotech.com/assets/logo.png" class="h-100px logo">
-
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
-                <h3>General Consent Form for GWW APP</h3>
+                <div class="form-logo-title">
+                    <span><img alt="Logo" src="https://groundedwellwise.cmexpertiseinfotech.com/assets/logo.png" class="h-100px logo"></span>
+                    <h3>General Consent Form for GWW APP</h3>
+                </div>
+
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>
                 <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="#">click here.</a></p>
                 <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label>

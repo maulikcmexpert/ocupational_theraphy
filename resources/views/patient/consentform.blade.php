@@ -12,9 +12,7 @@
 </head>
 
 <body>
-    <?php
-    dd($consentAnswers[0]->answer);
-    ?>
+
     <div class="container">
         <div class="form-main">
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
@@ -55,7 +53,7 @@
                                         @if ($val->ques_type == 'check')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" checked>
                                         @endif
                                     </div>
                                 </div>

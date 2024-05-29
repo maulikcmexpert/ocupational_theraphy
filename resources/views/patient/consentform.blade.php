@@ -100,7 +100,7 @@
                             @if ($key >= 9 && $key <= 10) <div class="form-check">
                                 <div>
                                     <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                        {{ $val->question }}
+                                        {!! $val->question !!}
                                         @if ($val->ques_type == 'text')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
@@ -130,7 +130,7 @@
                     @if ($key >= 11 && $key <= 15) <div class="form-check">
                         <div>
                             <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                {{ $val->question }}
+                                {!! $val->question !!}
                                 @if ($val->ques_type == 'text')
                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                 <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
@@ -161,7 +161,7 @@
                 <div class="form-check">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            {{ $val->question }}
+                            {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
@@ -191,7 +191,7 @@
                 @if ($key >= 17 && $key <= 21) <div class="form-check">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            {{ $val->question }}
+                            {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
@@ -223,7 +223,7 @@
                 <div class="form-check ">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            {{ $val->question }}
+                            {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">

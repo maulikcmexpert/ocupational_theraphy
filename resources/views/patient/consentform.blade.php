@@ -299,7 +299,7 @@
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                 @php
                 $explodeAns = json_decode($consentAnswers[$key]->answer);
-                dd($consentAnswers[$key]->answer);
+                dd(json_decode($consentAnswers[$key]->answer));
                 @endphp
                 @if(is_array($consentAnswers[$key]->answer))
                 @php

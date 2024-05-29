@@ -166,7 +166,8 @@ class PatientController extends Controller
                     $cryptId = encrypt($row->id);
                     $test_type = 0;
                     $rasForm = route('patient.recoveryAssessment', [$cryptId, $test_type]);
-
+                    $consentForm = route('patient.consentForm', $row->id);
+                    $checkConsentForm = ConsentAnswer::where('user_id', $row->id)->count();
 
                     $checkRASInitialFormStaus = PatientRasMaster::where(['patient_id' => $row->id, 'test_type' => '0'])->count();
                     $checkRASFinalFormStaus = PatientRasMaster::where(['patient_id' => $row->id, 'test_type' => '1'])->count();
@@ -177,8 +178,11 @@ class PatientController extends Controller
                     } elseif (($checkRASInitialFormStaus != 0) && ($checkRASFinalFormStaus != 0)) {
                         $classbtn = "btn-success";
                     }
+                    if ($checkConsentForm != 0) {
 
-                    return   '<a class="btn ' . $classbtn . '" href="' . $rasForm . '"  role="button" >RAS-24</a>';
+                        return   '<a class="btn ' . $classbtn . '" href="' . $rasForm . '"  role="button" >RAS-24</a>';
+                    }
+                    return ' <a class="btn ' . $classbtn . '" href="' . $consentForm . '" target="_blank"   role="Button">RAS-24</a>';
                 })
 
 

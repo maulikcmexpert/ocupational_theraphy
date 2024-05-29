@@ -43,7 +43,7 @@
                                             @if ($val->ques_type == 'text')
                                             <span>
                                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                                             </span>
                                             @endif
                                         </label>
@@ -89,7 +89,7 @@
                                             {!! $val->question !!}
                                             @if ($val->ques_type == 'text')
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                                             @endif
                                         </label>
                                     </div>
@@ -138,7 +138,7 @@
                                         {!! $val->question !!}
                                         @if ($val->ques_type == 'text')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                        <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                                        <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                                         @endif
                                     </label>
                                 </div>
@@ -184,7 +184,7 @@
                                 {!! $val->question !!}
                                 @if ($val->ques_type == 'text')
                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                                <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                                 @endif
                             </label>
                         </div>
@@ -230,7 +230,7 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                             @endif
                         </label>
                     </div>
@@ -275,7 +275,7 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                             @endif
                         </label>
                     </div>
@@ -322,7 +322,7 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>>
                             @endif
                         </label>
                     </div>

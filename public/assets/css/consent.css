@@ -187,5 +187,8 @@ p{
   .text-type-input label{
     flex-direction: column;
   }
+  .form-wrpper {
+    padding: 30px 15px;
+}
   
 }

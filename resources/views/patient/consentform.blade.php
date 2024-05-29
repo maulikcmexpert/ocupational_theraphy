@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php dd($consentAnswers[0]['answer']); ?>
+    <?php dd($consentAnswers); ?>
     <div class="container">
         <div class="form-main">
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">

@@ -167,7 +167,7 @@ class PatientController extends Controller
                     $test_type = 0;
                     $rasForm = route('patient.recoveryAssessment', [$cryptId, $test_type]);
                     $consentForm = route('patient.consentForm', $row->id);
-                    $checkConsentForm = ConsentAnswer::where('user_id', $row->id)->count();
+                    $checkConsentForm = ConsentAnswer::where('patient_id', $row->id)->count();
 
                     $checkRASInitialFormStaus = PatientRasMaster::where(['patient_id' => $row->id, 'test_type' => '0'])->count();
                     $checkRASFinalFormStaus = PatientRasMaster::where(['patient_id' => $row->id, 'test_type' => '1'])->count();

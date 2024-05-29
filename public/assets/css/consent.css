@@ -143,5 +143,8 @@ p{
   .main-content-title h3 {
       font-size: 16px;
   }
+  .text-type-input label{
+    flex-direction: column;
+  }
   
 }

@@ -15,6 +15,7 @@
 
     <div class="container">
         <div class="form-main">
+            <label id="consentFormError" class="error"></label>
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <div class="form-logo-title">
@@ -47,7 +48,7 @@
                                             </span>
                                             @endif
                                         </label>
-                                        <label id="questions[0][answer]-error" class="error" for="questions[{{ $key }}][answer]"></label>
+
                                     </div>
                                     <div>
                                         <?php

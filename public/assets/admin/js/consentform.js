@@ -17,23 +17,42 @@
 // });
 
 $(document).ready(function () {
-  // Add custom method to check at least one answer is selected
+  $("#myForm").on("submit", function (event) {
+    if ($('input[type="checkbox"]:checked').length === 0) {
+      alert("Please select at least one option.");
+      $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
+      event.preventDefault();
+    } else {
+      $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
+    }
+  });
 
-  // Initialize validation
-  $("#consentForm").validate({
-    rules: {
-      // Apply the custom rule to the first question as an example
-      "questions[0][answer]": {
-        required: true,
-      },
-    },
-    messages: {
-      "questions[0][answer]": {
-        required: "Please select at least one answer",
-      },
-    },
-    submitHandler: function (form) {
-      form.submit();
-    },
+  // Remove the outline when a checkbox is checked
+  $('input[type="checkbox"]').on("change", function () {
+    if ($(this).is(":checked")) {
+      $('input[type="checkbox"]').css("outline", "");
+    }
   });
 });
+
+// $(document).ready(function () {
+//   // Add custom method to check at least one answer is selected
+
+//   // Initialize validation
+//   $("#consentForm").validate({
+//     rules: {
+//       // Apply the custom rule to the first question as an example
+//       "questions[0][answer]": {
+//         required: true,
+//       },
+//     },
+//     messages: {
+//       "questions[0][answer]": {
+//         required: "Please select at least one answer",
+//       },
+//     },
+//     submitHandler: function (form) {
+//       form.submit();
+//     },
+//   });
+// });

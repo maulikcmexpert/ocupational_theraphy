@@ -297,6 +297,10 @@
                 </div>
                 @if ($val->ques_type == 'text_two')
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
+                @php
+                $explodeAns = json_decode($consentAnswers[$key]->answer);
+                dd($consentAnswers[$key]->answer);
+                @endphp
                 @if(is_array($consentAnswers[$key]->answer))
                 @php
                 $explodeAns = json_decode($consentAnswers[$key]->answer);

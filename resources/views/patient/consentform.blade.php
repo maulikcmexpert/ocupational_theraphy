@@ -36,12 +36,12 @@
                                     <div class="text-type-input">
                                         <label class="form-check-label " for="flexCheckDefault_{{ $val->id }}">
                                             <span>{{ $val->question }}</span>
+                                            @if ($val->ques_type == 'text')
                                             <span>
-                                                @if ($val->ques_type == 'text')
                                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                                 <input class="form-control " type="text" name="questions[{{ $key }}][answer]">
-                                                @endif
                                             </span>
+                                            @endif
                                         </label>
                                     </div>
                                     <div>

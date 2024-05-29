@@ -53,7 +53,7 @@
                                         @if ($val->ques_type == 'check')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" checked>
+                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{(count($consentAnswers) != '0' && $consentAnswers[0]->answer == '1')?$consentAnswers[0]->answer:''}}}checked>
                                         @endif
                                     </div>
                                 </div>

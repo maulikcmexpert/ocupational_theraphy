@@ -153,7 +153,7 @@
             <div class="main-content">
                 @foreach ($question as $key => $val)
                 @if ($key == 16)
-                <div class="form-check">
+                <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             {{ $val->question }}
@@ -215,7 +215,7 @@
             <div class="main-content">
                 @foreach ($question as $key => $val)
                 @if ($key >= 22)
-                <div class="form-check">
+                <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
                             {{ $val->question }}

@@ -70,7 +70,7 @@
                                 @if ($key >= 5 && $key <= 8) <div class="form-check">
                                     <div>
                                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                            {{ $val->question }}
+                                            { {{ $val->question }}}
                                             @if ($val->ques_type == 'text')
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                             <input class="form-control" type="text" name="questions[{{ $key }}][answer]">

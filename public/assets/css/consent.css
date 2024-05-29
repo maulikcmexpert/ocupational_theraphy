@@ -8,6 +8,10 @@ h3{
 p{
     margin-bottom: 0px !important;
 }
+.form-wrpper{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+  border-radius: 5px;
+}
 .form-wrpper h3{
   color: #181c32;
   font-size: 24px;

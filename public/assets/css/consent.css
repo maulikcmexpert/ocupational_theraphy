@@ -103,7 +103,7 @@ p{
   display: flex;
   align-items: start;
   gap: 10px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .main-content-wrp input:focus{
   box-shadow: none;

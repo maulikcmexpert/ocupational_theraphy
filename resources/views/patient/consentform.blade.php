@@ -31,14 +31,16 @@
                                 @if ($key == 5)
                                 @break
                                 @endif
-                                <div class="form-check">
+                                <div class="form-check text-type-input">
                                     <div>
-                                        <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                                            {{ $val->question }}
-                                            @if ($val->ques_type == 'text')
-                                            <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
-                                            @endif
+                                        <label class="form-check-label " for="flexCheckDefault_{{ $val->id }}">
+                                            <span>{{ $val->question }}</span>
+                                            <span>
+                                                @if ($val->ques_type == 'text')
+                                                <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
+                                                <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                                                @endif
+                                            </span>
                                         </label>
                                     </div>
                                     <div>

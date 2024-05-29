@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    @if(count($consentAnswers) == 0)
+
     <div class="container">
         <div class="form-main">
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
@@ -271,37 +271,12 @@
     </form>
     </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    @else
-
-    <div class="container">
-        <div class="consent-form-answers">
-            @foreach ($consentAnswers as $answer)
-            <div class="consent-answer">
-                <strong>Question:</strong> {{ $answer->question->question }}
-                <br>
-                <strong>Answer:</strong>
-                @if(is_array($answer->answer))
-                <ul>
-                    @foreach($answer->answer as $item)
-                    <li>{{ $item }}</li>
-                    @endforeach
-                </ul>
-                @else
-                {{ $answer->answer }}
-                @endif
-            </div>
-            <hr>
-            @endforeach
-        </div>
-
-        @endif
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-6S5LYNn3ZJCIm0f9L6BCerqFlQ4f5MwNKq+EthDXabtaJvg3TuFLhpno9pcm+5Ynm6jdA9xfpQoMz2fcjVMk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="{{asset('public/assets/admin/js/consentform.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-6S5LYNn3ZJCIm0f9L6BCerqFlQ4f5MwNKq+EthDXabtaJvg3TuFLhpno9pcm+5Ynm6jdA9xfpQoMz2fcjVMk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{asset('public/assets/admin/js/consentform.js')}}"></script>
 
 </body>
 

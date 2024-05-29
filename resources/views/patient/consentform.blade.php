@@ -68,7 +68,7 @@
                                         ?>
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                                            <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                         ?>
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                                            <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                                         <?php } ?>
                                     </div>
                             </div>
@@ -162,7 +162,7 @@
 
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                                        <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                                     <?php } ?>
                                 </div>
                         </div>
@@ -207,7 +207,7 @@
                             ?>
                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                 <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                                <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                             <?php } ?>
                         </div>
                 </div>
@@ -253,7 +253,7 @@
                         ?>
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{ $checkbox}}>
+                            <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{ $checkbox}}>
                         <?php } ?>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                         ?>
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                            <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                         <?php } ?>
                     </div>
             </div>
@@ -345,7 +345,7 @@
                         ?>
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
+                            <input class="form-check-input checkboxAns" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox.' '.$disabled}}>
                         <?php } ?>
                     </div>
                 </div>

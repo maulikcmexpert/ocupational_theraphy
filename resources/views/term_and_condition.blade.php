@@ -50,7 +50,7 @@
                 <div class="col-lg-12">
 
 
-                    <?= $term_and_condition->term_and_condition ?>
+                    <?= (count($term_and_condition) != 0) ? $term_and_condition->term_and_condition : "Coming Soon" ?>
 
 
                     <div class="terms-content">

@@ -57,7 +57,7 @@
                         <a class="logo mx-auto" href="#">
                             <img src="{{asset('assets/logo.png')}}" alt="">
                         </a>
-                        <h1 class="text-center text-decoration-underline mb-2">Terms and Condition</h1>
+                        <h1 class="text-center text-decoration-underline mb-2"><?= ($term_and_condition != null) ? $term_and_condition->t_c_title : "" ?></h1>
                         <?= ($term_and_condition != null) ? $term_and_condition->term_and_condition : "" ?>
                     </div>
                 </div>

@@ -38,111 +38,111 @@ $(document).ready(function () {
     rules: {
       // Apply the custom rule to the first question as an example
       "questions[0][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       // Repeat the rule for each question
       "questions[1][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[2][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[3][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[4][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[5][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[6][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[7][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[8][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[9][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[10][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[11][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[12][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[13][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[14][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[15][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[16][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[17][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[18][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[19][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[20][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[21][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[22][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[23][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[24][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[25][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[26][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[27][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[28][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[29][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[30][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[31][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
 
       "questions[32][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[33][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
       "questions[34][answer]": {
-        atLeastOneSelected: ["questions"],
+        atLeastOneSelected: true,
       },
     },
     messages: {

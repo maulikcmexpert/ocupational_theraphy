@@ -47,6 +47,7 @@
                                             </span>
                                             @endif
                                         </label>
+                                        <label id="questions[0][answer]-error" class="error" for="questions[{{ $key }}][answer]"></label>
                                     </div>
                                     <div>
                                         @if ($val->ques_type == 'check')

@@ -115,6 +115,7 @@ p{
 
 .text-type-input{
   padding: 5px 10px !important;
+  width: 100%;
 }
 
 .text-type-input label span{

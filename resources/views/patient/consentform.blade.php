@@ -351,10 +351,13 @@
                 </div>
                 @if ($val->ques_type == 'text_two')
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                @php
-                $explodeAns = json_decode($consentAnswers[$key]->answer);
+                <?php
+                if (count($consentAnswers) != 0) {
 
-                @endphp
+
+                    $explodeAns = json_decode($consentAnswers[$key]->answer);
+                }
+                ?>
 
                 <div class="form-check text-type-input">
                     <div>

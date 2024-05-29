@@ -15,6 +15,8 @@
     <div class="container">
         <div class="form-main">
 
+            <img alt="Logo" src="https://groundedwellwise.cmexpertiseinfotech.com/assets/logo.png" class="h-100px logo">
+
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <h3>General Consent Form for GWW APP</h3>

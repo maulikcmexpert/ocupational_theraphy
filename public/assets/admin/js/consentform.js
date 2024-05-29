@@ -24,12 +24,12 @@ $(document).ready(function () {
     rules: {
       // Apply the custom rule to the first question as an example
       "questions[0][answer]": {
-        atLeastOneSelected: true,
+        required: true,
       },
     },
     messages: {
       "questions[0][answer]": {
-        atLeastOneSelected: "Please select at least one answer",
+        required: "Please select at least one answer",
       },
     },
     submitHandler: function (form) {

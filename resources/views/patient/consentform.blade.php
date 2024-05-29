@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="form-main">
-            <label id="consentFormError" class="error"></label>
+
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <div class="form-logo-title">
@@ -26,6 +26,7 @@
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>
                 <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="{{ route('terms_and_condition')}}">click here.</a></p>
                 <!-- <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label> -->
+                <label id="consentFormError" class="error"></label>
                 <div class="row">
                     <div class="col-12 mb-3">
                         <div class="main-content-wrp">

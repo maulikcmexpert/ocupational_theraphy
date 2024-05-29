@@ -19,7 +19,7 @@
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
     if ($('input[type="checkbox"]:checked').length === 0) {
-      $("#consentFormError").html("Please select at least one option.");
+      $(".consentFormError").html("Please select at least one option.");
       $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
       event.preventDefault();
     } else {

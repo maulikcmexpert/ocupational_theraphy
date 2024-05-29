@@ -325,7 +325,7 @@
         </div>
     </div>
     </div>
-    @if(count($consentAnswers) != 0)
+    @if(count($consentAnswers) == 0)
     <div class="text-center footer-form-btn">
         <input type="submit" class="btn btn-primary" value="Submit">
     </div>

@@ -238,7 +238,7 @@
                 <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            My treating team, namely: <input class="form-control" type="text" name="questions[{{ $key }}][answer][]">
+                            <span>My treating team, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]"></span>
                         </label>
                     </div>
                     <div></div>
@@ -246,7 +246,7 @@
                 <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
-                            Family members, namely: <input class="form-control" type="text" name="questions[{{ $key }}][answer][]">
+                            <span>Family members, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]"></span>
                         </label>
                     </div>
                     <div></div>

@@ -108,7 +108,7 @@ p{
 .main-content-wrp input:focus{
   box-shadow: none;
 }
-.main-content .form-check div{
+.text-type-input label span{
   width: 100%;
 }
 

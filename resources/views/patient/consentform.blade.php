@@ -54,7 +54,7 @@
                                         @php
                                         $checkbox = "";
                                         @endphp
-                                        @if(count($consentAnswers) != 0 && $consentAnswers[0]->answer == '1')
+                                        @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
                                         @php
                                         $checkbox = "checked";
                                         @endphp

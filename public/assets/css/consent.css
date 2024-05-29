@@ -108,6 +108,11 @@ p{
 .main-content-wrp input:focus{
   box-shadow: none;
 }
+
+.main-content-wrp input{
+  border-color: #774692 !important;
+}
+
 .text-type-input{
   padding: 5px 10px !important;
 }
@@ -115,6 +120,11 @@ p{
 .text-type-input label span{
   width: 100%;
 }
+.text-type-input input{
+  border-radius: 14px !important;
+}
+
+
 
 @media only screen and (max-width: 575px) {
   .main-content .form-check{

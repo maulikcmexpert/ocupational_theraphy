@@ -1,5 +1,6 @@
 label.error{
-  color: red;
+  color: red !important;
+  font-size: 12px !important;
 }
 
 h3{

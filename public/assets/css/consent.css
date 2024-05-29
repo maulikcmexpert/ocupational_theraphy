@@ -108,6 +108,10 @@ p{
 .main-content-wrp input:focus{
   box-shadow: none;
 }
+.text-type-input{
+  padding: 5px 10px;
+}
+
 .text-type-input label span{
   width: 100%;
 }

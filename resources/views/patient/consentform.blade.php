@@ -263,7 +263,7 @@
         </div>
     </div>
     </div>
-    <div class="texr-center">
+    <div class="text-center">
         <input type="submit" class="btn btn-primary" value="Send">
     </div>
 

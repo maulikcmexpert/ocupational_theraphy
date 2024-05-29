@@ -43,7 +43,7 @@
                                             @if ($val->ques_type == 'text')
                                             <span>
                                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]">
+                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]" value="{{$consentAnswers[$key]->answer}}">
                                             </span>
                                             @endif
                                         </label>
@@ -53,7 +53,7 @@
                                         @if ($val->ques_type == 'check')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{($consentAnswers[$key]->answer == '1')?'checked':''}}>
                                         @endif
                                     </div>
                                 </div>

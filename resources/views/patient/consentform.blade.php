@@ -43,7 +43,7 @@
                                             @if ($val->ques_type == 'text')
                                             <span>
                                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0)?$consentAnswers[$key]->answer:''}}">
+                                                <input class="form-control " type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                                             </span>
                                             @endif
                                         </label>
@@ -82,15 +82,23 @@
                                             {!! $val->question !!}
                                             @if ($val->ques_type == 'text')
                                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                                             @endif
                                         </label>
                                     </div>
                                     <div>
                                         @if ($val->ques_type == 'check')
+                                        @php
+                                        $checkbox = "";
+                                        @endphp
+                                        @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                                        @php
+                                        $checkbox = "checked";
+                                        @endphp
+                                        @endif
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox}}>
                                         @endif
                                     </div>
                             </div>
@@ -112,15 +120,23 @@
                                         {!! $val->question !!}
                                         @if ($val->ques_type == 'text')
                                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                        <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                                        <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                                         @endif
                                     </label>
                                 </div>
                                 <div>
                                     @if ($val->ques_type == 'check')
+                                    @php
+                                    $checkbox = "";
+                                    @endphp
+                                    @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                                    @php
+                                    $checkbox = "checked";
+                                    @endphp
+                                    @endif
                                     <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                                     <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                                    <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                                    <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox}}>
                                     @endif
                                 </div>
                         </div>
@@ -142,15 +158,23 @@
                                 {!! $val->question !!}
                                 @if ($val->ques_type == 'text')
                                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                                <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                                <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                                 @endif
                             </label>
                         </div>
                         <div>
                             @if ($val->ques_type == 'check')
+                            @php
+                            $checkbox = "";
+                            @endphp
+                            @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                            @php
+                            $checkbox = "checked";
+                            @endphp
+                            @endif
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                             <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                            <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{checkbox}}>
                             @endif
                         </div>
                 </div>
@@ -173,15 +197,23 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                             @endif
                         </label>
                     </div>
                     <div>
                         @if ($val->ques_type == 'check')
+                        @php
+                        $checkbox = "";
+                        @endphp
+                        @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                        @php
+                        $checkbox = "checked";
+                        @endphp
+                        @endif
                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{ $checkbox}}>
                         @endif
                     </div>
                 </div>
@@ -203,15 +235,23 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                             @endif
                         </label>
                     </div>
                     <div>
                         @if ($val->ques_type == 'check')
+                        @php
+                        $checkbox = "";
+                        @endphp
+                        @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                        @php
+                        $checkbox = "checked";
+                        @endphp
+                        @endif
                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox}}>
                         @endif
                     </div>
             </div>
@@ -235,20 +275,34 @@
                             {!! $val->question !!}
                             @if ($val->ques_type == 'text')
                             <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
-                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]">
+                            <input class="form-control" type="text" name="questions[{{ $key }}][answer]" value="{{(count($consentAnswers) !=0 && $consentAnswers[$key]->answer !=null)?$consentAnswers[$key]->answer:''}}">
                             @endif
                         </label>
                     </div>
                     <div>
                         @if ($val->ques_type == 'check')
+                        @php
+                        $checkbox = "";
+                        @endphp
+                        @if(count($consentAnswers) != 0 && $consentAnswers[$key]->answer == '1')
+                        @php
+                        $checkbox = "checked";
+                        @endphp
+                        @endif
                         <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
                         <input type="hidden" name="questions[{{ $key }}][answer]" value="0">
-                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}">
+                        <input class="form-check-input" name="questions[{{ $key }}][answer]" type="checkbox" value="1" id="flexCheckDefault_{{ $val->id }}" {{$checkbox}}>
                         @endif
                     </div>
                 </div>
                 @if ($val->ques_type == 'text_two')
                 <input type="hidden" name="questions[{{ $key }}][question]" value="{{ $val->id }}">
+                @if(is_array($consentAnswers[$key]->answer))
+                @php
+                $explodeAns = json_decode($consentAnswers[$key]->answer);
+                dd($explodeAns);
+                @endphp
+                @endif
                 <div class="form-check text-type-input">
                     <div>
                         <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">

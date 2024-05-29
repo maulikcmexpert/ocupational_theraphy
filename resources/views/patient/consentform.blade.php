@@ -263,7 +263,9 @@
         </div>
     </div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Send">
+    <div class="texr-center">
+        <input type="submit" class="btn btn-primary" value="Send">
+    </div>
 
     </form>
     </div>

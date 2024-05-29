@@ -55,7 +55,7 @@
 
                     <div class="terms-content">
                         <a class="logo mx-auto" href="#">
-                            <img src="asset('assets/logo.png')" alt="">
+                            <img src="{{asset('assets/logo.png')}}" alt="">
                         </a>
                         <h1 class="text-center text-decoration-underline mb-2">Terms and Condition</h1>
                         <?= ($term_and_condition != null) ? $term_and_condition->term_and_condition : "Applied as soon as" ?>

@@ -1,8 +1,27 @@
+@php $role_id = Auth::guard('web')->user()->role_id @endphp
+
+@if($role_id == 1)
+
+@php
+$dashboard = route('admin.dashboard');
+@endphp
+
+@elseif ($role_id == 2)
+@php
+
+$dashboard = route('staff.dashboard');
+@endphp
+@elseif ($role_id == 3)
+@php
+
+$dashboard = route('doctor.dashboard');
+@endphp
+@endif
 <div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="#">
+        <a href="{{$dashboard}}">
             <img alt="Logo" src="{{ asset('assets/logo.png')}}" class="h-100px logo" />
         </a>
         <!--end::Logo-->
@@ -29,25 +48,7 @@
 
                 <div class="menu-item">
 
-                    @php $role_id = Auth::guard('web')->user()->role_id @endphp
 
-                    @if($role_id == 1)
-
-                    @php
-                    $dashboard = route('admin.dashboard');
-                    @endphp
-
-                    @elseif ($role_id == 2)
-                    @php
-
-                    $dashboard = route('staff.dashboard');
-                    @endphp
-                    @elseif ($role_id == 3)
-                    @php
-
-                    $dashboard = route('doctor.dashboard');
-                    @endphp
-                    @endif
 
                     <a class="menu-link {{ (Request::segment(2) == 'dashboard')? 'active':'' }}" href="{{$dashboard}}">
                         <span class="menu-icon">

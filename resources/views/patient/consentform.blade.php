@@ -13,7 +13,7 @@
 
 <body>
     <?php
-    dd($consentAnswers);
+    dd($consentAnswers[0]->answer);
     ?>
     <div class="container">
         <div class="form-main">

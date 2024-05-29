@@ -14,13 +14,12 @@ $(document).ready(function () {
       // Assuming checkboxes have name attribute as questions[i][answer][]
       // where i ranges from 0 to 34
       "questions[][answer]": {
-        atLeastOneCheckbox: true,
+        required: true,
       },
     },
     messages: {
       "questions[][answer]": {
-        atLeastOneCheckbox:
-          "Please select at least one checkbox for this question.",
+        required: "Please select at least one checkbox for this question.",
       },
     },
     submitHandler: function (form) {

@@ -108,6 +108,9 @@ p{
 .main-content-wrp input:focus{
   box-shadow: none;
 }
+.main-content .form-check div{
+  width: 100%;
+}
 
 @media only screen and (max-width: 575px) {
   .main-content .form-check{

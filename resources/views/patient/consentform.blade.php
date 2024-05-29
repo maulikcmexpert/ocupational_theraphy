@@ -18,12 +18,12 @@
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
                 <div class="form-logo-title">
-                    <span><img alt="Logo" src="https://groundedwellwise.cmexpertiseinfotech.com/assets/logo.png" class="h-100px logo"></span>
+                    <span><img alt="Logo" src="{{asset('assets/logo.png')}}" class="h-100px logo"></span>
                     <h3>General Consent Form for GWW APP</h3>
                 </div>
 
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>
-                <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="#">click here.</a></p>
+                <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="{{ route('terms_and_condition')}}">associated occupational therapy practices</a> please <a href="#">click here.</a></p>
                 <!-- <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label> -->
                 <div class="row">
                     <div class="col-12 mb-3">

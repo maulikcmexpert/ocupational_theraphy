@@ -35,8 +35,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::get('about_us', [CompanyProfileController::class, 'about_us']);
-Route::get('privacy_policy', [CompanyProfileController::class, 'privacy_policy']);
-Route::get('terms_and_condition', [CompanyProfileController::class, 'terms_and_condition']);
+Route::get('privacy_policy', [CompanyProfileController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('terms_and_condition', [CompanyProfileController::class, 'terms_and_condition'])->name('terms_and_condition');
 Route::post('current_server_time', [CoreController::class, 'currentServertime']);
 
 

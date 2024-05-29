@@ -190,5 +190,8 @@ p{
   .form-wrpper {
     padding: 30px 15px;
 }
+.form-wrpper h3 {
+  font-size: 18px;
+}
   
 }

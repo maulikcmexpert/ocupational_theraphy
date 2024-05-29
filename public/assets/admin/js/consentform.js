@@ -17,7 +17,7 @@
 // });
 
 $(document).ready(function () {
-  $("#myForm").on("submit", function (event) {
+  $("#consentForm").on("submit", function (event) {
     if ($('input[type="checkbox"]:checked').length === 0) {
       alert("Please select at least one option.");
       $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes

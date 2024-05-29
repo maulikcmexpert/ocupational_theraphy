@@ -263,8 +263,8 @@
         </div>
     </div>
     </div>
-    <div class="text-center">
-        <input type="submit" class="btn btn-primary" value="Send">
+    <div class="text-center footer-form-btn">
+        <input type="submit" class="btn btn-primary" value="Submit">
     </div>
 
     </form>

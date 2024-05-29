@@ -147,7 +147,11 @@ p{
   height: 100%;
   object-fit: contain;
 }
-
+.footer-form-btn input{
+  background-color: #774692 !important;
+  border-color: #774692 !important;
+  padding: 6px 15px !important;
+}
 
 @media only screen and (max-width: 575px) {
   .main-content .form-check{

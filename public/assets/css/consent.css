@@ -120,7 +120,7 @@ p{
 .text-type-input label span{
   width: 100%;
 }
-.text-type-input input{
+.text-type-input input[type='text']{
   border-radius: 14px !important;
 }
 

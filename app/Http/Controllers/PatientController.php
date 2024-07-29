@@ -232,9 +232,11 @@ class PatientController extends Controller
     {
         $patientId = $id;
         foreach ($request->questions as $key => $value) {
-            $request->validate([
-                $value['answer'] => 'accepted'
-            ]);
+            if (!is_array($value['answer'])) {
+                $request->validate([
+                    $value['answer'] => 'accepted'
+                ]);
+            }
         }
 
 

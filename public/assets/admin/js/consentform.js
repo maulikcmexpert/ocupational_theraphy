@@ -19,16 +19,15 @@
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
     if ($('input[type="checkbox"]:checked').length === 0) {
-      $(".consentFormError").html("Please select at least  option.");
+      $(".consentFormError").html("Please select at least one option.");
       $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
       event.preventDefault();
     } else {
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
       let allChecked = true;
       checkboxes.forEach((checkbox) => {
-        const message = document.getElementById(`message${checkbox.value}`);
-
         if (!checkbox.checked) {
+          alert(checkbox.html());
           allChecked = false;
           checkbox.css("outline", "2px solid red");
         } else {

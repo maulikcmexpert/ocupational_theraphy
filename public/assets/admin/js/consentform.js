@@ -38,7 +38,7 @@ $(document).ready(function () {
       if (!allChecked) {
         event.preventDefault();
       }
-      $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
+      // $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
     }
   });
 

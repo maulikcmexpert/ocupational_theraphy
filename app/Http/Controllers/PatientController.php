@@ -232,8 +232,13 @@ class PatientController extends Controller
     {
         $patientId = $id;
         foreach ($request->questions as $key => $value) {
-            dd($value['answer']);
+            $request->validate([
+                $value['answer'] => 'accepted'
+            ]);
         }
+
+
+        dd($request);
         $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
         if ($checkIsCompleted == 0) {
 

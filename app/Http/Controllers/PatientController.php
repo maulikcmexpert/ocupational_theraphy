@@ -231,7 +231,7 @@ class PatientController extends Controller
     public function consentFormStore(Request $request, string $id)
     {
         $patientId = $id;
-
+        dd($paitent_id);
         $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
         if ($checkIsCompleted == 0) {
 

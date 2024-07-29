@@ -24,9 +24,9 @@ $(document).ready(function () {
     //   event.preventDefault();
     // } else {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    alert(checkboxes);
     let allChecked = true;
     checkboxes.forEach((checkbox) => {
+      alert(checkboxes);
       // if (!checkbox.checked) {
       //   allChecked = false;
       //   checkbox.css("outline", "2px solid red");

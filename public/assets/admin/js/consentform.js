@@ -26,7 +26,7 @@ $(document).ready(function () {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     let allChecked = true;
     checkboxes.forEach((checkbox) => {
-      alert(checkboxes);
+      alert($(this).html());
       // if (!checkbox.checked) {
       //   allChecked = false;
       //   checkbox.css("outline", "2px solid red");

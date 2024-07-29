@@ -26,17 +26,17 @@ $(document).ready(function () {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     let allChecked = true;
     checkboxes.forEach((checkbox) => {
-      if (!checkbox.checked) {
-        alert(checkbox.html());
-        allChecked = false;
-        checkbox.css("outline", "2px solid red");
-      } else {
-        checkbox.css("outline", "");
-      }
+      alert(checkbox.html());
+      // if (!checkbox.checked) {
+      //   allChecked = false;
+      //   checkbox.css("outline", "2px solid red");
+      // } else {
+      //   checkbox.css("outline", "");
+      // }
     });
     if (!allChecked) {
-      event.preventDefault();
     }
+    event.preventDefault();
     // $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
     // }
   });

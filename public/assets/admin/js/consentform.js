@@ -18,19 +18,10 @@
 
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
-    $(this)
-      .find(".form-check-input")
-      .each(function () {
-        alert($(this).html());
-        if ($(this).is(":checked")) {
-          groupHasChecked = true;
-          return false; // Exit the inner loop
-        }
-      });
-    event.preventDefault();
     if ($('input[type="checkbox"]:checked').length === 0) {
       $(".consentFormError").html("Please select at least one option.");
       $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
+      event.preventDefault();
     } else {
       $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
     }

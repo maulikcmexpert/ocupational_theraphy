@@ -23,16 +23,31 @@ $(document).ready(function () {
       $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
       event.preventDefault();
     } else {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      let allChecked = true;
+      checkboxes.forEach((checkbox) => {
+        const message = document.getElementById(`message${checkbox.value}`);
+
+        if (!checkbox.checked) {
+          allChecked = false;
+          checkbox.css("outline", "2px solid red");
+        } else {
+          checkbox.css("outline", "");
+        }
+      });
+      if (!allChecked) {
+        event.preventDefault();
+      }
       $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
     }
   });
 
   // Remove the outline when a checkbox is checked
-  $('input[type="checkbox"]').on("change", function () {
-    if ($(this).is(":checked")) {
-      $('input[type="checkbox"]').css("outline", "");
-    }
-  });
+  // $('input[type="checkbox"]').on("change", function () {
+  //   if ($(this).is(":checked")) {
+  //     $('input[type="checkbox"]').css("outline", "");
+  //   }
+  // });
 });
 
 // $(document).ready(function () {

@@ -18,27 +18,27 @@
 
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
-    if ($('input[type="checkbox"]:checked').length === 0) {
-      $(".consentFormError").html("Please select at least one option.");
-      $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
-      event.preventDefault();
-    } else {
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      let allChecked = true;
-      checkboxes.forEach((checkbox) => {
-        if (!checkbox.checked) {
-          alert(checkbox.html());
-          allChecked = false;
-          checkbox.css("outline", "2px solid red");
-        } else {
-          checkbox.css("outline", "");
-        }
-      });
-      if (!allChecked) {
-        event.preventDefault();
+    // if ($('input[type="checkbox"]:checked').length === 0) {
+    //   $(".consentFormError").html("Please select at least one option.");
+    //   $('input[type="checkbox"]').css("outline", "2px solid red"); // Highlight checkboxes
+    //   event.preventDefault();
+    // } else {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let allChecked = true;
+    checkboxes.forEach((checkbox) => {
+      if (!checkbox.checked) {
+        alert(checkbox.html());
+        allChecked = false;
+        checkbox.css("outline", "2px solid red");
+      } else {
+        checkbox.css("outline", "");
       }
-      // $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
+    });
+    if (!allChecked) {
+      event.preventDefault();
     }
+    // $('input[type="checkbox"]').css("outline", ""); // Remove highlight if validation passes
+    // }
   });
 
   // Remove the outline when a checkbox is checked

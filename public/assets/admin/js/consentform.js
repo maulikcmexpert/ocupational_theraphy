@@ -18,11 +18,15 @@
 
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
-    var checkboxes = $(this).find(".form-check-input");
-
-    checkboxes.each(function (checkbox) {
-      alert(checkbox.html());
-    });
+    $(this)
+      .find(".form-check-input")
+      .each(function () {
+        alert($(this).html());
+        if ($(this).is(":checked")) {
+          groupHasChecked = true;
+          return false; // Exit the inner loop
+        }
+      });
     event.preventDefault();
     if ($('input[type="checkbox"]:checked').length === 0) {
       $(".consentFormError").html("Please select at least one option.");

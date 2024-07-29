@@ -363,7 +363,8 @@
 
                 <div class="form-check text-type-input">
                     <div>
-                        <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}"><?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>
+                        <label class="form-check-label" for="flexCheckDefault_{{ $val->id }}">
+                            <!-- {{(count($consentAnswers) != 0) ? 'disabled' : ''}}  -->
                             <span>My treating team, namely:</span> <span><input class="form-control" type="text" name="questions[{{ $key }}][answer][]" value="{{(count($consentAnswers) != 0 && $explodeAns[0] != null)?$explodeAns[0]:''}}" <?= (count($consentAnswers) != 0) ? 'disabled' : '' ?>></span>
                         </label>
                     </div>

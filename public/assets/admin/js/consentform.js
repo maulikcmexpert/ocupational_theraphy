@@ -19,7 +19,10 @@
 $(document).ready(function () {
   $("#consentForm").on("submit", function (event) {
     var checkboxes = $(this).find(".form-check-input");
-    alert(checkboxes);
+
+    checkboxes.each(function (checkbox) {
+      alert(checkbox.html());
+    });
     event.preventDefault();
     if ($('input[type="checkbox"]:checked').length === 0) {
       $(".consentFormError").html("Please select at least one option.");

@@ -231,7 +231,7 @@ class PatientController extends Controller
     public function consentFormStore(Request $request, string $id)
     {
         $patientId = $id;
-        foreach ($request['question'] as $key => $value) {
+        foreach ($request as $key => $value) {
             dd($value);
         }
         $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();

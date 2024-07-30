@@ -1,3 +1,13 @@
+<style>
+    .Consent-success {
+        background: green;
+        color: white;
+    }
+
+    .Consent-success i {
+        color: white;
+    }
+</style>
 <!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Toolbar-->

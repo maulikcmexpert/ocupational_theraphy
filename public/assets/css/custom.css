@@ -1096,14 +1096,14 @@ select {
     cursor: pointer;
 }
 
-.Consent-success {
+/* .Consent-success {
     background: green;
     color: white;
 }
 
 .Consent-success i {
     color: white;
-}
+} */
 
 @media only screen and (max-width:1300px) {
     #kt_table_users_wrapper {

@@ -410,14 +410,13 @@
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
                 });
-
+                @endif
+                @endforeach
                 if (checkedValues.length > 0) {
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     alert('No checkboxes are checked');
                 }
-                @endif
-                @endforeach
                 event.preventDefault();
             });
         });

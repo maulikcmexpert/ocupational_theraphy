@@ -441,7 +441,7 @@
                     event.preventDefault();
                     alert('All Fields are required !!!');
                 }
-                event.preventDefault();
+                // event.preventDefault();
             });
 
             $('input[type="checkbox"]').on("change", function () {

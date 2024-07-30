@@ -414,7 +414,7 @@
                 });
                 @endif
                 @endforeach
-                if (checkedValues.length > i) {
+                if (checkedValues.length >= i) {
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     alert('No checkboxes are checked');

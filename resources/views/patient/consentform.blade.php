@@ -470,7 +470,7 @@
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
                 method: "POST",
-                url: "{{route('patient/consent_form_reset')}}",
+                url: "{{route('patient.consentFormReset')}}",
                 data: {
                     patient_id:patient_id ,
                 },

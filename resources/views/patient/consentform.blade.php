@@ -439,7 +439,7 @@
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     event.preventDefault();
-                    // alert('No checkboxes are checked');
+                    alert('All Fields are required !!!');
                 }
                 event.preventDefault();
             });

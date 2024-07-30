@@ -250,6 +250,23 @@ class PatientController extends Controller
         return redirect('patient/create_consent_form/' . $patientId . '/submited');
     }
 
+    public function consentFormReset(Request $request)
+    {
+        dd($request);
+        try {
+            DB::beginTransaction();
+
+
+            GroupDoctorAssignment::where(['id' => decrypt($assign_id), 'group_id' => decrypt($group_id), 'doctor_id' => decrypt($doctor_id)])->delete();
+            DB::commit();
+            return response()->json(true);
+        } catch (QueryException $e) {
+
+            DB::rollBack();
+            return response()->json(false);
+        }
+    }
+
     public function createConsentForm(string $id)
     {
 

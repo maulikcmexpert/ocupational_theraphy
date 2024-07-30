@@ -18,6 +18,7 @@
 
             <form method="POST" id="consentForm" action="{{ route('patient.consentFormStore', $patient_id) }}" class="form-wrpper">
                 @csrf
+                <input type="hidden" name="patient_id" class="patient_id" value="{{encrypt($patient_id)}}">
                 <div class="form-logo-title">
                     <span><img alt="Logo" src="{{asset('assets/logo.png')}}" class="h-100px logo"></span>
                     <h3>General Consent Form for GWW APP</h3>

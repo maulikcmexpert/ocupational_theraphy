@@ -747,5 +747,4 @@ $(document).on("click", "#dischargeCheck", function () {
   $("#totalSession").html(totalSession);
 });
 
-$('.consent_form').css('background-color','red');
 

@@ -466,9 +466,6 @@
             $('.reset').on("click", function () {
                 var patient_id = $('#patient_id').val();
                 $.ajax({
-                headers: {
-                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-                },
                 method: "POST",
                 url: "{{route('patient.consentFormReset')}}",
                 data: {

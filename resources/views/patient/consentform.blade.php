@@ -393,7 +393,7 @@
     @else
     <label class="error consentFormError"></label>
     <div class="text-center footer-form-btn">
-        <input type="button" class="btn btn-info" value="Reset">
+        <input type="button" class="btn btn-info reset" value="Reset">
     </div>
     @endif
     </form>

@@ -28,11 +28,11 @@ $(document).ready(function () {
   });
 
   // Remove the outline when a checkbox is checked
-  $('input[type="checkbox"]').on("change", function () {
-    if ($(this).is(":checked")) {
-      $('input[type="checkbox"]').css("outline", "");
-    }
-  });
+  // $('input[type="checkbox"]').on("change", function () {
+  //   if ($(this).is(":checked")) {
+  //     $('input[type="checkbox"]').css("outline", "");
+  //   }
+  // });
 });
 
 // $(document).ready(function () {

@@ -417,7 +417,7 @@
                         uncheckedValues.push($(this).val());
                         $(this).css("outline", "2px solid red");
                     });
-                @else
+                @elseif($val->ques_type == 'text')
                     $('input[name="questions[{{ $key }}][answer]"]').each(function() {
                         var value = $(this).val();
                         if (value === '') {
@@ -425,6 +425,8 @@
                             $(this).css("outline", "2px solid red");
                         }
                     });
+                @else
+
                 @endif
                 @endforeach
                 if (checkedValues.length >= i) {

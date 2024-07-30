@@ -441,7 +441,7 @@
                 @endif
                 @endforeach
                 if (checkedValues.length >= i) {
-                    alert('Checked values: ' + checkedValues.join(', '));
+                    // alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     event.preventDefault();
                     // alert('All Fields are required !!!');

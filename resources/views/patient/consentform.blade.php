@@ -444,7 +444,7 @@
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     event.preventDefault();
-                    alert('All Fields are required !!!');
+                    // alert('All Fields are required !!!');
                 }
                 // event.preventDefault();
             });

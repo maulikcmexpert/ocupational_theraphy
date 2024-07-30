@@ -415,7 +415,7 @@
                 var uncheckedValues = [];
                 var i = 0;
                 @foreach($question as $key => $val)
-                @if($val - > ques_type == 'check')
+                @if($val -> ques_type == 'check')
                 i++;
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
@@ -424,7 +424,7 @@
                     uncheckedValues.push($(this).val());
                     $(this).css("outline", "2px solid red");
                 });
-                @elseif($val - > ques_type == 'text')
+                @elseif($val -> ques_type == 'text')
                 $('input[name="questions[{{ $key }}][answer]"]').each(function() {
                     var value = $(this).val();
                     if (value === '') {

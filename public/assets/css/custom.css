@@ -1111,7 +1111,7 @@ select {
 }
 
 #kt_table_users .Consent-danger i {
-    color: white;
+    color: green;
 }
 
 @media only screen and (max-width:1300px) {

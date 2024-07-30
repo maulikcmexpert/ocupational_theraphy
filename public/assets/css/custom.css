@@ -1096,12 +1096,12 @@ select {
     cursor: pointer;
 }
 
-#kt_table_users .Consent-success {
+.Consent-success {
     background: green;
     color: white;
 }
 
-#kt_table_users .Consent-success i {
+.Consent-success i {
     color: white;
 }
 

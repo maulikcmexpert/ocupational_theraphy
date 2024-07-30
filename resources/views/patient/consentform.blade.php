@@ -396,7 +396,7 @@
     <div class="text-center footer-form-btn">
         <input type="button" class="btn btn-info reset" value="Reset">
         <input type="button" class="btn btn-info edit" value="Edit">
-        <input type="button" class="btn btn-info update" value="Update">
+        <input type="button" class="btn btn-info update" value="Update" style="display: none;">
     </div>
     @endif
     </form>
@@ -487,6 +487,12 @@
                         }
                     },
                 });
+            });
+
+            $('.edit').on('click', function() {
+                alert();
+                $(this).hide();
+                $('.update').show();
             });
 
         });

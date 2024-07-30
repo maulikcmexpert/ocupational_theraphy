@@ -405,12 +405,17 @@
         $(document).ready(function() {
             $("#consentForm").on("submit", function(event) {
                 var checkedValues = [];
+                var uncheckedValues = [];
                 var i = 0;
                 @foreach($question as $key => $val)
                 @if($val->ques_type == 'check')
                 i++;
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
+                });
+                $('input[name="questions[{{ $key }}][answer]"]:not(:checked)').each(function() {
+                    uncheckedValues.push($(this).val());
+                    $(this).css("outline", "2px solid red");
                 });
                 @endif
                 @endforeach

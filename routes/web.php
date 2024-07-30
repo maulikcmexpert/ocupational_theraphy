@@ -156,8 +156,8 @@ Route::middleware('auth')->group(function () {
     Route::get('patient/apom_assessment_report/{patient_id}', [PatientController::class, 'apomAssessmentReport'])->name('patient.apom_assessment_report');
     Route::post('patient/apom_assessment_pdf_genarate', [PatientController::class, 'apomAssessmentPdfGenarate'])->name('patient.apom_assessment_pdf_genarate');
     Route::get('patient/check_patient_status/{patient_id}', [PatientController::class, 'CheckPatientStatus'])->name('patient.check_patient_status');
+    Route::post('patient/consentFormReset', [PatientController::class, 'consentFormReset'])->name('patient.consentFormReset');
 });
 Route::get('patient/create_consent_form/{id}', [PatientController::class, 'createConsentForm'])->name('patient.consentForm');
 Route::get('patient/create_consent_form/{id}/submited', [PatientController::class, 'createConsentFormSubmited'])->name('patient.consentFormSubmited');
 Route::post('patient/consent_form_store/{id}', [PatientController::class, 'consentFormStore'])->name('patient.consentFormStore');
-Route::post('patient/consentFormReset', [PatientController::class, 'consentFormReset'])->name('patient.consentFormReset');

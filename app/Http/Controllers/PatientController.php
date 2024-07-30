@@ -256,9 +256,6 @@ class PatientController extends Controller
         try {
             DB::beginTransaction();
 
-
-            GroupDoctorAssignment::where(['id' => decrypt($assign_id), 'group_id' => decrypt($group_id), 'doctor_id' => decrypt($doctor_id)])->delete();
-            DB::commit();
             return response()->json(true);
         } catch (QueryException $e) {
 

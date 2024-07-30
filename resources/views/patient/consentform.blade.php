@@ -449,8 +449,7 @@
                     $(this).css("outline", "");
                 }
             });
-            $('input[type="text"]').on("change", function () {
-                alert();
+            $('input[type="text"]').on("keyup", function () {
                 var value = $(this).val();
                 if (value != '') {
                     $(this).css("outline", "");

@@ -472,7 +472,8 @@
                 method: "POST",
                 url: "{{route('patient.consentFormReset')}}",
                 data: {
-                    patient_id:patient_id ,
+                    patient_id:patient_id,
+                    _token: '{{ csrf_token() }}',
                 },
                 success: function (output) {
                     if (output == true) {

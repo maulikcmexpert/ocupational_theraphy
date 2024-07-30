@@ -144,7 +144,7 @@ class PatientController extends Controller
                     if (Auth::guard('web')->user()->role_id != 3) {
                         $actionBtn .= '<a class="" href="' . $change_password_url . '"  title="Change Password" id="change_password_doctor" ><i class="fas fa-key"></i></a> ';
                     }
-                    $actionBtn .= ' <a class="btn btn-primary" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
+                    $actionBtn .= ' <a class="btn btn-success" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
 
                     '</div>';
                     return $actionBtn;

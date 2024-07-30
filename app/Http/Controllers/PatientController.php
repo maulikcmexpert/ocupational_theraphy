@@ -252,10 +252,11 @@ class PatientController extends Controller
 
     public function consentFormReset(Request $request)
     {
-        dd($request);
+        // dd($request);
         try {
             DB::beginTransaction();
-
+            ConsentAnswer::where(['patient_id' => decrypt($request->patient_id)])->delete();
+            DB::commit();
             return response()->json(true);
         } catch (QueryException $e) {
 

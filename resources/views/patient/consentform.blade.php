@@ -453,6 +453,8 @@
                 var value = $(this).val();
                 if (value != '') {
                     $(this).css("outline", "");
+                }else{
+                    $(this).css("outline", "2px solid red");
                 }
             });
         });

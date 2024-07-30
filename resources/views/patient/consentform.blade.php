@@ -498,6 +498,8 @@
                 $('input[type="checkbox"]').prop('disabled', false);
                 $(this).hide();
                 $('.update').show();
+                $('.updateup').show();
+
             });
 
             $('.editup').on('click', function() {

@@ -232,21 +232,22 @@ class PatientController extends Controller
     {
         $patientId = $id;
 
-        $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
-        if ($checkIsCompleted == 0) {
+        // $checkIsCompleted = ConsentAnswer::where('patient_id', $patientId)->count();
+        ConsentAnswer::where('patient_id', $patientId)->delete();
+        // if ($checkIsCompleted == 0) {
 
-            foreach ($request->questions as $val) {
+        foreach ($request->questions as $val) {
 
-                $answer = new ConsentAnswer();
-                $answer->patient_id = $patientId;
-                $answer->question_id = $val['question'];
-                $answer->answer = is_array($val['answer']) ? json_encode($val['answer']) : $val['answer'];
-                $answer->save();
-            }
-            toastr()->success('Patient Consent form submited successfully !');
-        } else {
-            toastr()->success('Patient Consent form already submited successfully !');
+            $answer = new ConsentAnswer();
+            $answer->patient_id = $patientId;
+            $answer->question_id = $val['question'];
+            $answer->answer = is_array($val['answer']) ? json_encode($val['answer']) : $val['answer'];
+            $answer->save();
         }
+        toastr()->success('Patient Consent form submited successfully !');
+        // } else {
+        //     toastr()->success('Patient Consent form already submited successfully !');
+        // }
         return redirect('patient/create_consent_form/' . $patientId . '/submited');
     }
 

@@ -462,6 +462,31 @@
                     $(this).css("outline", "2px solid red");
                 }
             });
+
+            $('.reset').on("click", function () {
+                var patient_id = $('#patient_id').val();
+                $.ajax({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                method: "POST",
+                url: "{{route('patient/consent_form_reset')}}",
+                data: {
+                    patient_id:patient_id ,
+                },
+                success: function (output) {
+                    if (output == true) {
+                    location.reload();
+                    toastr.success("Consent form reset successfully !");
+                    } else {
+                    location.reload();
+
+                    toastr.error("Consent form not reset !");
+                    }
+                },
+                });
+            });
+
         });
     </script>
 </body>

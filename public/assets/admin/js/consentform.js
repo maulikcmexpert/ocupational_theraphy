@@ -35,29 +35,7 @@ $(document).ready(function () {
   //     $('input[type="checkbox"]').css("outline", "");
   //   }
   // });
-  $('.reset').on("click", function () {
-    var patient_id = $('#patient_id').val();
-    $.ajax({
-      headers: {
-        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-      },
-      method: "POST",
-      url: base_url + "patient/consent_form_reset",
-      data: {
-        patient_id:patient_id ,
-      },
-      success: function (output) {
-        if (output == true) {
-          location.reload();
-          toastr.success("Consent form reset successfully !");
-        } else {
-          location.reload();
-
-          toastr.error("Consent form not reset !");
-        }
-      },
-    });
-  });
+  
 
 
 });

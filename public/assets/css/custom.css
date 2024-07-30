@@ -1097,7 +1097,7 @@ select {
 }
 
 #kt_table_users .Consent-success {
-    background: green;
+    background-color: green !important;
     color: white;
 }
 

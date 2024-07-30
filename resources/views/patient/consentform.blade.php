@@ -449,6 +449,12 @@
                     $(this).css("outline", "");
                 }
             });
+            $('input[type="text"]').on("change", function () {
+                var value = $(this).val();
+                if (value != '') {
+                    $(this).css("outline", "");
+                }
+            });
         });
     </script>
 </body>

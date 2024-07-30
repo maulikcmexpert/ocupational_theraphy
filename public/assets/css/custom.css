@@ -1105,6 +1105,15 @@ select {
     color: white;
 }
 
+#kt_table_users .Consent-danger {
+    background-color: red !important;
+    color: white;
+}
+
+#kt_table_users .Consent-danger i {
+    color: white;
+}
+
 @media only screen and (max-width:1300px) {
     #kt_table_users_wrapper {
         overflow-x: scroll;

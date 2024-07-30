@@ -405,14 +405,16 @@
         $(document).ready(function() {
             $("#consentForm").on("submit", function(event) {
                 var checkedValues = [];
+                var i = 0;
                 @foreach($question as $key => $val)
                 @if($val->ques_type == 'check')
+                i++;
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
                 });
                 @endif
                 @endforeach
-                if (checkedValues.length > 0) {
+                if (checkedValues.length > i) {
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
                     alert('No checkboxes are checked');

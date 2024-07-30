@@ -27,7 +27,7 @@
                 <p>Your consent is a crucial component of the therapeutic process, and it is rooted in respect for your autonomy and your right to make decisions about your private information and your healthcare.</p>
                 <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="{{ route('terms_and_condition')}}">click here.</a></p>
                 <!-- <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label> -->
-                @if(count($consentAnswers) = 0)
+                @if(count($consentAnswers) != 0)
                 <input type="button" class="btn btn-info reset" value="Reset">
                 <input type="button" class="btn btn-info edit" value="Edit">
                 <input type="submit" class="btn btn-info update" value="Update" style="display: none;"> <label class="error consentFormError"></label>

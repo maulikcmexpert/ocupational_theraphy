@@ -395,12 +395,14 @@
     <label class="error consentFormError"></label>
     <div class="text-center footer-form-btn">
         <input type="button" class="btn btn-info reset" value="Reset">
+        <input type="button" class="btn btn-info edit" value="Edit">
+        <input type="button" class="btn btn-info update" value="Update">
     </div>
     @endif
     </form>
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -413,31 +415,31 @@
                 var uncheckedValues = [];
                 var i = 0;
                 @foreach($question as $key => $val)
-                @if($val->ques_type == 'check')
-                    i++;
-                    $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
-                        checkedValues.push($(this).val());
-                    });
-                    $('input[name="questions[{{ $key }}][answer]"]:not(:checked)').each(function() {
-                        uncheckedValues.push($(this).val());
+                @if($val -> ques_type == 'check')
+                i++;
+                $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
+                    checkedValues.push($(this).val());
+                });
+                $('input[name="questions[{{ $key }}][answer]"]:not(:checked)').each(function() {
+                    uncheckedValues.push($(this).val());
+                    $(this).css("outline", "2px solid red");
+                });
+                @elseif($val -> ques_type == 'text')
+                $('input[name="questions[{{ $key }}][answer]"]').each(function() {
+                    var value = $(this).val();
+                    if (value === '') {
+                        i++;
                         $(this).css("outline", "2px solid red");
-                    });
-                @elseif($val->ques_type == 'text')
-                    $('input[name="questions[{{ $key }}][answer]"]').each(function() {
-                        var value = $(this).val();
-                        if (value === '') {
-                            i++;
-                            $(this).css("outline", "2px solid red");
-                        }
-                    });
+                    }
+                });
                 @else
-                    $('input[name="questions[{{ $key }}][answer][]"]').each(function() {
-                        var value = $(this).val();
-                        if (value === '') {
-                            i++;
-                            $(this).css("outline", "2px solid red");
-                        }
-                    });
+                $('input[name="questions[{{ $key }}][answer][]"]').each(function() {
+                    var value = $(this).val();
+                    if (value === '') {
+                        i++;
+                        $(this).css("outline", "2px solid red");
+                    }
+                });
                 @endif
                 @endforeach
                 if (checkedValues.length >= i) {
@@ -449,39 +451,41 @@
                 // event.preventDefault();
             });
 
-            $('input[type="checkbox"]').on("change", function () {
+            // $('.update').hide();
+
+            $('input[type="checkbox"]').on("change", function() {
                 if ($(this).is(":checked")) {
                     $(this).css("outline", "");
                 }
             });
-            $('input[type="text"]').on("keyup", function () {
+            $('input[type="text"]').on("keyup", function() {
                 var value = $(this).val();
                 if (value != '') {
                     $(this).css("outline", "");
-                }else{
+                } else {
                     $(this).css("outline", "2px solid red");
                 }
             });
 
-            $('.reset').on("click", function () {
+            $('.reset').on("click", function() {
                 var patient_id = $('#patient_id').val();
                 $.ajax({
-                method: "POST",
-                url: "{{route('patient.consentFormReset')}}",
-                data: {
-                    patient_id:patient_id,
-                    _token: '{{ csrf_token() }}',
-                },
-                success: function (output) {
-                    if (output == true) {
-                    location.reload();
-                    toastr.success("Consent form reset successfully !");
-                    } else {
-                    location.reload();
+                    method: "POST",
+                    url: "{{route('patient.consentFormReset')}}",
+                    data: {
+                        patient_id: patient_id,
+                        _token: '{{ csrf_token() }}',
+                    },
+                    success: function(output) {
+                        if (output == true) {
+                            location.reload();
+                            toastr.success("Consent form reset successfully !");
+                        } else {
+                            location.reload();
 
-                    toastr.error("Consent form not reset !");
-                    }
-                },
+                            toastr.error("Consent form not reset !");
+                        }
+                    },
                 });
             });
 

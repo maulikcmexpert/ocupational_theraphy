@@ -422,7 +422,8 @@
                 if (checkedValues.length >= i) {
                     alert('Checked values: ' + checkedValues.join(', '));
                 } else {
-                    alert('No checkboxes are checked');
+                    event.preventDefault();
+                    // alert('No checkboxes are checked');
                 }
                 event.preventDefault();
             });

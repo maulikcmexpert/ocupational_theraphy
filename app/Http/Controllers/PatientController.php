@@ -147,6 +147,8 @@ class PatientController extends Controller
                     $checkConsentForm = ConsentAnswer::where('patient_id', $row->id)->count();
                     if ($checkConsentForm != 0) {
                         $actionBtn .= ' <a class="" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
+                    } else {
+                        $actionBtn .= ' <a class="" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
                     }
 
                     '</div>';

@@ -426,7 +426,13 @@
                         }
                     });
                 @else
-
+                    $('input[name="questions[{{ $key }}][answer][]"]').each(function() {
+                        var value = $(this).val();
+                        if (value === '') {
+                            i++;
+                            $(this).css("outline", "2px solid red");
+                        }
+                    });
                 @endif
                 @endforeach
                 if (checkedValues.length >= i) {

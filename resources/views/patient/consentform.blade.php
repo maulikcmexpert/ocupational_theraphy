@@ -490,7 +490,8 @@
             });
 
             $('.edit').on('click', function() {
-                alert();
+                $('input[type="text"]').prop('disabled', false);
+                $('input[type="checkbox"]').prop('disabled', false);
                 $(this).hide();
                 $('.update').show();
             });

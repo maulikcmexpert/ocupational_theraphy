@@ -408,7 +408,7 @@
                 var uncheckedValues = [];
                 var i = 0;
                 @foreach($question as $key => $val)
-                @if($val - > ques_type == 'check')
+                @if($val->ques_type == 'check')
                 i++;
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
@@ -427,7 +427,7 @@
                 event.preventDefault();
             });
 
-            $('input[type="checkbox"]').on("change", function() {
+            $('input[type="checkbox"]').on("change", function () {
                 if ($(this).is(":checked")) {
                     $(this).css("outline", "");
                 }

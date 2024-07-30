@@ -409,14 +409,22 @@
                 var i = 0;
                 @foreach($question as $key => $val)
                 @if($val->ques_type == 'check')
-                i++;
-                $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
-                    checkedValues.push($(this).val());
-                });
-                $('input[name="questions[{{ $key }}][answer]"]:not(:checked)').each(function() {
-                    uncheckedValues.push($(this).val());
-                    $(this).css("outline", "2px solid red");
-                });
+                    i++;
+                    $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
+                        checkedValues.push($(this).val());
+                    });
+                    $('input[name="questions[{{ $key }}][answer]"]:not(:checked)').each(function() {
+                        uncheckedValues.push($(this).val());
+                        $(this).css("outline", "2px solid red");
+                    });
+                @else
+                    $('input[name="questions[{{ $key }}][answer]"]').each(function() {
+                        var value = $(this).val();
+                        if (value === '') {
+                            i++;
+                            $(this).css("outline", "2px solid red");
+                        }
+                    });
                 @endif
                 @endforeach
                 if (checkedValues.length >= i) {

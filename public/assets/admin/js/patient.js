@@ -1,8 +1,5 @@
 $(function () {
 
-  $('.consent_form').css('background-color','red');
-
-
   const base_url = $("#base_url").val();
 
   var table = $(".data-table").DataTable({
@@ -749,3 +746,6 @@ $(document).on("click", "#dischargeCheck", function () {
   $("#totalAttendence").html(totalAttendence);
   $("#totalSession").html(totalSession);
 });
+
+$('.consent_form').css('background-color','red');
+

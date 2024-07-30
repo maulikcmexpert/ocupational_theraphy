@@ -406,8 +406,8 @@
             $("#consentForm").on("submit", function(event) {
                 var checkedValues = [];
                 @foreach($question as $key => $val)
-                @if($val-> ques_type == 'check')
-                $('input[name="{{questions[{{ $key }}][answer]"]:checked').each(function() {
+                @if($val->ques_type == 'check')
+                $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
                 });
 

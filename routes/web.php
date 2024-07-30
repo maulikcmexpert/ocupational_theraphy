@@ -160,4 +160,4 @@ Route::middleware('auth')->group(function () {
 Route::get('patient/create_consent_form/{id}', [PatientController::class, 'createConsentForm'])->name('patient.consentForm');
 Route::get('patient/create_consent_form/{id}/submited', [PatientController::class, 'createConsentFormSubmited'])->name('patient.consentFormSubmited');
 Route::post('patient/consent_form_store/{id}', [PatientController::class, 'consentFormStore'])->name('patient.consentFormStore');
-Route::post('patient/consent_form_reset', [PatientController::class, 'consentFormReset'])->name('patient.consent_form_reset');
+Route::post('patient/consent_form_reset', [PatientController::class, 'consentFormReset']);

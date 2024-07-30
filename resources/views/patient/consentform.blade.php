@@ -450,6 +450,7 @@
                 }
             });
             $('input[type="text"]').on("change", function () {
+                alert();
                 var value = $(this).val();
                 if (value != '') {
                     $(this).css("outline", "");

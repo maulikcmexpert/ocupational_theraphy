@@ -389,7 +389,11 @@
     <label class="error consentFormError"></label>
     <div class="text-center footer-form-btn">
         <input type="submit" class="btn btn-primary" value="Submit">
-
+    </div>
+    @else
+    <label class="error consentFormError"></label>
+    <div class="text-center footer-form-btn">
+        <input type="button" class="btn btn-info" value="Reset">
     </div>
     @endif
     </form>

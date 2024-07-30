@@ -145,11 +145,11 @@ class PatientController extends Controller
                         $actionBtn .= '<a class="" href="' . $change_password_url . '"  title="Change Password" id="change_password_doctor" ><i class="fas fa-key"></i></a> ';
                     }
                     $checkConsentForm = ConsentAnswer::where('patient_id', $row->id)->count();
+                    $consentFormBtn = "btn btn-success";
                     if ($checkConsentForm != 0) {
-                        $actionBtn .= ' <a class="" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
-                    } else {
-                        $actionBtn .= ' <a class="" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
+                        $consentFormBtn = "btn btn-danger";
                     }
+                    $actionBtn .= ' <a class="' . $consentFormBtn . '" href="' . $consentForm . '" target="_blank"   title="Consent Form"><i class="fa fa-wpforms" ></i></a>';
 
                     '</div>';
                     return $actionBtn;

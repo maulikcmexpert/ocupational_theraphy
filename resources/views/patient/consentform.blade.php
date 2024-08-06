@@ -28,7 +28,7 @@
                 <p>For the full Terms and Conditions of the Grounded.Well.Wise Pvt Ltd and its <a href="">associated occupational therapy practices</a> please <a href="{{ route('terms_and_condition')}}">click here.</a></p>
                 <!-- <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label> -->
                 @if(count($consentAnswers) != 0)
-                <input type="button" class="btn btn-info reset" value="Reset">
+                <!-- <input type="button" class="btn btn-info reset" value="Reset"> -->
                 <!-- <input type="button" class="btn btn-info editup" value="Edit"> -->
                 <input type="submit" class="btn btn-info updateup" value="Update" style="display: none;"> <label class="error consentFormError"></label>
                 @endif
@@ -398,7 +398,7 @@
     @else
     <label class="error consentFormError"></label>
     <div class="text-center footer-form-btn">
-        <input type="button" class="btn btn-info reset" value="Reset">
+        <!-- <input type="button" class="btn btn-info reset" value="Reset"> -->
         <!-- <input type="button" class="btn btn-info edit" value="Edit"> -->
         <input type="submit" class="btn btn-info update" value="Update" style="display: none;">
     </div>
@@ -419,7 +419,7 @@
                 var uncheckedValues = [];
                 var i = 0;
                 @foreach($question as $key => $val)
-                @if($val -> ques_type == 'check')
+                @if($val - > ques_type == 'check')
                 i++;
                 $('input[name="questions[{{ $key }}][answer]"]:checked').each(function() {
                     checkedValues.push($(this).val());
@@ -428,7 +428,7 @@
                     uncheckedValues.push($(this).val());
                     $(this).css("outline", "2px solid red");
                 });
-                @elseif($val -> ques_type == 'text')
+                @elseif($val - > ques_type == 'text')
                 $('input[name="questions[{{ $key }}][answer]"]').each(function() {
                     var value = $(this).val();
                     if (value === '') {

@@ -29,7 +29,7 @@
                 <!-- <label id="questions[0][answer]-error" class="error" for="questions[0][answer]"></label> -->
                 @if(count($consentAnswers) != 0)
                 <input type="button" class="btn btn-info reset" value="Reset">
-                <input type="button" class="btn btn-info editup" value="Edit">
+                <!-- <input type="button" class="btn btn-info editup" value="Edit"> -->
                 <input type="submit" class="btn btn-info updateup" value="Update" style="display: none;"> <label class="error consentFormError"></label>
                 @endif
                 <div class="row">
@@ -399,7 +399,7 @@
     <label class="error consentFormError"></label>
     <div class="text-center footer-form-btn">
         <input type="button" class="btn btn-info reset" value="Reset">
-        <input type="button" class="btn btn-info edit" value="Edit">
+        <!-- <input type="button" class="btn btn-info edit" value="Edit"> -->
         <input type="submit" class="btn btn-info update" value="Update" style="display: none;">
     </div>
     @endif
